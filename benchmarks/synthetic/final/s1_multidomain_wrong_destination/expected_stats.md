@@ -3,7 +3,7 @@
 ## Recommended run
 
 ```bash
-bash benchmarks_synthetic/final/s1_multidomain_wrong_destination/run_a1_v2.sh 5 bfs
+bash benchmarks/synthetic/final/s1_multidomain_wrong_destination/run_s1.sh 5 bfs
 Bad version
 
 Validated on 2026-05-24 at depth 5:

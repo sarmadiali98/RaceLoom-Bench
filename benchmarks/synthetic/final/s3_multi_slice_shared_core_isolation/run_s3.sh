@@ -5,7 +5,7 @@ DEPTH="${1:-5}"
 STRATEGY="${2:-bfs}"
 
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
-BENCH="benchmarks_synthetic/final/s3_multi_slice_shared_core_isolation"
+BENCH="benchmarks/synthetic/final/s3_multi_slice_shared_core_isolation"
 
 echo "=== S3 bad: Multi-slice shared-core isolation, depth=${DEPTH}, strategy=${STRATEGY} ==="
 ~/run_raceloom_progress.sh \

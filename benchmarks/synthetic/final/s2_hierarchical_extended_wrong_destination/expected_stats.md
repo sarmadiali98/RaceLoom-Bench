@@ -3,7 +3,7 @@
 ## Recommended run
 
 ```bash
-bash benchmarks_synthetic/final/s2_hierarchical_extended_wrong_destination/run_a2_v2.sh 4 bfs
+bash benchmarks/synthetic/final/s2_hierarchical_extended_wrong_destination/run_s2.sh 4 bfs
 Bad version
 
 Observed on 2026-05-24 at depth 4:

@@ -5,7 +5,7 @@ DEPTH="${1:-4}"
 STRATEGY="${2:-bfs}"
 
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
-BENCH="benchmarks_synthetic/final/s2_hierarchical_extended_wrong_destination"
+BENCH="benchmarks/synthetic/final/s2_hierarchical_extended_wrong_destination"
 
 echo "=== S2 bad: Hierarchical extended wrong destination, depth=${DEPTH}, strategy=${STRATEGY} ==="
 ~/run_raceloom_progress.sh \

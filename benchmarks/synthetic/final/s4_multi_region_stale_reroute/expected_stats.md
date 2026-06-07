@@ -3,7 +3,7 @@
 ## Recommended run
 
 ```bash
-bash benchmarks_synthetic/final/s4_multi_region_stale_reroute/run_a4_v2.sh 5 bfs
+bash benchmarks/synthetic/final/s4_multi_region_stale_reroute/run_s4.sh 5 bfs
 Bad version
 
 Validated on 2026-05-24;19:42:41 at depth 5:

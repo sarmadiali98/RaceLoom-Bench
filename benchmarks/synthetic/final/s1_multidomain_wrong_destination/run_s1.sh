@@ -5,7 +5,7 @@ DEPTH="${1:-5}"
 STRATEGY="${2:-bfs}"
 
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
-BENCH="benchmarks_synthetic/final/s1_multidomain_wrong_destination"
+BENCH="benchmarks/synthetic/final/s1_multidomain_wrong_destination"
 
 echo "=== S1 bad: Multidomain wrong destination, depth=${DEPTH}, strategy=${STRATEGY} ==="
 ~/run_raceloom_progress.sh \

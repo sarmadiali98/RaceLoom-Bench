@@ -4,7 +4,7 @@ Status: pending validation.
 
 Recommended command:
 
-bash benchmarks_synthetic/final/s3_multi_slice_shared_core_isolation/run_a3_v2.sh 5 bfs
+bash benchmarks/synthetic/final/s3_multi_slice_shared_core_isolation/run_s3.sh 5 bfs
 
 Expected behavior:
 

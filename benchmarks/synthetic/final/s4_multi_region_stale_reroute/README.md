@@ -38,5 +38,5 @@ Expected behavior:
 
 Harmful races found: 0
 Recommended command
-bash benchmarks_synthetic/final/s4_multi_region_stale_reroute/run_a4_v2.sh 5 bfs
+bash benchmarks/synthetic/final/s4_multi_region_stale_reroute/run_s4.sh 5 bfs
 
