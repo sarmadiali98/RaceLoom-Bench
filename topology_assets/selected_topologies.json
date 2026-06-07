@@ -24,16 +24,16 @@
     "default_waypoint": "n009"
   },
   {
-    "topology_id": "T3_cost266",
-    "source": "sndlib/cost266",
-    "nodes": 37,
-    "edges": 57,
+    "topology_id": "T3_geant2012",
+    "source": "topology-zoo/geant2012",
+    "nodes": 40,
+    "edges": 61,
     "diameter": 8,
-    "cycle_rank": 21,
-    "json": "T3_cost266.json",
-    "default_source": "n033",
-    "default_destination": "n025",
-    "default_waypoint": "n015"
+    "cycle_rank": 22,
+    "json": "T3_geant2012.json",
+    "default_source": "n028",
+    "default_destination": "n004",
+    "default_waypoint": "n023"
   },
   {
     "topology_id": "T4_germany50",
@@ -46,17 +46,5 @@
     "default_source": "n048",
     "default_destination": "n020",
     "default_waypoint": "n006"
-  },
-  {
-    "topology_id": "T3_geant2012",
-    "source": "topology-zoo/geant2012",
-    "nodes": 40,
-    "edges": 61,
-    "diameter": 8,
-    "cycle_rank": 22,
-    "json": "T3_geant2012.json",
-    "default_source": "n028",
-    "default_destination": "n004",
-    "default_waypoint": "n023"
   }
 ]

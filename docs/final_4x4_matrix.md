@@ -12,4 +12,3 @@ Format: `traces / bad harmful / control harmful`.
 All 16 bad models expose harmful races.
 All 16 control models expose zero harmful races.
 
-T3 uses Topology Zoo Geant2012 instead of the earlier Cost266 attempt to avoid the suspicious repeated T2/T3 count issue.

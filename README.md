@@ -16,8 +16,6 @@ This repository contains a curated RaceLoom benchmark suite with a completed 4×
 - T3: Topology Zoo Geant2012
 - T4: SNDlib Germany50
 
-T3 uses Geant2012 to avoid the earlier repeated-count issue seen with Cost266.
-
 ## Result matrix
 
 See:
@@ -43,4 +41,3 @@ Running the full matrix
 scripts/run_final_matrix.sh results/final_matrix_logs
 python3 scripts/summarize_logs.py results/final_matrix_logs
 
-This export intentionally excludes failed attempts, deprecated generated directories, stale logs, and the earlier Cost266 counted row.
