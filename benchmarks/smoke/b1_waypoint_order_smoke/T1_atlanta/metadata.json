@@ -1,0 +1,34 @@
+{
+  "id": "B1-T1-waypoint-order-smoke",
+  "name": "b1_waypoint_order_smoke_T1_atlanta",
+  "paper_id": "B1",
+  "topology_id": "T1_atlanta",
+  "policy_class": "waypoint_update_order_uninspected_destination",
+  "recommended_depth": 4,
+  "recommended_strategy": "bfs",
+  "expected_bad": {
+    "harmful_races": "> 0"
+  },
+  "expected_control": {
+    "harmful_races": 0
+  },
+  "translation_honesty": "This B1 smoke benchmark makes the waypoint participate in the race. The ingress update and waypoint inspection update are separate controller events. In the faulty model, the waypoint initially forwards traffic as uninspected and is later updated to produce an inspected tag. A harmful race occurs if ingress forwarding is enabled before the waypoint inspection update. In the control model, the waypoint is safe from the start.",
+  "embedding": {
+    "paper_id": "B1",
+    "benchmark_family": "waypoint order smoke",
+    "topology_id": "T1_atlanta",
+    "source_node": "n009",
+    "waypoint_node": "n013",
+    "destination_node": "n004",
+    "source_switch": "SW009",
+    "waypoint_switch": "SW013",
+    "destination_switch": "SW004",
+    "source_uninspected_port": 2,
+    "ingress_update": "(port = 2) . (port <- 8501)",
+    "waypoint_safe_update": "(port = 8502) . (port <- 8503)",
+    "bad_waypoint_initial": "(port = 8502) . (port <- 8510)",
+    "control_waypoint_initial": "(port = 8502) . (port <- 8503)",
+    "checked_property": "(port=2) . @Network . (port=8513)",
+    "meaning": "The faulty model permits a race where ingress forwarding is installed before waypoint inspection is installed. The control model starts with safe waypoint inspection behavior, so the same ingress update remains safe."
+  }
+}

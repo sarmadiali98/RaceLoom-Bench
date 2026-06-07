@@ -1,0 +1,33 @@
+{
+  "topology_id": "T1_atlanta",
+  "topology_source": "sndlib/atlanta",
+  "source_node": "n009",
+  "correct_gateway_node": "n004",
+  "wrong_gateway_node": "n015",
+  "safe_path": [
+    "n009",
+    "n010",
+    "n008",
+    "n013",
+    "n014",
+    "n004"
+  ],
+  "wrong_path": [
+    "n009",
+    "n011",
+    "n001",
+    "n012",
+    "n015"
+  ],
+  "decision_node": "n009",
+  "decision_index": 0,
+  "safe_next": "n010",
+  "wrong_next": "n011",
+  "source_port": 1,
+  "correct_gateway_port": 21,
+  "wrong_gateway_marker_port": 30,
+  "wrong_gateway_terminal_port": 31,
+  "decision_input_port": 1,
+  "safe_output_port": 168,
+  "wrong_output_port": 172
+}

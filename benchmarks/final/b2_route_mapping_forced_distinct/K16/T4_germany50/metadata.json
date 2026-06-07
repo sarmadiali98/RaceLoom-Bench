@@ -1,0 +1,22 @@
+{
+  "paper_id": "B2",
+  "name": "b2_route_mapping_forced_distinct_K16_T4_germany50",
+  "policy_class": "wrong_next_hop_route_mapping",
+  "status": "generated_unvalidated",
+  "translation_honesty": "B2 route-mapping benchmark with forced distinct source, router, and gateway switches. Prefix A and Prefix B are classified at the source, mapped at a distinct router, and terminated at the gateway. The faulty update maps Prefix A to Gateway B. The control maps Prefix A to Gateway A. Background churn is retained.",
+  "b2_route_mapping_encoding": {
+    "source_node": "n048",
+    "gateway_node": "n020",
+    "source_switch": "SW048",
+    "router_switch": "SW008",
+    "gateway_switch": "SW020",
+    "all_distinct": true,
+    "source_table": "(((port = 1) . (port <- 8701)) + ((port = 2) . (port <- 8702)))",
+    "bad_route_update": "(((port = 8711) . (port <- 8722)) + ((port = 8712) . (port <- 8721)))",
+    "control_route_update": "(((port = 8711) . (port <- 8721)) + ((port = 8712) . (port <- 8722)))",
+    "gateway_table": "(((port = 8731) . (port <- 8741)) + ((port = 8732) . (port <- 8742)))",
+    "checked_property": "(port=1) . @Network . (port=8752)",
+    "bad_path": "1 -> 8701 -> 8711 -> 8722 -> 8732 -> 8742 -> 8752",
+    "control_path": "1 -> 8701 -> 8711 -> 8721 -> 8731 -> 8741 -> 8751"
+  }
+}

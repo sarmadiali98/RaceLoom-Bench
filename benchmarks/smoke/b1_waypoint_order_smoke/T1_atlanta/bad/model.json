@@ -1,0 +1,98 @@
+{
+  "Switches": {
+    "SW001": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW002": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW003": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW004": {
+      "InitialFlowTable": "(((port = 8504) . (port <- 8505)) + ((port = 8511) . (port <- 8512)))",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW005": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW006": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW007": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW008": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW009": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upIngress",
+          "Policy": "(port = 2) . (port <- 8501)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW010": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW011": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW012": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW013": {
+      "InitialFlowTable": "(port = 8502) . (port <- 8510)",
+      "DirectUpdates": [
+        {
+          "Channel": "upWaypoint",
+          "Policy": "(port = 8502) . (port <- 8503)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW014": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW015": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    }
+  },
+  "Links": "((((port = 8501) . (port <- 8502))) + (((port = 8503) . (port <- 8504))) + (((port = 8510) . (port <- 8511))) + (((port = 8505) . (port <- 8506))) + (((port = 8512) . (port <- 8513))))",
+  "RecursiveVariables": {
+    "CIngress": "(upIngress ! \"(port = 2) . (port <- 8501)\") ; CIngress",
+    "CWaypoint": "(upWaypoint ! \"(port = 8502) . (port <- 8503)\") ; CWaypoint"
+  },
+  "Controllers": [
+    "CIngress",
+    "CWaypoint"
+  ]
+}

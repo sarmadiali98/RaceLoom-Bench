@@ -1,0 +1,35 @@
+{
+  "id": "B2-T1-route-mapping-smoke",
+  "name": "b2_route_mapping_smoke_T1_atlanta",
+  "paper_id": "B2",
+  "topology_id": "T1_atlanta",
+  "policy_class": "wrong_next_hop_route_mapping",
+  "recommended_depth": 4,
+  "recommended_strategy": "bfs",
+  "expected_bad": {
+    "harmful_races": "> 0"
+  },
+  "expected_control": {
+    "harmful_races": 0
+  },
+  "translation_honesty": "This B2 smoke benchmark models wrong next-hop behavior as a route-mapping error. Two routed-prefix traffic classes are sent to a router. The control update maps Prefix A to Gateway A and Prefix B to Gateway B. The faulty update swaps the next-hop mapping, allowing Prefix A to reach Gateway B. The checked property forbids Prefix A from reaching Gateway B.",
+  "embedding": {
+    "paper_id": "B2",
+    "benchmark_family": "wrong next-hop route mapping smoke",
+    "topology_id": "T1_atlanta",
+    "source_node": "n009",
+    "router_node": "n013",
+    "gateway_node": "n004",
+    "source_switch": "SW009",
+    "router_switch": "SW013",
+    "gateway_switch": "SW004",
+    "prefix_a_port": 1,
+    "prefix_b_port": 2,
+    "control_route_update": "(((port = 8711) . (port <- 8721)) + ((port = 8712) . (port <- 8722)))",
+    "bad_route_update": "(((port = 8711) . (port <- 8722)) + ((port = 8712) . (port <- 8721)))",
+    "gateway_a_endpoint": 8751,
+    "gateway_b_endpoint": 8752,
+    "checked_property": "(port=1) . @Network . (port=8752)",
+    "meaning": "B2 checks route mapping correctness. Prefix A should be routed to Gateway A. The faulty route update maps Prefix A to Gateway B, while the control update maps Prefix A to Gateway A."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "B3-T1-slice-isolation-two-controller-smoke",
+  "name": "b3_slice_isolation_twocontroller_smoke_T1_atlanta",
+  "paper_id": "B3",
+  "topology_id": "T1_atlanta",
+  "policy_class": "cross_slice_leakage_two_controller",
+  "recommended_depth": 4,
+  "recommended_strategy": "bfs",
+  "expected_bad": {
+    "harmful_races": "> 0"
+  },
+  "expected_control": {
+    "harmful_races": 0
+  },
+  "translation_honesty": "This B3 smoke benchmark models slice isolation as a symbolic flowspace boundary. Slice A and Slice B have separate logical controllers, distinct ingress classes, and distinct endpoints. The Slice B endpoint is legitimate for Slice B traffic but forbidden for Slice A traffic. The faulty model gives CSliceA an overbroad rule that sends Slice A traffic to the Slice B endpoint. The control model confines each slice to its own endpoint.",
+  "embedding": {
+    "paper_id": "B3",
+    "benchmark_family": "two-controller slice isolation smoke",
+    "topology_id": "T1_atlanta",
+    "source_node": "n009",
+    "policy_node": "n013",
+    "endpoint_node": "n004",
+    "source_switch": "SW009",
+    "policy_switch": "SW013",
+    "endpoint_switch": "SW004",
+    "slice_a_ingress_port": 1,
+    "slice_b_ingress_port": 2,
+    "slice_a_endpoint": 8951,
+    "slice_b_endpoint": 8952,
+    "source_table": "(((port = 1) . (port <- 8901)) + ((port = 2) . (port <- 8902)))",
+    "slice_a_control_update": "(port = 8911) . (port <- 8921)",
+    "slice_a_bad_update": "(port = 8911) . (port <- 8922)",
+    "slice_b_update": "(port = 8912) . (port <- 8922)",
+    "endpoint_table": "(((port = 8931) . (port <- 8941)) + ((port = 8932) . (port <- 8942)))",
+    "checked_property": "(port=1) . @Network . (port=8952)",
+    "meaning": "B3 checks slice isolation with two logical slice controllers. CSliceA controls Slice A policy and CSliceB controls Slice B policy. The control model sends Slice A traffic to the Slice A endpoint and Slice B traffic to the Slice B endpoint. The faulty model gives Slice A an overbroad policy that sends it to the Slice B endpoint."
+  }
+}

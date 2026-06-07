@@ -1,0 +1,235 @@
+
+========================================================================================
+B1 K8/T1 files
+========================================================================================
+bad model          benchmarks_comprehensive_topologies/b1_waypoint_order_churn/K8/T1_atlanta/bad/model.json  exists=True
+bad properties     benchmarks_comprehensive_topologies/b1_waypoint_order_churn/K8/T1_atlanta/bad/properties.json  exists=True
+control model      benchmarks_comprehensive_topologies/b1_waypoint_order_churn/K8/T1_atlanta/control/model.json  exists=True
+control properties benchmarks_comprehensive_topologies/b1_waypoint_order_churn/K8/T1_atlanta/control/properties.json  exists=True
+metadata           benchmarks_comprehensive_topologies/b1_waypoint_order_churn/K8/T1_atlanta/metadata.json  exists=True
+churn embedding    benchmarks_comprehensive_topologies/b1_waypoint_order_churn/K8/T1_atlanta/source/churn_embedding.json  exists=True
+bad log            benchmarks_comprehensive_topologies/b1_waypoint_order_churn/K8/T1_atlanta/bad_depth5_bfs.log  exists=True
+control log        benchmarks_comprehensive_topologies/b1_waypoint_order_churn/K8/T1_atlanta/control_depth5_bfs.log  exists=True
+
+========================================================================================
+B1 encoded roles
+========================================================================================
+paper_id:           B1
+name:               b1_waypoint_order_T1_atlanta_K8
+policy_class:       waypoint_update_order_uninspected_destination
+source switch:      SW009
+waypoint switch:    SW013
+destination switch: SW004
+
+source node:        n009
+waypoint node:      n013
+destination node:   n004
+
+========================================================================================
+B1 semantic ports and encoded policies
+========================================================================================
+source_uninspected_port:
+   2
+ingress_update:
+   (port = 2) . (port <- 8501)
+waypoint_safe_update:
+   (port = 8502) . (port <- 8503)
+bad_waypoint_initial:
+   (port = 8502) . (port <- 8510)
+control_waypoint_initial:
+   (port = 8502) . (port <- 8503)
+destination_table:
+   (((port = 8504) . (port <- 8505)) + ((port = 8511) . (port <- 8512)))
+destination_bad_uninspected_port:
+   8513
+checked_property:
+   (port=2) . @Network . (port=8513)
+
+========================================================================================
+Controllers
+========================================================================================
+bad controllers:
+[
+  "CWaypoint",
+  "CIngress",
+  "CBg"
+]
+
+control controllers:
+[
+  "CWaypoint",
+  "CIngress",
+  "CBg"
+]
+
+bad recursive variables:
+{
+  "CBg": "(upBg1 ! \"(port = 9010) . (port <- 9011)\") ; CBg o+ (upBg2 ! \"(port = 9020) . (port <- 9021)\") ; CBg o+ (upBg3 ! \"(port = 9030) . (port <- 9031)\") ; CBg o+ (upBg4 ! \"(port = 9040) . (port <- 9041)\") ; CBg o+ (upBg5 ! \"(port = 9050) . (port <- 9051)\") ; CBg o+ (upBg6 ! \"(port = 9060) . (port <- 9061)\") ; CBg o+ (upBg7 ! \"(port = 9070) . (port <- 9071)\") ; CBg o+ (upBg8 ! \"(port = 9080) . (port <- 9081)\") ; CBg",
+  "CIngress": "(upIngress ! \"(port = 2) . (port <- 8501)\") ; CIngress",
+  "CWaypoint": "(upWaypoint ! \"(port = 8502) . (port <- 8503)\") ; CWaypoint"
+}
+
+control recursive variables:
+{
+  "CBg": "(upBg1 ! \"(port = 9010) . (port <- 9011)\") ; CBg o+ (upBg2 ! \"(port = 9020) . (port <- 9021)\") ; CBg o+ (upBg3 ! \"(port = 9030) . (port <- 9031)\") ; CBg o+ (upBg4 ! \"(port = 9040) . (port <- 9041)\") ; CBg o+ (upBg5 ! \"(port = 9050) . (port <- 9051)\") ; CBg o+ (upBg6 ! \"(port = 9060) . (port <- 9061)\") ; CBg o+ (upBg7 ! \"(port = 9070) . (port <- 9071)\") ; CBg o+ (upBg8 ! \"(port = 9080) . (port <- 9081)\") ; CBg",
+  "CIngress": "(upIngress ! \"(port = 2) . (port <- 8501)\") ; CIngress",
+  "CWaypoint": "(upWaypoint ! \"(port = 8502) . (port <- 8503)\") ; CWaypoint"
+}
+
+========================================================================================
+Source switch encoding
+========================================================================================
+switch: SW009
+
+bad source InitialFlowTable:
+(port = 2) . (port <- 168)
+
+bad source DirectUpdates:
+[
+  {
+    "Channel": "upIngress",
+    "Policy": "(port = 2) . (port <- 8501)"
+  }
+]
+
+control source InitialFlowTable:
+(port = 2) . (port <- 168)
+
+control source DirectUpdates:
+[
+  {
+    "Channel": "upIngress",
+    "Policy": "(port = 2) . (port <- 8501)"
+  }
+]
+
+========================================================================================
+Waypoint switch encoding
+========================================================================================
+switch: SW013
+
+bad waypoint InitialFlowTable:
+(((port = 165) . (port <- 180)) + ((port = 8502) . (port <- 8510)))
+
+control waypoint InitialFlowTable:
+(((port = 165) . (port <- 180)) + ((port = 8502) . (port <- 8503)))
+
+bad waypoint DirectUpdates:
+[
+  {
+    "Channel": "upWaypoint",
+    "Policy": "(port = 8502) . (port <- 8503)"
+  }
+]
+
+control waypoint DirectUpdates:
+[
+  {
+    "Channel": "upWaypoint",
+    "Policy": "(port = 8502) . (port <- 8503)"
+  }
+]
+
+========================================================================================
+Destination switch encoding
+========================================================================================
+switch: SW004
+
+bad destination InitialFlowTable:
+(((((port = 135) . (port <- 15)) + ((port = 139) . (port <- 15)))) + ((((port = 8504) . (port <- 8505)) + ((port = 8511) . (port <- 8512)))))
+
+control destination InitialFlowTable:
+(((((port = 135) . (port <- 15)) + ((port = 139) . (port <- 15)))) + ((((port = 8504) . (port <- 8505)) + ((port = 8511) . (port <- 8512)))))
+
+bad destination DirectUpdates:
+[]
+
+control destination DirectUpdates:
+[]
+
+========================================================================================
+B1 property files
+========================================================================================
+bad properties:
+{
+  "Properties": {
+    "CT->SW": {
+      "Expression": "(port=2) . @Network . (port=8513)",
+      "AllowsPackets": false
+    },
+    "CT->SW<-CT": {
+      "Expression": "(port=2) . @Network . (port=8513)",
+      "AllowsPackets": false
+    },
+    "CT->CT->SW": {
+      "Expression": "(port=2) . @Network . (port=8513)",
+      "AllowsPackets": false
+    }
+  }
+}
+
+control properties:
+{
+  "Properties": {
+    "CT->SW": {
+      "Expression": "(port=2) . @Network . (port=8513)",
+      "AllowsPackets": false
+    },
+    "CT->SW<-CT": {
+      "Expression": "(port=2) . @Network . (port=8513)",
+      "AllowsPackets": false
+    },
+    "CT->CT->SW": {
+      "Expression": "(port=2) . @Network . (port=8513)",
+      "AllowsPackets": false
+    }
+  }
+}
+
+========================================================================================
+Semantic links involving B1 ports
+========================================================================================
+((port = 8501) . (port <- 8502))
+((port = 8503) . (port <- 8504))
+((port = 8510) . (port <- 8511))
+((port = 8505) . (port <- 8506))
+((port = 8512) . (port <- 8513))
+
+========================================================================================
+Bad/control core difference summary
+========================================================================================
+Same source update in both:
+  (port = 2) . (port <- 8501)
+
+Same waypoint repair update in both:
+  (port = 8502) . (port <- 8503)
+
+Faulty waypoint initial:
+  (port = 8502) . (port <- 8510)
+
+Control waypoint initial:
+  (port = 8502) . (port <- 8503)
+
+Forbidden outcome:
+  (port=2) . @Network . (port=8513)
+
+========================================================================================
+Run summaries
+========================================================================================
+
+== bad ==
+branches: CBg:8;CIngress:1;CWaypoint:1;BSw:11
+traces:   156100
+harmful:  62
+total:    563.5354116400704
+
+== control ==
+branches: CBg:8;CIngress:1;CWaypoint:1;BSw:11
+traces:   156100
+harmful:  0
+total:    572.4744335787836
+
+========================================================================================
+One-line model claim
+========================================================================================
+B1 checks whether ingress forwarding can race ahead of waypoint inspection and allow monitored traffic to reach the destination without receiving the waypoint inspection tag.

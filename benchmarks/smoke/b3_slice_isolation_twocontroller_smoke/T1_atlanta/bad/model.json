@@ -1,0 +1,97 @@
+{
+  "Switches": {
+    "SW001": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW002": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW003": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW004": {
+      "InitialFlowTable": "(((port = 8931) . (port <- 8941)) + ((port = 8932) . (port <- 8942)))",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW005": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW006": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW007": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW008": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW009": {
+      "InitialFlowTable": "(((port = 1) . (port <- 8901)) + ((port = 2) . (port <- 8902)))",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW010": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW011": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW012": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW013": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upSliceA",
+          "Policy": "(port = 8911) . (port <- 8922)"
+        },
+        {
+          "Channel": "upSliceB",
+          "Policy": "(port = 8912) . (port <- 8922)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW014": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW015": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    }
+  },
+  "Links": "((((port = 8901) . (port <- 8911))) + (((port = 8902) . (port <- 8912))) + (((port = 8921) . (port <- 8931))) + (((port = 8922) . (port <- 8932))) + (((port = 8941) . (port <- 8951))) + (((port = 8942) . (port <- 8952))))",
+  "RecursiveVariables": {
+    "CSliceA": "(upSliceA ! \"(port = 8911) . (port <- 8922)\") ; CSliceA",
+    "CSliceB": "(upSliceB ! \"(port = 8912) . (port <- 8922)\") ; CSliceB"
+  },
+  "Controllers": [
+    "CSliceA",
+    "CSliceB"
+  ]
+}

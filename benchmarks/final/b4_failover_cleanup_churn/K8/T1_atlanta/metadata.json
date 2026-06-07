@@ -1,0 +1,227 @@
+{
+  "id": "L7-T1_atlanta-K8",
+  "name": "b4_failover_cleanup_T1_atlanta_K8",
+  "family": "comprehensive_topology_with_background_update_churn",
+  "source_benchmark": "L7 \u2014 FAUCET stacking failover stale path",
+  "source_model": "benchmarks_literature/l7_faucet_stacking_failover_path",
+  "topology_id": "T1_atlanta",
+  "topology_source": "sndlib/atlanta",
+  "topology_stats": {
+    "nodes": 15,
+    "edges": 22,
+    "diameter": 5,
+    "cycle_rank": 8,
+    "connected": true
+  },
+  "policy_class": "post_failure_stale_primary_cleanup",
+  "churn_level": 8,
+  "recommended_depth": 5,
+  "recommended_strategy": "bfs",
+  "expected_bad": {
+    "harmful_races": "> 0"
+  },
+  "expected_control": {
+    "harmful_races": 0
+  },
+  "status": "generated_unvalidated",
+  "translation_honesty": "This strengthened B4 benchmark models failover as a multi-update consistency problem. Pre-failure traffic may use the primary path. Post-failure traffic is introduced by CDetect. CFailover should move it to the backup path, and CCleanup should neutralize stale primary-path continuation. The faulty model initially leaves the stale primary continuation reachable. The checked property forbids post-failure traffic from reaching the stale primary endpoint. K8 background churn is retained.",
+  "embedding": {
+    "topology_id": "T1_atlanta",
+    "topology_source": "sndlib/atlanta",
+    "source_node": "n009",
+    "safe_destination_node": "n004",
+    "safe_path": [
+      "n009",
+      "n010",
+      "n008",
+      "n013",
+      "n014",
+      "n004"
+    ],
+    "decision_node": "n009",
+    "decision_index": 0,
+    "safe_next": "n010",
+    "source_port": 1,
+    "safe_endpoint_port": 21,
+    "stale_marker_port": 30,
+    "stale_forbidden_port": 31,
+    "safe_output_port": 168
+  },
+  "background_update_churn": {
+    "k_background_updates": 8,
+    "background_nodes": [
+      "n001",
+      "n002",
+      "n003",
+      "n005",
+      "n006",
+      "n007",
+      "n011",
+      "n012"
+    ],
+    "background_updates": [
+      {
+        "index": 1,
+        "node": "n001",
+        "switch": "SW001",
+        "channel": "upBg1",
+        "input_port": 9010,
+        "mid_port": 9011,
+        "terminal_port": 9012,
+        "policy": "(port = 9010) . (port <- 9011)"
+      },
+      {
+        "index": 2,
+        "node": "n002",
+        "switch": "SW002",
+        "channel": "upBg2",
+        "input_port": 9020,
+        "mid_port": 9021,
+        "terminal_port": 9022,
+        "policy": "(port = 9020) . (port <- 9021)"
+      },
+      {
+        "index": 3,
+        "node": "n003",
+        "switch": "SW003",
+        "channel": "upBg3",
+        "input_port": 9030,
+        "mid_port": 9031,
+        "terminal_port": 9032,
+        "policy": "(port = 9030) . (port <- 9031)"
+      },
+      {
+        "index": 4,
+        "node": "n005",
+        "switch": "SW005",
+        "channel": "upBg4",
+        "input_port": 9040,
+        "mid_port": 9041,
+        "terminal_port": 9042,
+        "policy": "(port = 9040) . (port <- 9041)"
+      },
+      {
+        "index": 5,
+        "node": "n006",
+        "switch": "SW006",
+        "channel": "upBg5",
+        "input_port": 9050,
+        "mid_port": 9051,
+        "terminal_port": 9052,
+        "policy": "(port = 9050) . (port <- 9051)"
+      },
+      {
+        "index": 6,
+        "node": "n007",
+        "switch": "SW007",
+        "channel": "upBg6",
+        "input_port": 9060,
+        "mid_port": 9061,
+        "terminal_port": 9062,
+        "policy": "(port = 9060) . (port <- 9061)"
+      },
+      {
+        "index": 7,
+        "node": "n011",
+        "switch": "SW011",
+        "channel": "upBg7",
+        "input_port": 9070,
+        "mid_port": 9071,
+        "terminal_port": 9072,
+        "policy": "(port = 9070) . (port <- 9071)"
+      },
+      {
+        "index": 8,
+        "node": "n012",
+        "switch": "SW012",
+        "channel": "upBg8",
+        "input_port": 9080,
+        "mid_port": 9081,
+        "terminal_port": 9082,
+        "policy": "(port = 9080) . (port <- 9081)"
+      }
+    ],
+    "core_embedding": {
+      "topology_id": "T1_atlanta",
+      "topology_source": "sndlib/atlanta",
+      "source_node": "n009",
+      "safe_destination_node": "n004",
+      "safe_path": [
+        "n009",
+        "n010",
+        "n008",
+        "n013",
+        "n014",
+        "n004"
+      ],
+      "decision_node": "n009",
+      "decision_index": 0,
+      "safe_next": "n010",
+      "source_port": 1,
+      "safe_endpoint_port": 21,
+      "stale_marker_port": 30,
+      "stale_forbidden_port": 31,
+      "safe_output_port": 168
+    }
+  },
+  "counted_cell": true,
+  "validated_bad_counted": {
+    "side": "bad",
+    "date": "2026-05-30;16:30:00",
+    "depth": 5,
+    "strategy": "bfs",
+    "network_model_branches": "CFailover:1;CBg:8;BSw:10",
+    "generated_traces": 96309,
+    "trace_generation_time_seconds": 2.3191085680155084,
+    "maude_execution_time_seconds": 0.27738341223448515,
+    "trace_generation_cache_hits": 10333,
+    "trace_generation_cache_misses": 478,
+    "katch_total_execution_time_seconds": 324.07964184856974,
+    "katch_total_cache_hits": 92409,
+    "katch_total_cache_misses": 455,
+    "harmful_races": 45,
+    "trace_analyzer_execution_time_seconds": 326.9598150140373,
+    "total_execution_time_seconds": 329.2789235820528,
+    "log": "/home/a_sarmadi/raceloom_image_rootfs/raceloom/benchmarks_comprehensive_topologies/l7_failover_churn/K8/T1_atlanta/bad_depth5_bfs.log"
+  },
+  "validated_control_counted": {
+    "side": "control",
+    "date": "2026-05-30;16:35:33",
+    "depth": 5,
+    "strategy": "bfs",
+    "network_model_branches": "CFailover:1;CBg:8;BSw:10",
+    "generated_traces": 96309,
+    "trace_generation_time_seconds": 2.214284689980559,
+    "maude_execution_time_seconds": 0.20625276258215308,
+    "trace_generation_cache_hits": 10462,
+    "trace_generation_cache_misses": 349,
+    "katch_total_execution_time_seconds": 184.2340433348436,
+    "katch_total_cache_hits": 201358,
+    "katch_total_cache_misses": 256,
+    "harmful_races": 0,
+    "trace_analyzer_execution_time_seconds": 187.98878664791118,
+    "total_execution_time_seconds": 190.20307133789174,
+    "log": "/home/a_sarmadi/raceloom_image_rootfs/raceloom/benchmarks_comprehensive_topologies/l7_failover_churn/K8/T1_atlanta/control_depth5_bfs.log"
+  },
+  "paper_id": "B4",
+  "b4_failover_cleanup_encoding": {
+    "source_node": "n009",
+    "failover_node": "n013",
+    "cleanup_node": "n004",
+    "source_switch": "SW009",
+    "failover_switch": "SW013",
+    "cleanup_switch": "SW004",
+    "pre_failure_port": 1,
+    "post_failure_port": 2,
+    "detect_update": "(port = 2) . (port <- 9201)",
+    "failover_bad_initial": "(port = 9202) . (port <- 9203)",
+    "failover_control_initial": "(port = 9202) . (port <- 9204)",
+    "failover_update": "(port = 9202) . (port <- 9204)",
+    "cleanup_bad_initial": "(port = 9205) . (port <- 9206)",
+    "cleanup_control_initial": "(port = 9205) . (port <- 9207)",
+    "cleanup_update": "(port = 9205) . (port <- 9207)",
+    "stale_primary_endpoint": 9208,
+    "backup_live_endpoint": 9209,
+    "checked_property": "(port=2) . @Network . (port=9208)"
+  }
+}

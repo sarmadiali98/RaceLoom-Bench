@@ -1,0 +1,17 @@
+benchmark	topology	k	depth	branches	traces	bad_harmful	control_harmful
+B1_waypoint_order	T1_atlanta	K8	5	CBg:8;CIngress:1;CWaypoint:1;BSw:11	156100	62	0
+B1_waypoint_order	T2_nobel_eu	K12	4	CBg:12;CIngress:1;CWaypoint:1;BSw:15	49980	38	0
+B1_waypoint_order	T3_geant2012	K14	4	CBg:14;CIngress:1;CWaypoint:1;BSw:17	82688	44	0
+B1_waypoint_order	T4_germany50	K16	4	CBg:16;CIngress:1;CWaypoint:1;BSw:19	129276	50	0
+B2_route_mapping	T1_atlanta	K8	5	CBg:8;CRoute:1;BSw:10	96309	74	0
+B2_route_mapping	T2_nobel_eu	K12	4	CBg:12;CRoute:1;BSw:14	37856	25	0
+B2_route_mapping	T3_geant2012	K14	4	CBg:14;CRoute:1;BSw:16	64800	29	0
+B2_route_mapping	T4_germany50	K16	4	CBg:16;CRoute:1;BSw:18	104040	33	0
+B3_slice_isolation	T1_atlanta	K8	5	CBg:8;CSliceA:1;CSliceB:1;BSw:11	156100	72	0
+B3_slice_isolation	T2_nobel_eu	K12	4	CBg:12;CSliceA:1;CSliceB:1;BSw:15	49980	51	0
+B3_slice_isolation	T3_geant2012	K14	4	CBg:14;CSliceA:1;CSliceB:1;BSw:17	82688	46	0
+B3_slice_isolation	T4_germany50	K16	4	CBg:16;CSliceA:1;CSliceB:1;BSw:19	129276	67	0
+B4_failover_cleanup	T1_atlanta	K8	5	CBg:8;CDetect:1;CFailover:1;CCleanup:1;BSw:12	242363	79	0
+B4_failover_cleanup	T2_nobel_eu	K12	4	CBg:12;CDetect:1;CFailover:1;CCleanup:1;BSw:16	64800	51	0
+B4_failover_cleanup	T3_geant2012	K14	4	CBg:14;CDetect:1;CFailover:1;CCleanup:1;BSw:18	104040	59	0
+B4_failover_cleanup	T4_germany50	K16	4	CBg:16;CDetect:1;CFailover:1;CCleanup:1;BSw:20	158840	67	0

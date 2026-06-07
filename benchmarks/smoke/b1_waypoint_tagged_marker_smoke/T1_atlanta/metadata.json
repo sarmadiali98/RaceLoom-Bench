@@ -1,0 +1,61 @@
+{
+  "id": "B1-T1-tagged-symbolic-destination-smoke",
+  "name": "b1_waypoint_tagged_symbolic_destination_smoke_T1_atlanta",
+  "family": "smoke_test_strengthened_waypoint_symbolic_destination",
+  "paper_id": "B1",
+  "topology_id": "T1_atlanta",
+  "topology_source": "sndlib/atlanta",
+  "topology_stats": {
+    "nodes": 15,
+    "edges": 22,
+    "diameter": 5,
+    "cycle_rank": 8,
+    "connected": true
+  },
+  "policy_class": "waypoint_bypass_uninspected_destination",
+  "recommended_depth": 4,
+  "recommended_strategy": "bfs",
+  "expected_bad": {
+    "harmful_races": "> 0"
+  },
+  "expected_control": {
+    "harmful_races": 0
+  },
+  "translation_honesty": "This strengthened B1 smoke benchmark distinguishes inspected and uninspected outcomes. The control update sends monitored traffic toward the waypoint path. The faulty update can emit a symbolic uninspected marker, which is linked to the uninspected destination endpoint. The checked property forbids source traffic from reaching that endpoint.",
+  "embedding": {
+    "paper_id": "B1",
+    "benchmark_family": "waypoint bypass with inspected/uninspected encoding",
+    "topology_id": "T1_atlanta",
+    "topology_source": "sndlib/atlanta",
+    "source_node": "n009",
+    "destination_node": "n004",
+    "waypoint_node": "n013",
+    "safe_path_through_waypoint": [
+      "n009",
+      "n010",
+      "n008",
+      "n013",
+      "n014",
+      "n004"
+    ],
+    "bypass_path_avoiding_waypoint": [
+      "n009",
+      "n011",
+      "n001",
+      "n012",
+      "n015",
+      "n004"
+    ],
+    "decision_node": "n009",
+    "source_port": 2,
+    "waypoint_tag_port": 17,
+    "inspected_destination_port": 19,
+    "uninspected_destination_forbidden_port": 18,
+    "safe_output_port": 168,
+    "bypass_output_port": 172,
+    "bad_symbolic_uninspected_policy": "(port = 2) . ((port <- 168) + (port <- 20))",
+    "control_waypoint_policy": "(port = 2) . (port <- 168)",
+    "uninspected_marker_port": 20,
+    "uninspected_marker_link": "((port = 20) . (port <- 18))"
+  }
+}

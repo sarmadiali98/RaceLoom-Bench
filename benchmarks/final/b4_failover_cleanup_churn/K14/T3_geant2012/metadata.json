@@ -1,0 +1,17 @@
+{
+  "paper_id": "B4",
+  "name": "b4_failover_cleanup_K14_T3_geant2012",
+  "policy_class": "failover_cleanup_stale_path",
+  "status": "generated_unvalidated",
+  "template_or_direct": "direct_topology_zoo_asset",
+  "topology_id": "T3_geant2012",
+  "topology_source": "topology-zoo/geant2012",
+  "topology_stats": {
+    "nodes": 40,
+    "edges": 61,
+    "diameter": 8,
+    "cycle_rank": 22,
+    "connected": true
+  },
+  "translation_honesty": "B4 failover-cleanup benchmark generated directly from Topology Zoo Geant2012 while preserving the exact locked K8/T1 B4 symbolic failover/cleanup semantics."
+}

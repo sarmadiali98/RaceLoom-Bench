@@ -1,0 +1,37 @@
+{
+  "topology_id": "T3_geant2012",
+  "source": "topology-zoo/geant2012",
+  "topology_stats": {
+    "nodes": 40,
+    "edges": 61,
+    "diameter": 8,
+    "cycle_rank": 22,
+    "connected": true
+  },
+  "core_embedding": {
+    "source_node": "n028",
+    "waypoint_node": "n023",
+    "destination_node": "n004",
+    "b2_route_mapping_encoding": {
+      "source_node": "n028",
+      "router_node": "n023",
+      "gateway_node": "n004",
+      "source_switch": "SW028",
+      "router_switch": "SW023",
+      "gateway_switch": "SW004",
+      "all_distinct": true,
+      "prefix_a_port": 1,
+      "prefix_b_port": 2,
+      "source_table": "(((port = 1) . (port <- 8701)) + ((port = 2) . (port <- 8702)))",
+      "bad_route_update": "(((port = 8711) . (port <- 8722)) + ((port = 8712) . (port <- 8721)))",
+      "control_route_update": "(((port = 8711) . (port <- 8721)) + ((port = 8712) . (port <- 8722)))",
+      "gateway_table": "(((port = 8731) . (port <- 8741)) + ((port = 8732) . (port <- 8742)))",
+      "gateway_a_endpoint": 8751,
+      "gateway_b_endpoint": 8752,
+      "checked_property": "(port=1) . @Network . (port=8752)",
+      "bad_path": "1 -> 8701 -> 8711 -> 8722 -> 8732 -> 8742 -> 8752",
+      "control_path": "1 -> 8701 -> 8711 -> 8721 -> 8731 -> 8741 -> 8751",
+      "k_background": 14
+    }
+  }
+}

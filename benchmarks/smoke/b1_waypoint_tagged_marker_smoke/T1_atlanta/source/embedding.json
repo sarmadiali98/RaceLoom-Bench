@@ -1,0 +1,32 @@
+{
+  "paper_id": "B1",
+  "benchmark_family": "waypoint bypass with inspected/uninspected encoding",
+  "topology_id": "T1_atlanta",
+  "topology_source": "sndlib/atlanta",
+  "source_node": "n009",
+  "destination_node": "n004",
+  "waypoint_node": "n013",
+  "safe_path_through_waypoint": [
+    "n009",
+    "n010",
+    "n008",
+    "n013",
+    "n014",
+    "n004"
+  ],
+  "bypass_path_avoiding_waypoint": [
+    "n009",
+    "n011",
+    "n001",
+    "n012",
+    "n015",
+    "n004"
+  ],
+  "decision_node": "n009",
+  "source_port": 2,
+  "waypoint_tag_port": 17,
+  "inspected_destination_port": 19,
+  "uninspected_destination_forbidden_port": 18,
+  "safe_output_port": 168,
+  "bypass_output_port": 172
+}

@@ -1,0 +1,35 @@
+{
+  "paper_id": "B3",
+  "name": "b3_slice_isolation_twocontroller_K14_T3_geant2012",
+  "policy_class": "cross_slice_leakage_two_controller",
+  "status": "generated_unvalidated",
+  "topology_id": "T3_geant2012",
+  "topology_source": "topology-zoo/geant2012",
+  "topology_stats": {
+    "nodes": 40,
+    "edges": 61,
+    "diameter": 8,
+    "cycle_rank": 22,
+    "connected": true
+  },
+  "template_or_direct": "direct_topology_zoo_asset",
+  "translation_honesty": "B3 two-controller slice-isolation benchmark using the exact known-good T1 symbolic semantics: source classifier, shared slice-controller switch, endpoint switch, and property forbidding Slice A traffic from reaching the Slice B endpoint. Only the topology host and background churn scale are changed.",
+  "b3_slice_isolation_encoding": {
+    "source_node": "n028",
+    "slice_node": "n023",
+    "endpoint_node": "n004",
+    "source_switch": "SW028",
+    "slice_switch": "SW023",
+    "endpoint_switch": "SW004",
+    "all_distinct": true,
+    "source_table": "(((port = 1) . (port <- 8901)) + ((port = 2) . (port <- 8902)))",
+    "slice_a_bad_update": "(port = 8911) . (port <- 8922)",
+    "slice_a_control_update": "(port = 8911) . (port <- 8921)",
+    "slice_b_update": "(port = 8912) . (port <- 8922)",
+    "endpoint_table": "(((port = 8931) . (port <- 8941)) + ((port = 8932) . (port <- 8942)))",
+    "checked_property": "(port=1) . @Network . (port=8952)",
+    "bad_path": "1 -> 8901 -> 8911 -> 8922 -> 8932 -> 8942 -> 8952",
+    "control_path": "1 -> 8901 -> 8911 -> 8921 -> 8931 -> 8941 -> 8951",
+    "semantics_source": "exact_known_good_B3_T1_port_structure"
+  }
+}

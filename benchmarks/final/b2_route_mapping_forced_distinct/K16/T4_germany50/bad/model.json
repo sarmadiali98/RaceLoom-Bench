@@ -1,0 +1,348 @@
+{
+  "Switches": {
+    "SW001": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upBg1",
+          "Policy": "(port = 9010) . (port <- 9011)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW002": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upBg2",
+          "Policy": "(port = 9020) . (port <- 9021)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW003": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upBg3",
+          "Policy": "(port = 9030) . (port <- 9031)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW004": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upBg4",
+          "Policy": "(port = 9040) . (port <- 9041)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW005": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upBg5",
+          "Policy": "(port = 9050) . (port <- 9051)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW006": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upBg6",
+          "Policy": "(port = 9060) . (port <- 9061)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW007": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upBg7",
+          "Policy": "(port = 9070) . (port <- 9071)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW008": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upRoute",
+          "Policy": "(((port = 8711) . (port <- 8722)) + ((port = 8712) . (port <- 8721)))"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW009": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upBg8",
+          "Policy": "(port = 9080) . (port <- 9081)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW010": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW011": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upBg9",
+          "Policy": "(port = 9090) . (port <- 9091)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW012": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upBg10",
+          "Policy": "(port = 9100) . (port <- 9101)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW013": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW014": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upBg11",
+          "Policy": "(port = 9110) . (port <- 9111)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW015": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upBg12",
+          "Policy": "(port = 9120) . (port <- 9121)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW016": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW017": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW018": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW019": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upBg13",
+          "Policy": "(port = 9130) . (port <- 9131)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW020": {
+      "InitialFlowTable": "(((port = 8731) . (port <- 8741)) + ((port = 8732) . (port <- 8742)))",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW021": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW022": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW023": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upBg14",
+          "Policy": "(port = 9140) . (port <- 9141)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW024": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW025": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upBg15",
+          "Policy": "(port = 9150) . (port <- 9151)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW026": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW027": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upBg16",
+          "Policy": "(port = 9160) . (port <- 9161)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW028": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW029": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW030": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW031": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW032": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW033": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW034": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW035": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW036": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW037": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW038": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW039": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW040": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW041": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW042": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW043": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW044": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW045": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW046": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW047": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW048": {
+      "InitialFlowTable": "(((port = 1) . (port <- 8701)) + ((port = 2) . (port <- 8702)))",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW049": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW050": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    }
+  },
+  "Links": "(((port = 100) . (port <- 101)) + ((port = 102) . (port <- 103)) + ((port = 104) . (port <- 105)) + ((port = 106) . (port <- 107)) + ((port = 108) . (port <- 109)) + ((port = 110) . (port <- 111)) + ((port = 112) . (port <- 113)) + ((port = 114) . (port <- 115)) + ((port = 116) . (port <- 117)) + ((port = 118) . (port <- 119)) + ((port = 120) . (port <- 121)) + ((port = 122) . (port <- 123)) + ((port = 124) . (port <- 125)) + ((port = 126) . (port <- 127)) + ((port = 128) . (port <- 129)) + ((port = 130) . (port <- 131)) + ((port = 132) . (port <- 133)) + ((port = 134) . (port <- 135)) + ((port = 136) . (port <- 137)) + ((port = 138) . (port <- 139)) + ((port = 140) . (port <- 141)) + ((port = 142) . (port <- 143)) + ((port = 144) . (port <- 145)) + ((port = 146) . (port <- 147)) + ((port = 148) . (port <- 149)) + ((port = 150) . (port <- 151)) + ((port = 152) . (port <- 153)) + ((port = 154) . (port <- 155)) + ((port = 156) . (port <- 157)) + ((port = 158) . (port <- 159)) + ((port = 160) . (port <- 161)) + ((port = 162) . (port <- 163)) + ((port = 164) . (port <- 165)) + ((port = 166) . (port <- 167)) + ((port = 168) . (port <- 169)) + ((port = 170) . (port <- 171)) + ((port = 172) . (port <- 173)) + ((port = 174) . (port <- 175)) + ((port = 176) . (port <- 177)) + ((port = 178) . (port <- 179)) + ((port = 180) . (port <- 181)) + ((port = 182) . (port <- 183)) + ((port = 184) . (port <- 185)) + ((port = 186) . (port <- 187)) + ((port = 188) . (port <- 189)) + ((port = 190) . (port <- 191)) + ((port = 192) . (port <- 193)) + ((port = 194) . (port <- 195)) + ((port = 196) . (port <- 197)) + ((port = 198) . (port <- 199)) + ((port = 200) . (port <- 201)) + ((port = 202) . (port <- 203)) + ((port = 204) . (port <- 205)) + ((port = 206) . (port <- 207)) + ((port = 208) . (port <- 209)) + ((port = 210) . (port <- 211)) + ((port = 212) . (port <- 213)) + ((port = 214) . (port <- 215)) + ((port = 216) . (port <- 217)) + ((port = 218) . (port <- 219)) + ((port = 220) . (port <- 221)) + ((port = 222) . (port <- 223)) + ((port = 224) . (port <- 225)) + ((port = 226) . (port <- 227)) + ((port = 228) . (port <- 229)) + ((port = 230) . (port <- 231)) + ((port = 232) . (port <- 233)) + ((port = 234) . (port <- 235)) + ((port = 236) . (port <- 237)) + ((port = 238) . (port <- 239)) + ((port = 240) . (port <- 241)) + ((port = 242) . (port <- 243)) + ((port = 244) . (port <- 245)) + ((port = 246) . (port <- 247)) + ((port = 248) . (port <- 249)) + ((port = 250) . (port <- 251)) + ((port = 252) . (port <- 253)) + ((port = 254) . (port <- 255)) + ((port = 256) . (port <- 257)) + ((port = 258) . (port <- 259)) + ((port = 260) . (port <- 261)) + ((port = 262) . (port <- 263)) + ((port = 264) . (port <- 265)) + ((port = 266) . (port <- 267)) + ((port = 268) . (port <- 269)) + ((port = 270) . (port <- 271)) + ((port = 272) . (port <- 273)) + ((port = 274) . (port <- 275)) + ((port = 276) . (port <- 277)) + ((port = 278) . (port <- 279)) + ((port = 280) . (port <- 281)) + ((port = 282) . (port <- 283)) + ((port = 284) . (port <- 285)) + ((port = 286) . (port <- 287)) + ((port = 288) . (port <- 289)) + ((port = 290) . (port <- 291)) + ((port = 292) . (port <- 293)) + ((port = 294) . (port <- 295)) + ((port = 296) . (port <- 297)) + ((port = 298) . (port <- 299)) + ((port = 300) . (port <- 301)) + ((port = 302) . (port <- 303)) + ((port = 304) . (port <- 305)) + ((port = 306) . (port <- 307)) + ((port = 308) . (port <- 309)) + ((port = 310) . (port <- 311)) + ((port = 312) . (port <- 313)) + ((port = 314) . (port <- 315)) + ((port = 316) . (port <- 317)) + ((port = 318) . (port <- 319)) + ((port = 320) . (port <- 321)) + ((port = 322) . (port <- 323)) + ((port = 324) . (port <- 325)) + ((port = 326) . (port <- 327)) + ((port = 328) . (port <- 329)) + ((port = 330) . (port <- 331)) + ((port = 332) . (port <- 333)) + ((port = 334) . (port <- 335)) + ((port = 336) . (port <- 337)) + ((port = 338) . (port <- 339)) + ((port = 340) . (port <- 341)) + ((port = 342) . (port <- 343)) + ((port = 344) . (port <- 345)) + ((port = 346) . (port <- 347)) + ((port = 348) . (port <- 349)) + ((port = 350) . (port <- 351)) + ((port = 352) . (port <- 353)) + ((port = 354) . (port <- 355)) + ((port = 356) . (port <- 357)) + ((port = 358) . (port <- 359)) + ((port = 360) . (port <- 361)) + ((port = 362) . (port <- 363)) + ((port = 364) . (port <- 365)) + ((port = 366) . (port <- 367)) + ((port = 368) . (port <- 369)) + ((port = 370) . (port <- 371)) + ((port = 372) . (port <- 373)) + ((port = 374) . (port <- 375)) + ((port = 376) . (port <- 377)) + ((port = 378) . (port <- 379)) + ((port = 380) . (port <- 381)) + ((port = 382) . (port <- 383)) + ((port = 384) . (port <- 385)) + ((port = 386) . (port <- 387)) + ((port = 388) . (port <- 389)) + ((port = 390) . (port <- 391)) + ((port = 392) . (port <- 393)) + ((port = 394) . (port <- 395)) + ((port = 396) . (port <- 397)) + ((port = 398) . (port <- 399)) + ((port = 400) . (port <- 401)) + ((port = 402) . (port <- 403)) + ((port = 404) . (port <- 405)) + ((port = 406) . (port <- 407)) + ((port = 408) . (port <- 409)) + ((port = 410) . (port <- 411)) + ((port = 412) . (port <- 413)) + ((port = 414) . (port <- 415)) + ((port = 416) . (port <- 417)) + ((port = 418) . (port <- 419)) + ((port = 420) . (port <- 421)) + ((port = 422) . (port <- 423)) + ((port = 424) . (port <- 425)) + ((port = 426) . (port <- 427)) + ((port = 428) . (port <- 429)) + ((port = 430) . (port <- 431)) + ((port = 432) . (port <- 433)) + ((port = 434) . (port <- 435)) + ((port = 436) . (port <- 437)) + ((port = 438) . (port <- 439)) + ((port = 440) . (port <- 441)) + ((port = 442) . (port <- 443)) + ((port = 444) . (port <- 445)) + ((port = 446) . (port <- 447)) + ((port = 448) . (port <- 449)) + ((port = 450) . (port <- 451)) + ((port = 30) . (port <- 31)) + ((port = 9011) . (port <- 9012)) + ((port = 9021) . (port <- 9022)) + ((port = 9031) . (port <- 9032)) + ((port = 9041) . (port <- 9042)) + ((port = 9051) . (port <- 9052)) + ((port = 9061) . (port <- 9062)) + ((port = 9071) . (port <- 9072)) + ((port = 9081) . (port <- 9082)) + ((port = 9091) . (port <- 9092)) + ((port = 9101) . (port <- 9102)) + ((port = 9111) . (port <- 9112)) + ((port = 9121) . (port <- 9122)) + ((port = 9131) . (port <- 9132)) + ((port = 9141) . (port <- 9142)) + ((port = 9151) . (port <- 9152)) + ((port = 9161) . (port <- 9162)) + ((port = 8701) . (port <- 8711)) + ((port = 8702) . (port <- 8712)) + ((port = 8721) . (port <- 8731)) + ((port = 8722) . (port <- 8732)) + ((port = 8741) . (port <- 8751)) + ((port = 8742) . (port <- 8752)))",
+  "RecursiveVariables": {
+    "CBg": "(upBg1 ! \"(port = 9010) . (port <- 9011)\") ; CBg o+ (upBg2 ! \"(port = 9020) . (port <- 9021)\") ; CBg o+ (upBg3 ! \"(port = 9030) . (port <- 9031)\") ; CBg o+ (upBg4 ! \"(port = 9040) . (port <- 9041)\") ; CBg o+ (upBg5 ! \"(port = 9050) . (port <- 9051)\") ; CBg o+ (upBg6 ! \"(port = 9060) . (port <- 9061)\") ; CBg o+ (upBg7 ! \"(port = 9070) . (port <- 9071)\") ; CBg o+ (upBg8 ! \"(port = 9080) . (port <- 9081)\") ; CBg o+ (upBg9 ! \"(port = 9090) . (port <- 9091)\") ; CBg o+ (upBg10 ! \"(port = 9100) . (port <- 9101)\") ; CBg o+ (upBg11 ! \"(port = 9110) . (port <- 9111)\") ; CBg o+ (upBg12 ! \"(port = 9120) . (port <- 9121)\") ; CBg o+ (upBg13 ! \"(port = 9130) . (port <- 9131)\") ; CBg o+ (upBg14 ! \"(port = 9140) . (port <- 9141)\") ; CBg o+ (upBg15 ! \"(port = 9150) . (port <- 9151)\") ; CBg o+ (upBg16 ! \"(port = 9160) . (port <- 9161)\") ; CBg",
+    "CRoute": "(upRoute ! \"(((port = 8711) . (port <- 8722)) + ((port = 8712) . (port <- 8721)))\") ; CRoute"
+  },
+  "Controllers": [
+    "CRoute",
+    "CBg"
+  ]
+}

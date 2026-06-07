@@ -1,0 +1,91 @@
+{
+  "Switches": {
+    "SW001": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW002": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW003": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW004": {
+      "InitialFlowTable": "(((port = 8731) . (port <- 8741)) + ((port = 8732) . (port <- 8742)))",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW005": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW006": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW007": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW008": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW009": {
+      "InitialFlowTable": "(((port = 1) . (port <- 8701)) + ((port = 2) . (port <- 8702)))",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW010": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW011": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW012": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW013": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upRoute",
+          "Policy": "(((port = 8711) . (port <- 8722)) + ((port = 8712) . (port <- 8721)))"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW014": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    },
+    "SW015": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [],
+      "RequestedUpdates": []
+    }
+  },
+  "Links": "((((port = 8701) . (port <- 8711))) + (((port = 8702) . (port <- 8712))) + (((port = 8721) . (port <- 8731))) + (((port = 8722) . (port <- 8732))) + (((port = 8741) . (port <- 8751))) + (((port = 8742) . (port <- 8752))))",
+  "RecursiveVariables": {
+    "CRoute": "(upRoute ! \"(((port = 8711) . (port <- 8722)) + ((port = 8712) . (port <- 8721)))\") ; CRoute"
+  },
+  "Controllers": [
+    "CRoute"
+  ]
+}

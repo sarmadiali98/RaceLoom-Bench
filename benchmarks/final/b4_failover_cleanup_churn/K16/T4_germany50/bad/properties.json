@@ -1,0 +1,16 @@
+{
+  "Properties": {
+    "CT->SW": {
+      "Expression": "(port=2) . @Network . (port=9208)",
+      "AllowsPackets": false
+    },
+    "CT->SW<-CT": {
+      "Expression": "(port=2) . @Network . (port=9208)",
+      "AllowsPackets": false
+    },
+    "CT->CT->SW": {
+      "Expression": "(port=2) . @Network . (port=9208)",
+      "AllowsPackets": false
+    }
+  }
+}

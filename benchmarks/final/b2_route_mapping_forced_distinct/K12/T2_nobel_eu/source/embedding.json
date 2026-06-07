@@ -1,0 +1,35 @@
+{
+  "topology_id": "T2_nobel_eu",
+  "topology_source": "sndlib/nobel-eu",
+  "source_node": "n026",
+  "correct_gateway_node": "n008",
+  "wrong_gateway_node": "n011",
+  "safe_path": [
+    "n026",
+    "n014",
+    "n018",
+    "n010",
+    "n003",
+    "n017",
+    "n012",
+    "n024",
+    "n008"
+  ],
+  "wrong_path": [
+    "n026",
+    "n019",
+    "n016",
+    "n011"
+  ],
+  "decision_node": "n026",
+  "decision_index": 0,
+  "safe_next": "n014",
+  "wrong_next": "n019",
+  "source_port": 1,
+  "correct_gateway_port": 21,
+  "wrong_gateway_marker_port": 30,
+  "wrong_gateway_terminal_port": 31,
+  "decision_input_port": 1,
+  "safe_output_port": 226,
+  "wrong_output_port": 250
+}

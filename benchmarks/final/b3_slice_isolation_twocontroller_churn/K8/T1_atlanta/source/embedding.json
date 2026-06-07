@@ -1,0 +1,31 @@
+{
+  "topology_id": "T1_atlanta",
+  "topology_source": "sndlib/atlanta",
+  "source_node": "n009",
+  "safe_destination_node": "n004",
+  "safe_path": [
+    "n009",
+    "n010",
+    "n008",
+    "n013",
+    "n014",
+    "n004"
+  ],
+  "decision_node": "n009",
+  "decision_index": 0,
+  "safe_next": "n010",
+  "slice_a_ingress_ports": [
+    1,
+    30
+  ],
+  "slice_b_marker_ports": [
+    15,
+    17
+  ],
+  "slice_b_forbidden_endpoints": [
+    16,
+    18
+  ],
+  "safe_endpoint": 22,
+  "safe_output_port": 168
+}

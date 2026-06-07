@@ -1,0 +1,143 @@
+{
+  "k_background_updates": 8,
+  "background_nodes": [
+    "n001",
+    "n002",
+    "n003",
+    "n005",
+    "n006",
+    "n007",
+    "n008",
+    "n010"
+  ],
+  "background_updates": [
+    {
+      "index": 1,
+      "node": "n001",
+      "switch": "SW001",
+      "channel": "upBg1",
+      "input_port": 9010,
+      "mid_port": 9011,
+      "terminal_port": 9012,
+      "policy": "(port = 9010) . (port <- 9011)"
+    },
+    {
+      "index": 2,
+      "node": "n002",
+      "switch": "SW002",
+      "channel": "upBg2",
+      "input_port": 9020,
+      "mid_port": 9021,
+      "terminal_port": 9022,
+      "policy": "(port = 9020) . (port <- 9021)"
+    },
+    {
+      "index": 3,
+      "node": "n003",
+      "switch": "SW003",
+      "channel": "upBg3",
+      "input_port": 9030,
+      "mid_port": 9031,
+      "terminal_port": 9032,
+      "policy": "(port = 9030) . (port <- 9031)"
+    },
+    {
+      "index": 4,
+      "node": "n005",
+      "switch": "SW005",
+      "channel": "upBg4",
+      "input_port": 9040,
+      "mid_port": 9041,
+      "terminal_port": 9042,
+      "policy": "(port = 9040) . (port <- 9041)"
+    },
+    {
+      "index": 5,
+      "node": "n006",
+      "switch": "SW006",
+      "channel": "upBg5",
+      "input_port": 9050,
+      "mid_port": 9051,
+      "terminal_port": 9052,
+      "policy": "(port = 9050) . (port <- 9051)"
+    },
+    {
+      "index": 6,
+      "node": "n007",
+      "switch": "SW007",
+      "channel": "upBg6",
+      "input_port": 9060,
+      "mid_port": 9061,
+      "terminal_port": 9062,
+      "policy": "(port = 9060) . (port <- 9061)"
+    },
+    {
+      "index": 7,
+      "node": "n008",
+      "switch": "SW008",
+      "channel": "upBg7",
+      "input_port": 9070,
+      "mid_port": 9071,
+      "terminal_port": 9072,
+      "policy": "(port = 9070) . (port <- 9071)"
+    },
+    {
+      "index": 8,
+      "node": "n010",
+      "switch": "SW010",
+      "channel": "upBg8",
+      "input_port": 9080,
+      "mid_port": 9081,
+      "terminal_port": 9082,
+      "policy": "(port = 9080) . (port <- 9081)"
+    }
+  ],
+  "core_embedding": {
+    "topology_id": "T1_atlanta",
+    "topology_source": "sndlib/atlanta",
+    "source_node": "n009",
+    "correct_gateway_node": "n004",
+    "wrong_gateway_node": "n015",
+    "safe_path": [
+      "n009",
+      "n010",
+      "n008",
+      "n013",
+      "n014",
+      "n004"
+    ],
+    "wrong_path": [
+      "n009",
+      "n011",
+      "n001",
+      "n012",
+      "n015"
+    ],
+    "decision_node": "n009",
+    "decision_index": 0,
+    "safe_next": "n010",
+    "wrong_next": "n011",
+    "source_port": 1,
+    "correct_gateway_port": 21,
+    "wrong_gateway_marker_port": 30,
+    "wrong_gateway_terminal_port": 31,
+    "decision_input_port": 1,
+    "safe_output_port": 168,
+    "wrong_output_port": 172,
+    "b2_route_mapping_encoding": {
+      "source_node": "n009",
+      "gateway_node": "n004",
+      "source_switch": "SW009",
+      "router_switch": "SW010",
+      "gateway_switch": "SW004",
+      "all_distinct": true,
+      "source_table": "(((port = 1) . (port <- 8701)) + ((port = 2) . (port <- 8702)))",
+      "bad_route_update": "(((port = 8711) . (port <- 8722)) + ((port = 8712) . (port <- 8721)))",
+      "control_route_update": "(((port = 8711) . (port <- 8721)) + ((port = 8712) . (port <- 8722)))",
+      "gateway_table": "(((port = 8731) . (port <- 8741)) + ((port = 8732) . (port <- 8742)))",
+      "checked_property": "(port=1) . @Network . (port=8752)",
+      "bad_path": "1 -> 8701 -> 8711 -> 8722 -> 8732 -> 8742 -> 8752",
+      "control_path": "1 -> 8701 -> 8711 -> 8721 -> 8731 -> 8741 -> 8751"
+    }
+  }
+}

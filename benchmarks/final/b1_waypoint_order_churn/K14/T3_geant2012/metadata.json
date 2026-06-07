@@ -1,0 +1,33 @@
+{
+  "paper_id": "B1",
+  "name": "b1_waypoint_order_K14_T3_geant2012",
+  "policy_class": "waypoint_update_order_uninspected_destination",
+  "status": "generated_unvalidated",
+  "topology_id": "T3_geant2012",
+  "topology_source": "topology-zoo/geant2012",
+  "topology_stats": {
+    "nodes": 40,
+    "edges": 61,
+    "diameter": 8,
+    "cycle_rank": 22,
+    "connected": true
+  },
+  "translation_honesty": "B1 waypoint-order benchmark generated directly from a Topology Zoo-derived topology asset. CIngress installs source forwarding; CWaypoint installs inspection. The faulty model initially forwards monitored traffic as uninspected; the control is safe from the start.",
+  "b1_waypoint_order_encoding": {
+    "source_node": "n028",
+    "waypoint_node": "n023",
+    "destination_node": "n004",
+    "source_switch": "SW028",
+    "waypoint_switch": "SW023",
+    "destination_switch": "SW004",
+    "source_uninspected_port": 2,
+    "ingress_update": "(port = 2) . (port <- 8501)",
+    "bad_waypoint_initial": "(port = 8502) . (port <- 8510)",
+    "control_waypoint_initial": "(port = 8502) . (port <- 8503)",
+    "waypoint_safe_update": "(port = 8502) . (port <- 8503)",
+    "destination_table": "(((port = 8504) . (port <- 8505)) + ((port = 8511) . (port <- 8512)))",
+    "destination_bad_uninspected_port": 8513,
+    "checked_property": "(port=2) . @Network . (port=8513)",
+    "k_background": 14
+  }
+}

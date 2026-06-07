@@ -1,0 +1,26 @@
+{
+  "topology_id": "T4_germany50",
+  "topology_source": "sndlib/germany50",
+  "source_node": "n048",
+  "safe_destination_node": "n020",
+  "safe_path": [
+    "n048",
+    "n008",
+    "n021",
+    "n039",
+    "n024",
+    "n026",
+    "n013",
+    "n032",
+    "n029",
+    "n020"
+  ],
+  "decision_node": "n048",
+  "decision_index": 0,
+  "safe_next": "n008",
+  "source_port": 1,
+  "safe_endpoint_port": 21,
+  "stale_marker_port": 30,
+  "stale_forbidden_port": 31,
+  "safe_output_port": 190
+}

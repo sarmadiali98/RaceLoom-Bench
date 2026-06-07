@@ -1,0 +1,34 @@
+{
+  "topology_id": "T2_nobel_eu",
+  "topology_source": "sndlib/nobel-eu",
+  "source_node": "n026",
+  "safe_destination_node": "n008",
+  "safe_path": [
+    "n026",
+    "n014",
+    "n018",
+    "n010",
+    "n003",
+    "n017",
+    "n012",
+    "n024",
+    "n008"
+  ],
+  "decision_node": "n026",
+  "decision_index": 0,
+  "safe_next": "n014",
+  "slice_a_ingress_ports": [
+    1,
+    30
+  ],
+  "slice_b_marker_ports": [
+    15,
+    17
+  ],
+  "slice_b_forbidden_endpoints": [
+    16,
+    18
+  ],
+  "safe_endpoint": 22,
+  "safe_output_port": 226
+}

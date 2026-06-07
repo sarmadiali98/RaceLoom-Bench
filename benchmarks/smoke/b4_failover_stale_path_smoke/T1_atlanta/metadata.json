@@ -1,0 +1,37 @@
+{
+  "id": "B4-T1-failover-stale-path-smoke",
+  "name": "b4_failover_stale_path_smoke_T1_atlanta",
+  "paper_id": "B4",
+  "topology_id": "T1_atlanta",
+  "policy_class": "post_failure_stale_primary_path",
+  "recommended_depth": 4,
+  "recommended_strategy": "bfs",
+  "expected_bad": {
+    "harmful_races": "> 0"
+  },
+  "expected_control": {
+    "harmful_races": 0
+  },
+  "translation_honesty": "This B4 smoke benchmark models failover as a post-failure path-liveness property. Pre-failure traffic may use the primary path. After failure, traffic should use the live backup path and must not reach the stale primary endpoint. The faulty failover update leaves a stale primary-path branch, while the control update sends post-failure traffic only to the backup path.",
+  "embedding": {
+    "paper_id": "B4",
+    "benchmark_family": "failover stale path smoke",
+    "topology_id": "T1_atlanta",
+    "source_node": "n009",
+    "path_node": "n013",
+    "endpoint_node": "n004",
+    "source_switch": "SW009",
+    "path_switch": "SW013",
+    "endpoint_switch": "SW004",
+    "pre_failure_traffic_port": 1,
+    "post_failure_traffic_port": 2,
+    "primary_stale_endpoint": 9031,
+    "backup_live_endpoint": 9032,
+    "source_initial": "(port = 1) . (port <- 9001)",
+    "failover_control_update": "(port = 2) . (port <- 9002)",
+    "failover_bad_update": "(port = 2) . ((port <- 9002) + (port <- 9001))",
+    "path_table": "(((port = 9011) . (port <- 9021)) + ((port = 9012) . (port <- 9022)))",
+    "checked_property": "(port=2) . @Network . (port=9031)",
+    "meaning": "B4 checks stale-path behavior after failover. The primary endpoint is valid for pre-failure traffic but forbidden for post-failure traffic. The control failover update sends post-failure traffic only to the backup path. The faulty update leaves a stale primary-path branch."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "topology_id": "T4_germany50",
+  "topology_source": "sndlib/germany50",
+  "source_node": "n048",
+  "correct_gateway_node": "n020",
+  "wrong_gateway_node": "n010",
+  "safe_path": [
+    "n048",
+    "n008",
+    "n021",
+    "n039",
+    "n024",
+    "n026",
+    "n013",
+    "n032",
+    "n029",
+    "n020"
+  ],
+  "wrong_path": [
+    "n048",
+    "n047",
+    "n016",
+    "n035",
+    "n040",
+    "n022",
+    "n017",
+    "n018",
+    "n010"
+  ],
+  "decision_node": "n048",
+  "decision_index": 0,
+  "safe_next": "n008",
+  "wrong_next": "n047",
+  "source_port": 1,
+  "correct_gateway_port": 21,
+  "wrong_gateway_marker_port": 30,
+  "wrong_gateway_terminal_port": 31,
+  "decision_input_port": 1,
+  "safe_output_port": 190,
+  "wrong_output_port": 450
+}

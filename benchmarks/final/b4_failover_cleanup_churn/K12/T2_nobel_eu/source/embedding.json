@@ -1,0 +1,25 @@
+{
+  "topology_id": "T2_nobel_eu",
+  "topology_source": "sndlib/nobel-eu",
+  "source_node": "n026",
+  "safe_destination_node": "n008",
+  "safe_path": [
+    "n026",
+    "n014",
+    "n018",
+    "n010",
+    "n003",
+    "n017",
+    "n012",
+    "n024",
+    "n008"
+  ],
+  "decision_node": "n026",
+  "decision_index": 0,
+  "safe_next": "n014",
+  "source_port": 1,
+  "safe_endpoint_port": 21,
+  "stale_marker_port": 30,
+  "stale_forbidden_port": 31,
+  "safe_output_port": 226
+}
