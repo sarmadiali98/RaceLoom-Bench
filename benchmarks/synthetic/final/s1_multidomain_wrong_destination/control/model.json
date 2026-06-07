@@ -1,0 +1,137 @@
+{
+  "Switches": {
+    "SW1A": {
+      "InitialFlowTable": "(port = 2) . (port <- 4)",
+      "DirectUpdates": [
+        {
+          "Channel": "upS1A",
+          "Policy": "zero"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW2A": {
+      "InitialFlowTable": "(port = 12) . (port <- 14)",
+      "DirectUpdates": [
+        {
+          "Channel": "upS2A",
+          "Policy": "zero"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW3A": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upS3A",
+          "Policy": "(port = 1) . (port <- 3)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW4A": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upS4A",
+          "Policy": "(port = 11) . (port <- 13)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW5A": {
+      "InitialFlowTable": "(port = 6) . (port <- 7)",
+      "DirectUpdates": [
+        {
+          "Channel": "upS5A",
+          "Policy": "(port = 5) . (port <- 6)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW6A": {
+      "InitialFlowTable": "(port = 8) . (port <- 10)",
+      "DirectUpdates": [
+        {
+          "Channel": "upS6A",
+          "Policy": "(port = 8) . (port <- 10)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW1B": {
+      "InitialFlowTable": "(port = 102) . (port <- 104)",
+      "DirectUpdates": [
+        {
+          "Channel": "upS1B",
+          "Policy": "zero"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW2B": {
+      "InitialFlowTable": "(port = 112) . (port <- 114)",
+      "DirectUpdates": [
+        {
+          "Channel": "upS2B",
+          "Policy": "zero"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW3B": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upS3B",
+          "Policy": "(port = 101) . (port <- 103)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW4B": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upS4B",
+          "Policy": "(port = 111) . (port <- 113)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW5B": {
+      "InitialFlowTable": "(port = 106) . (port <- 107)",
+      "DirectUpdates": [
+        {
+          "Channel": "upS5B",
+          "Policy": "(port = 105) . (port <- 106)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW6B": {
+      "InitialFlowTable": "(port = 108) . (port <- 110)",
+      "DirectUpdates": [
+        {
+          "Channel": "upS6B",
+          "Policy": "(port = 108) . (port <- 110)"
+        }
+      ],
+      "RequestedUpdates": []
+    }
+  },
+  "Links": "((((port = 3) . (port <- 5)) + ((port = 4) . (port <- 6)) + ((port = 7) . (port <- 8)) + ((port = 9) . (port <- 11)) + ((port = 10) . (port <- 12)) + ((port = 13) . (port <- 15)) + ((port = 14) . (port <- 16)))) + ((((port = 103) . (port <- 105)) + ((port = 104) . (port <- 106)) + ((port = 107) . (port <- 108)) + ((port = 109) . (port <- 111)) + ((port = 110) . (port <- 112)) + ((port = 113) . (port <- 115)) + ((port = 114) . (port <- 116))))",
+  "RecursiveVariables": {
+    "C1A": "(upS1A ! \"zero\") ; C1A o+ (upS3A ! \"(port = 1) . (port <- 3)\") ; C1A o+ (upS5A ! \"(port = 5) . (port <- 6)\") ; C1A",
+    "C2A": "(upS2A ! \"zero\") ; C2A o+ (upS4A ! \"(port = 11) . (port <- 13)\") ; C2A o+ (upS6A ! \"(port = 8) . (port <- 10)\") ; C2A",
+    "C1B": "(upS1B ! \"zero\") ; C1B o+ (upS3B ! \"(port = 101) . (port <- 103)\") ; C1B o+ (upS5B ! \"(port = 105) . (port <- 106)\") ; C1B",
+    "C2B": "(upS2B ! \"zero\") ; C2B o+ (upS4B ! \"(port = 111) . (port <- 113)\") ; C2B o+ (upS6B ! \"(port = 108) . (port <- 110)\") ; C2B"
+  },
+  "Controllers": [
+    "C1A",
+    "C2A",
+    "C1B",
+    "C2B"
+  ]
+}

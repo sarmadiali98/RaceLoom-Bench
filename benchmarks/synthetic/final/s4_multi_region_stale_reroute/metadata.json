@@ -1,0 +1,83 @@
+{
+  "id": "S4",
+  "name": "multi_region_stale_reroute_12sw",
+  "family": "synthetic_reachability_v2",
+  "bug_type": "stale_reroute_or_failover_race",
+  "source_base": "benchmarks_journal/reachability_loop_during_reroute",
+  "description": "A larger synthetic stale-reroute/failover benchmark. It preserves the validated A4 reroute semantic core and adds extra switches, lower-controller branches, and asymmetric side-core paths.",
+  "switch_count": 9,
+  "controller_count": 3,
+  "controllers": [
+    "C1",
+    "C2",
+    "CM"
+  ],
+  "topology_structure": "Hierarchical multi-region reroute topology with two lower controllers, one manager controller, extra regional paths, and asymmetric side-core links.",
+  "semantic_core": "The original A4 bad/control pair: bad exposes stale-reroute harmful reachability; control preserves the intended safe reroute behavior.",
+  "v2_extensions": {
+    "extra_c1_switches": [
+      "SW6",
+      "SW7",
+      "SW8"
+    ],
+    "extra_c2_switches": [
+      "SW9",
+      "SW10",
+      "SW11",
+      "SW12"
+    ],
+    "extra_links": [
+      "(port = 31) . (port <- 32)",
+      "(port = 33) . (port <- 34)",
+      "(port = 35) . (port <- 36)",
+      "(port = 41) . (port <- 42)",
+      "(port = 43) . (port <- 44)",
+      "(port = 45) . (port <- 46)",
+      "(port = 47) . (port <- 48)",
+      "(port = 36) . (port <- 60)",
+      "(port = 60) . (port <- 61)",
+      "(port = 61) . (port <- 62)",
+      "(port = 48) . (port <- 70)",
+      "(port = 70) . (port <- 71)"
+    ]
+  },
+  "recommended_depth": 5,
+  "recommended_strategy": "bfs",
+  "status": "validated",
+  "validated_bad": {
+    "date": "2026-05-24;19:42:41",
+    "depth": 5,
+    "strategy": "bfs",
+    "network_model_branches": "C1:5;C2:6;CM:2;BSw:12",
+    "generated_traces": 150533,
+    "trace_generation_time_seconds": 11.393642176990397,
+    "maude_execution_time_seconds": 5.965923148149159,
+    "trace_generation_cache_hits": 14963,
+    "trace_generation_cache_misses": 1410,
+    "katch_total_execution_time_seconds": 913.9535014847643,
+    "katch_total_cache_hits": 585682,
+    "katch_total_cache_misses": 1424,
+    "harmful_races": 18,
+    "trace_analyzer_execution_time_seconds": 923.8298014100292,
+    "total_execution_time_seconds": 935.2234435870196
+  },
+  "validated_control": {
+    "date": "2026-05-24;19:58:18",
+    "depth": 5,
+    "strategy": "bfs",
+    "network_model_branches": "C1:5;C2:6;CM:2;BSw:12",
+    "generated_traces": 150533,
+    "trace_generation_time_seconds": 11.329583516984712,
+    "maude_execution_time_seconds": 5.906745502841659,
+    "trace_generation_cache_hits": 14963,
+    "trace_generation_cache_misses": 1410,
+    "katch_total_execution_time_seconds": 916.4796599623514,
+    "katch_total_cache_hits": 591513,
+    "katch_total_cache_misses": 1429,
+    "harmful_races": 0,
+    "trace_analyzer_execution_time_seconds": 926.38947159698,
+    "total_execution_time_seconds": 937.7190551139647
+  },
+  "scenario": "Multi-region stale reroute",
+  "artifact_name": "s4_multi_region_stale_reroute"
+}

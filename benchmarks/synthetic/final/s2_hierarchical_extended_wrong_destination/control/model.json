@@ -1,0 +1,145 @@
+{
+  "Switches": {
+    "SW1": {
+      "DirectUpdates": [
+        {
+          "Channel": "upS1",
+          "Policy": "(port = 1) . (port <- 2)"
+        },
+        {
+          "Channel": "upS1",
+          "Policy": "(port = 5) . (port <- 2)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW2": {
+      "DirectUpdates": [
+        {
+          "Channel": "upS2",
+          "Policy": "(port = 3) . (port <- 4)"
+        },
+        {
+          "Channel": "upS2",
+          "Policy": "(port = 3) . (port <- 4)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW3": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upS3",
+          "Policy": "(port = 8) . (port <- 20)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW4": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upS4",
+          "Policy": "(port = 21) . (port <- 22)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW5": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upS5",
+          "Policy": "(port = 23) . (port <- 24)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW6": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upS6",
+          "Policy": "(port = 25) . (port <- 26)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW7": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upS7",
+          "Policy": "(port = 27) . (port <- 28)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW8": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upS8",
+          "Policy": "(port = 29) . (port <- 30)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW9": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upS9",
+          "Policy": "(port = 31) . (port <- 32)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW10": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upS10",
+          "Policy": "(port = 33) . (port <- 34)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW11": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upS11",
+          "Policy": "(port = 40) . (port <- 41)"
+        }
+      ],
+      "RequestedUpdates": []
+    },
+    "SW12": {
+      "InitialFlowTable": "zero",
+      "DirectUpdates": [
+        {
+          "Channel": "upS12",
+          "Policy": "(port = 50) . (port <- 51)"
+        }
+      ],
+      "RequestedUpdates": []
+    }
+  },
+  "Links": "((port = 2) . (port <- 3) + (port = 6) . (port <- 8) + (port = 4) . (port <- 7)) + (port = 8) . (port <- 20) + (port = 20) . (port <- 21) + (port = 22) . (port <- 23) + (port = 24) . (port <- 25) + (port = 26) . (port <- 27) + (port = 28) . (port <- 29) + (port = 30) . (port <- 31) + (port = 32) . (port <- 33) + (port = 34) . (port <- 108) + (port = 7) . (port <- 40) + (port = 41) . (port <- 42) + (port = 42) . (port <- 50) + (port = 51) . (port <- 52) + (port = 52) . (port <- 5)",
+  "RecursiveVariables": {
+    "C1": "(upS1 ! \"(port = 1) . (port <- 2)\") ; C1 o+ (upC1 ? \"(port = 5) . (port <- 2)\") ; ((upS1 ! \"(port = 5) . (port <- 2)\") ; bot) o+ (upS3 ! \"(port = 8) . (port <- 20)\") ; C1 o+ (upS5 ! \"(port = 23) . (port <- 24)\") ; C1 o+ (upS7 ! \"(port = 27) . (port <- 28)\") ; C1 o+ (upS9 ! \"(port = 31) . (port <- 32)\") ; C1 o+ (upS11 ! \"(port = 40) . (port <- 41)\") ; C1",
+    "C2": "(upS2 ! \"(port = 3) . (port <- 4)\") ; C2 o+ (upC2 ? \"(port = 3) . (port <- 4)\") ; ((upS2 ! \"(port = 3) . (port <- 4)\") ; bot) o+ (upS4 ! \"(port = 21) . (port <- 22)\") ; C2 o+ (upS6 ! \"(port = 25) . (port <- 26)\") ; C2 o+ (upS8 ! \"(port = 29) . (port <- 30)\") ; C2 o+ (upS10 ! \"(port = 33) . (port <- 34)\") ; C2 o+ (upS12 ! \"(port = 50) . (port <- 51)\") ; C2",
+    "CM": "(upC1 ! \"(port = 5) . (port <- 2)\") ; CM o+ (upC2 ! \"(port = 3) . (port <- 4)\") ; CM"
+  },
+  "OtherChannels": [
+    "upC1",
+    "upC2"
+  ],
+  "Controllers": [
+    "C1",
+    "C2",
+    "CM"
+  ]
+}

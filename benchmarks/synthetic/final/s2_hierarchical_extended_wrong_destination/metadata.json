@@ -1,0 +1,67 @@
+{
+  "id": "S2",
+  "name": "hierarchical_extended_wrong_destination_12sw",
+  "family": "reachability_v2",
+  "bug_type": "hierarchical_wrong_destination_extended_path",
+  "tier": "tier_3_large_multiswitch_controller_hierarchy",
+  "switch_count": 12,
+  "controller_count": 3,
+  "controllers": [
+    "C1",
+    "C2",
+    "CM"
+  ],
+  "description": "A larger hierarchy-compatible benchmark based on the original working two-layer controller hierarchy. The control plane remains CM -> C1/C2 -> switches, while the data plane is extended to 12 switches with a long asymmetric transit path.",
+  "forbidden_relation": "(port = 1) . @Network . (port = 8)",
+  "bad_key_update": {
+    "manager": "CM",
+    "lower_controller": "C2",
+    "switch": "SW2",
+    "policy": "(port = 3) . (port <- 6)"
+  },
+  "control_key_update": {
+    "manager": "CM",
+    "lower_controller": "C2",
+    "switch": "SW2",
+    "policy": "(port = 3) . (port <- 4)"
+  },
+  "recommended_depth": 4,
+  "recommended_strategy": "bfs",
+  "status": "validated",
+  "validated_bad": {
+    "date": "2026-05-24;13:50:59",
+    "depth": 4,
+    "strategy": "bfs",
+    "network_model_branches": "C1:7;C2:7;CM:2;BSw:15",
+    "generated_traces": 38478,
+    "trace_generation_time_seconds": 10.875066605047323,
+    "maude_execution_time_seconds": 6.222786183701828,
+    "trace_generation_cache_hits": 2168,
+    "trace_generation_cache_misses": 948,
+    "katch_total_execution_time_seconds": 1004.5828951910953,
+    "katch_total_cache_hits": 108058,
+    "katch_total_cache_misses": 1574,
+    "harmful_races": 31,
+    "trace_analyzer_execution_time_seconds": 1007.9317614120082,
+    "total_execution_time_seconds": 1018.8068280170555
+  },
+  "validated_control": {
+    "date": "2026-05-24;14:08:47",
+    "depth": 4,
+    "strategy": "bfs",
+    "network_model_branches": "C1:7;C2:7;CM:2;BSw:15",
+    "generated_traces": 38478,
+    "trace_generation_time_seconds": 10.923202387988567,
+    "maude_execution_time_seconds": 6.428357926604804,
+    "trace_generation_cache_hits": 2168,
+    "trace_generation_cache_misses": 948,
+    "katch_total_execution_time_seconds": 1024.2826083498076,
+    "katch_total_cache_hits": 111919,
+    "katch_total_cache_misses": 1585,
+    "harmful_races": 0,
+    "trace_analyzer_execution_time_seconds": 1027.5635939670028,
+    "total_execution_time_seconds": 1038.4867963549914
+  },
+  "scenario": "Hierarchical extended wrong destination",
+  "artifact_name": "s2_hierarchical_extended_wrong_destination"
+}

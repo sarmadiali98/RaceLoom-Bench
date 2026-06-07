@@ -1,0 +1,12 @@
+{
+  "Properties": {
+    "CT->SW": {
+      "Expression": "((port=2) . @Network . (port=15)) + ((port=1) . @Network . (port=16)) + ((port=102) . @Network . (port=115)) + ((port=101) . @Network . (port=116))",
+      "AllowsPackets": false
+    },
+    "CT->SW<-CT": {
+      "Expression": "((port=2) . @Network . (port=15)) + ((port=1) . @Network . (port=16)) + ((port=102) . @Network . (port=115)) + ((port=101) . @Network . (port=116))",
+      "AllowsPackets": false
+    }
+  }
+}

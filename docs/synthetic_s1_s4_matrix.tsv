@@ -1,0 +1,5 @@
+ID	Scenario	Depth	Strategy	Branch structure	Generated traces	Bad harmful races	Control harmful races	Bad total seconds	Control total seconds
+S1	Multidomain wrong destination	5	bfs	C1A:3;C2A:3;C1B:3;C2B:3;BSw:13	363024	396	0	1427.731890576193	642.8721467598807
+S2	Hierarchical extended wrong destination	4	bfs	C1:7;C2:7;CM:2;BSw:15	38478	31	0	1049.240204293048	1059.2249279383104
+S3	Multi-slice shared-core isolation	5	bfs	C1:6;C2:6;BSw:13	363024	104	0	1287.3523482799064	867.2769452400971
+S4	Multi-region stale reroute	5	bfs	C1:5;C2:6;CM:2;BSw:12	150533	18	0	955.192787066102	965.6332723221276

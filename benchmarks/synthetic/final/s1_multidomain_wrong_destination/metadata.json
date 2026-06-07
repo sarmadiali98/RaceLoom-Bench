@@ -1,0 +1,62 @@
+{
+  "id": "S1",
+  "name": "multidomain_wrong_destination_12sw",
+  "family": "reachability_v2",
+  "bug_type": "multi_domain_wrong_destination_and_isolation_violation",
+  "tier": "tier_3_large_multiswitch_multicontroller",
+  "switch_count": 12,
+  "controller_count": 4,
+  "controllers": [
+    "C1A",
+    "C2A",
+    "C1B",
+    "C2B"
+  ],
+  "base_structure": "Two duplicated 6-switch independent-controller domains with offset port spaces.",
+  "description": "A larger Tier-3 reachability benchmark with two independent controller domains, 12 switches, 4 controllers, and four forbidden reachability relations. It models wrong-destination and cross-domain isolation failures across multiple independently controlled network regions.",
+  "forbidden_relations": [
+    "(port=2) . @Network . (port=15)",
+    "(port=1) . @Network . (port=16)",
+    "(port=102) . @Network . (port=115)",
+    "(port=101) . @Network . (port=116)"
+  ],
+  "recommended_depth": 4,
+  "recommended_strategy": "bfs",
+  "validated_bad": {
+    "date": "2026-05-24;20:27:21",
+    "depth": 5,
+    "strategy": "bfs",
+    "network_model_branches": "C1A:3;C2A:3;C1B:3;C2B:3;BSw:13",
+    "generated_traces": 363024,
+    "trace_generation_time_seconds": 12.381033284007572,
+    "maude_execution_time_seconds": 2.7701479155221023,
+    "trace_generation_cache_hits": 27982,
+    "trace_generation_cache_misses": 2452,
+    "katch_total_execution_time_seconds": 1350.2849128727103,
+    "katch_total_cache_hits": 1985756,
+    "katch_total_cache_misses": 1884,
+    "harmful_races": 396,
+    "trace_analyzer_execution_time_seconds": 1377.812679554976,
+    "total_execution_time_seconds": 1390.1937128389836
+  },
+  "validated_control": {
+    "date": "2026-05-24;20:50:34",
+    "depth": 5,
+    "strategy": "bfs",
+    "network_model_branches": "C1A:3;C2A:3;C1B:3;C2B:3;BSw:13",
+    "generated_traces": 363024,
+    "trace_generation_time_seconds": 10.582543096970767,
+    "maude_execution_time_seconds": 1.595638758444693,
+    "trace_generation_cache_hits": 29051,
+    "trace_generation_cache_misses": 1383,
+    "katch_total_execution_time_seconds": 591.4027784478967,
+    "katch_total_cache_hits": 2187626,
+    "katch_total_cache_misses": 814,
+    "harmful_races": 0,
+    "trace_analyzer_execution_time_seconds": 617.4730976740248,
+    "total_execution_time_seconds": 628.0556407709955
+  },
+  "status": "validated",
+  "scenario": "Multidomain wrong destination",
+  "artifact_name": "s1_multidomain_wrong_destination"
+}
