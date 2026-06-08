@@ -199,8 +199,7 @@
     "katch_total_cache_misses": 710,
     "harmful_races": 45,
     "trace_analyzer_execution_time_seconds": 507.5337001529988,
-    "total_execution_time_seconds": 509.8252118040109,
-    "log": "/home/a_sarmadi/raceloom_image_rootfs/raceloom/benchmarks_comprehensive_topologies/l5_slice_isolation_churn/K8/T1_atlanta/bad_depth5_bfs.log"
+    "total_execution_time_seconds": 509.8252118040109
   },
   "validated_control_counted": {
     "side": "control",
@@ -218,8 +217,7 @@
     "katch_total_cache_misses": 419,
     "harmful_races": 0,
     "trace_analyzer_execution_time_seconds": 306.4603185959859,
-    "total_execution_time_seconds": 308.68781576806214,
-    "log": "/home/a_sarmadi/raceloom_image_rootfs/raceloom/benchmarks_comprehensive_topologies/l5_slice_isolation_churn/K8/T1_atlanta/control_depth5_bfs.log"
+    "total_execution_time_seconds": 308.68781576806214
   },
   "paper_id": "B3",
   "b3_slice_isolation_twocontroller_encoding": {

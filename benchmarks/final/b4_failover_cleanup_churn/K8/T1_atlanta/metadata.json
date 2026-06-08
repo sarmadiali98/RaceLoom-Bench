@@ -181,8 +181,7 @@
     "katch_total_cache_misses": 455,
     "harmful_races": 45,
     "trace_analyzer_execution_time_seconds": 326.9598150140373,
-    "total_execution_time_seconds": 329.2789235820528,
-    "log": "/home/a_sarmadi/raceloom_image_rootfs/raceloom/benchmarks_comprehensive_topologies/l7_failover_churn/K8/T1_atlanta/bad_depth5_bfs.log"
+    "total_execution_time_seconds": 329.2789235820528
   },
   "validated_control_counted": {
     "side": "control",
@@ -200,8 +199,7 @@
     "katch_total_cache_misses": 256,
     "harmful_races": 0,
     "trace_analyzer_execution_time_seconds": 187.98878664791118,
-    "total_execution_time_seconds": 190.20307133789174,
-    "log": "/home/a_sarmadi/raceloom_image_rootfs/raceloom/benchmarks_comprehensive_topologies/l7_failover_churn/K8/T1_atlanta/control_depth5_bfs.log"
+    "total_execution_time_seconds": 190.20307133789174
   },
   "paper_id": "B4",
   "b4_failover_cleanup_encoding": {
