@@ -140,3 +140,25 @@ These benchmarks are RaceLoom model-level artifacts. They are source-derived or 
 Citation
 
 If you use this benchmark suite, cite the associated RaceLoom paper and this repository.
+
+Setting up RaceLoom
+
+This repository does not include RaceLoom itself. To run the benchmarks, first download and load the RaceLoom Docker artifact from Zenodo:
+
+bash scripts/setup_raceloom_artifact.sh
+
+Then configure the benchmark scripts:
+
+export RACELOOM_IMAGE=raceloom:latest
+export RACELOOM_WORKDIR=/raceloom
+export RACELOOM_CMD="python main.py"
+
+On Apple Silicon Macs, also set:
+
+export DOCKER_PLATFORM=linux/amd64
+
+After setup, run the reviewer smoke test:
+
+bash scripts/docker_smoke_test.sh
+
+The RaceLoom artifact record is available at https://doi.org/10.5281/zenodo.16884345.

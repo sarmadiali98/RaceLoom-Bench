@@ -31,7 +31,8 @@ if [ -z "${RACELOOM_IMAGE:-}" ]; then
 fi
 
 RACELOOM_CMD="${RACELOOM_CMD:-python main.py}"
-RACELOOM_WORKDIR="${RACELOOM_WORKDIR:-/workspace/raceloom}"
+RACELOOM_WORKDIR="${RACELOOM_WORKDIR:-/raceloom}"
+DOCKER_PLATFORM="${DOCKER_PLATFORM:-}"
 
 mkdir -p "$OUT_DIR"
 
@@ -46,7 +47,12 @@ run_side() {
   echo "Log: $log"
   echo
 
-  docker run --rm \
+  DOCKER_ARGS=(--rm)
+  if [ -n "$DOCKER_PLATFORM" ]; then
+    DOCKER_ARGS+=(--platform "$DOCKER_PLATFORM")
+  fi
+
+  docker run "${DOCKER_ARGS[@]}" \
     -v "$PWD:/workspace/RaceLoom-Bench" \
     "$RACELOOM_IMAGE" \
     bash -lc "cd '$RACELOOM_WORKDIR' && $RACELOOM_CMD \
