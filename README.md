@@ -162,3 +162,13 @@ After setup, run the reviewer smoke test:
 bash scripts/docker_smoke_test.sh
 
 The RaceLoom artifact record is available at https://doi.org/10.5281/zenodo.16884345.
+
+## Runtime summary
+
+The full B1--B4 matrix and S1--S4 synthetic benchmarks were validated on the server configuration recorded in `docs/tested_configurations.md`.
+
+- Main B1--B4 matrix runtimes are summarized in `docs/runtime_summary.md`.
+- Synthetic S1--S4 runtimes are summarized in `docs/runtime_summary.md`.
+- The reviewer smoke test is intentionally much smaller and is documented in `docs/artifact_review.md`.
+
+The smoke test is the recommended first reviewer check. Full benchmark reruns are intended for a native Ubuntu/Linux amd64 machine or a comparable workstation/server.
