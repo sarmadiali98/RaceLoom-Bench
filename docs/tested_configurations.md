@@ -7,7 +7,7 @@ This file records the exact systems used for benchmark validation and smoke-test
 | Item | Exact value |
 |---|---|
 | OS | Ubuntu 24.04.3 LTS |
-| Kernel | Linux gpu1 6.8.0-87-generic #88-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 09:28:41 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux |
+| Kernel | 6.8.0-87-generic #88-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 09:28:41 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux |
 | CPU model | Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz |
 | CPUs reported by `lscpu` | 64 |
 | CPUs reported by `nproc --all` | 128 |

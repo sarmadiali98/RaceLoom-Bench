@@ -257,7 +257,7 @@ The full B1--B4 matrix and S1--S4 synthetic benchmarks were validated on the fol
 | Item | Exact value |
 |---|---|
 | OS | Ubuntu 24.04.3 LTS |
-| Kernel | Linux gpu1 6.8.0-87-generic #88-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 09:28:41 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux |
+| Kernel | 6.8.0-87-generic #88-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 09:28:41 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux |
 | CPU model | Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz |
 | CPUs reported by `lscpu` | 64 |
 | CPUs available to the process from `nproc` | 64 |
@@ -267,7 +267,7 @@ Total recorded runtimes:
 
 | Benchmark set | Total recorded runtime |
 |---|---:|
-| B1--B4 main matrix | 36638.825103s = 610.647 min |
+| B1--B4 main matrix | 36611.170621s = 610.186 min |
 | S1--S4 synthetic set | 8254.524522s = 137.575 min |
 
 Detailed runtime information is recorded in:

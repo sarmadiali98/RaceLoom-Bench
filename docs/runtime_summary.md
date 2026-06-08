@@ -5,7 +5,7 @@ This file reports exact recorded runtimes extracted from the validation logs.
 ## Validation server
 
 - OS: Ubuntu 24.04.3 LTS
-- Kernel: Linux gpu1 6.8.0-87-generic #88-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 09:28:41 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+- Kernel: 6.8.0-87-generic #88-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 09:28:41 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
 - CPU model: Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz
 - CPUs reported by `lscpu`: 64
 - CPUs reported by `nproc --all`: 128
@@ -29,8 +29,8 @@ This file reports exact recorded runtimes extracted from the validation logs.
 | B1 | waypoint / IDS-bypass | K16/T4_germany50 | control | 4 | `CBg:16;CIngress:1;CWaypoint:1;BSw:19` | 129,276 | 0 | 2369.630452s |
 | B2 | wrong next-hop / route mapping | K8/T1_atlanta | bad | 5 | `CBg:8;CRoute:1;BSw:10` | 96,309 | 74 | 286.921927s |
 | B2 | wrong next-hop / route mapping | K8/T1_atlanta | control | 5 | `CBg:8;CRoute:1;BSw:10` | 96,309 | 0 | 301.237840s |
-| B2 | wrong next-hop / route mapping | K12/T2_nobel_eu | bad | 4 | `CBg:12;CRoute:1;BSw:14` | 37,856 | 25 | 535.127057s |
-| B2 | wrong next-hop / route mapping | K12/T2_nobel_eu | control | 4 | `CBg:12;CRoute:1;BSw:14` | 37,856 | 0 | 548.866781s |
+| B2 | wrong next-hop / route mapping | K12/T2_nobel_eu | bad | 4 | `CBg:12;CRoute:1;BSw:14` | 37,856 | 25 | 523.141458s |
+| B2 | wrong next-hop / route mapping | K12/T2_nobel_eu | control | 4 | `CBg:12;CRoute:1;BSw:14` | 37,856 | 0 | 533.197898s |
 | B2 | wrong next-hop / route mapping | K14/T3_geant2012 | bad | 4 | `CRoute:1;CBg:14;BSw:16` | 64,800 | 29 | 1208.228198s |
 | B2 | wrong next-hop / route mapping | K14/T3_geant2012 | control | 4 | `CRoute:1;CBg:14;BSw:16` | 64,800 | 0 | 953.507350s |
 | B2 | wrong next-hop / route mapping | K16/T4_germany50 | bad | 4 | `CBg:16;CRoute:1;BSw:18` | 104,040 | 33 | 1254.254325s |
@@ -52,7 +52,7 @@ This file reports exact recorded runtimes extracted from the validation logs.
 | B4 | failover / stale path | K16/T4_germany50 | bad | 4 | `CBg:16;CDetect:1;CFailover:1;CCleanup:1;BSw:20` | 158,840 | 67 | 2689.636385s |
 | B4 | failover / stale path | K16/T4_germany50 | control | 4 | `CBg:16;CDetect:1;CFailover:1;CCleanup:1;BSw:20` | 158,840 | 0 | 2704.822722s |
 
-Total recorded B1--B4 matrix runtime: **36638.825103s** = **610.647 min**.
+Total recorded B1--B4 matrix runtime: **36611.170621s** = **610.186 min**.
 
 ## Synthetic S1--S4 benchmarks
 
