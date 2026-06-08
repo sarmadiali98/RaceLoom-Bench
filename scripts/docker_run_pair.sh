@@ -36,6 +36,23 @@ DOCKER_PLATFORM="${DOCKER_PLATFORM:-}"
 
 mkdir -p "$OUT_DIR"
 
+echo "=== Docker mount preflight ==="
+DOCKER_ARGS=(--rm)
+if [ -n "$DOCKER_PLATFORM" ]; then
+  DOCKER_ARGS+=(--platform "$DOCKER_PLATFORM")
+fi
+
+docker run "${DOCKER_ARGS[@]}" \
+  -v "$PWD:/workspace/RaceLoom-Bench" \
+  "$RACELOOM_IMAGE" \
+  bash -lc "test -f '/workspace/RaceLoom-Bench/$PAIR_DIR/bad/model.json' && test -f '/workspace/RaceLoom-Bench/$PAIR_DIR/control/model.json'" \
+  || {
+    echo "ERROR: Docker could not see the benchmark files inside the mounted repository."
+    echo "This can happen on macOS/Colima if the repository is cloned under /tmp or another unshared path."
+    echo "Move the repository under your home directory and rerun the command."
+    exit 2
+  }
+
 run_side() {
   local side="$1"
   local log="$OUT_DIR/${side}.log"
