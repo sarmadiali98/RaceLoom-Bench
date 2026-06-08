@@ -1,0 +1,236 @@
+# Validation log
+set=main
+id=B4
+family_or_scenario=failover / stale path
+topology_or_case=K14/T3_geant2012
+side=bad
+depth=4
+expected_traces=104040
+expected_harmful=59
+expected_total_seconds=1821.278688707156
+
+----- BEGIN SANITIZED RACELOOM LOG -----
+Logging to: <RACELOOM_WORKDIR>/progress_logs/run_2026_06_06T13_09_55.log
+Model: benchmarks_comprehensive_topologies/b4_failover_cleanup_churn/K14/T3_geant2012/bad/model.json
+Properties: benchmarks_comprehensive_topologies/b4_failover_cleanup_churn/K14/T3_geant2012/bad/properties.json
+Args: --depth 4 --strategy bfs
+
+RaceLoom PID: 2378379
+Progress monitor started.
+
+[0m0s] stage=running | tree_cpu=110.0% tree_rss=25.0M | sysmem=4066M used/124703M avail | load=0.25,2.00,2.46 | top=2378379 cpu=106% rss=26.5M cmd=python
+[0m10s] stage=running | tree_cpu=307.0% tree_rss=367.4M | sysmem=4387M used/124382M avail | load=0.44,1.98,2.45 | top=2378722 cpu=268% rss=76.5M cmd=java
+[0m20s] stage=running | tree_cpu=32.7% tree_rss=297.4M | sysmem=4367M used/124402M avail | load=0.60,1.97,2.44 | top=2378379 cpu=32.6% rss=297.4M cmd=python
+[0m30s] stage=running | tree_cpu=21.8% tree_rss=297.4M | sysmem=4463M used/124306M avail | load=0.82,1.97,2.43 | top=2378379 cpu=21.8% rss=297.4M cmd=python
+[0m41s] stage=running | tree_cpu=393.4% tree_rss=300.4M | sysmem=4505M used/124264M avail | load=1.73,2.12,2.48 | top=2378379 cpu=16.4% rss=297.4M cmd=python
+[0m51s] stage=running | tree_cpu=13.3% tree_rss=297.4M | sysmem=4526M used/124243M avail | load=2.16,2.20,2.50 | top=2378379 cpu=13.3% rss=297.4M cmd=python
+[1m2s] stage=running | tree_cpu=11.2% tree_rss=297.4M | sysmem=4565M used/124204M avail | load=2.13,2.19,2.49 | top=2378379 cpu=11.2% rss=297.4M cmd=python
+[1m12s] stage=running | tree_cpu=9.6% tree_rss=297.4M | sysmem=4508M used/124261M avail | load=2.81,2.34,2.54 | top=2378379 cpu=9.6% rss=297.4M cmd=python
+[1m23s] stage=running | tree_cpu=8.5% tree_rss=297.4M | sysmem=4606M used/124163M avail | load=2.83,2.36,2.54 | top=2378379 cpu=8.5% rss=297.4M cmd=python
+[1m33s] stage=running | tree_cpu=7.6% tree_rss=297.4M | sysmem=4481M used/124288M avail | load=2.99,2.41,2.56 | top=2378379 cpu=7.6% rss=297.4M cmd=python
+[1m43s] stage=running | tree_cpu=6.9% tree_rss=297.4M | sysmem=4519M used/124250M avail | load=3.29,2.50,2.58 | top=2378379 cpu=6.9% rss=297.4M cmd=python
+[1m54s] stage=running | tree_cpu=6.4% tree_rss=297.4M | sysmem=4565M used/124204M avail | load=3.07,2.49,2.58 | top=2378379 cpu=6.4% rss=297.4M cmd=python
+[2m4s] stage=running | tree_cpu=291.9% tree_rss=423.9M | sysmem=4600M used/124168M avail | load=2.75,2.44,2.56 | top=2389811 cpu=328% rss=131.0M cmd=java
+[2m14s] stage=running | tree_cpu=257.5% tree_rss=373.4M | sysmem=4520M used/124249M avail | load=2.56,2.41,2.55 | top=2390827 cpu=267% rss=78.5M cmd=java
+[2m25s] stage=running | tree_cpu=283.1% tree_rss=413.9M | sysmem=4565M used/124203M avail | load=2.39,2.38,2.54 | top=2391840 cpu=328% rss=125.0M cmd=java
+[2m35s] stage=running | tree_cpu=305.8% tree_rss=422.4M | sysmem=4606M used/124163M avail | load=2.55,2.41,2.55 | top=2392860 cpu=352% rss=126.5M cmd=java
+[2m46s] stage=running | tree_cpu=239.6% tree_rss=364.9M | sysmem=4623M used/124146M avail | load=2.63,2.43,2.55 | top=2393881 cpu=261% rss=77.0M cmd=java
+[2m56s] stage=running | tree_cpu=381.4% tree_rss=297.4M | sysmem=4448M used/124321M avail | load=3.07,2.53,2.58 | top=2378379 cpu=4.4% rss=297.4M cmd=python
+[3m7s] stage=running | tree_cpu=4.2% tree_rss=297.4M | sysmem=4347M used/124422M avail | load=3.23,2.58,2.60 | top=2378379 cpu=4.2% rss=297.4M cmd=python
+[3m17s] stage=running | tree_cpu=374.0% tree_rss=449.3M | sysmem=4454M used/124315M avail | load=3.13,2.58,2.60 | top=2378379 cpu=4.0% rss=297.4M cmd=python
+[3m28s] stage=running | tree_cpu=342.8% tree_rss=297.4M | sysmem=4435M used/124334M avail | load=3.18,2.61,2.61 | top=2378379 cpu=3.8% rss=297.4M cmd=python
+[3m38s] stage=running | tree_cpu=300.6% tree_rss=410.4M | sysmem=4558M used/124211M avail | load=3.44,2.69,2.63 | top=2398984 cpu=352% rss=126.0M cmd=java
+[3m49s] stage=running | tree_cpu=3.5% tree_rss=297.4M | sysmem=4592M used/124177M avail | load=3.19,2.67,2.63 | top=2378379 cpu=3.5% rss=297.4M cmd=python
+[3m59s] stage=running | tree_cpu=3.4% tree_rss=297.4M | sysmem=4534M used/124235M avail | load=3.48,2.75,2.66 | top=2378379 cpu=3.4% rss=297.4M cmd=python
+[4m9s] stage=running | tree_cpu=238.3% tree_rss=367.4M | sysmem=4518M used/124251M avail | load=3.32,2.74,2.65 | top=2402092 cpu=253% rss=77.5M cmd=java
+[4m20s] stage=running | tree_cpu=354.2% tree_rss=442.4M | sysmem=4588M used/124181M avail | load=3.50,2.80,2.67 | top=2403111 cpu=369% rss=145.5M cmd=java
+[4m30s] stage=running | tree_cpu=371.1% tree_rss=300.9M | sysmem=4442M used/124327M avail | load=3.43,2.81,2.68 | top=2378379 cpu=3.1% rss=297.9M cmd=python
+[4m41s] stage=running | tree_cpu=3.0% tree_rss=297.9M | sysmem=4515M used/124254M avail | load=3.51,2.84,2.69 | top=2378379 cpu=3.0% rss=297.9M cmd=python
+[4m51s] stage=running | tree_cpu=256.9% tree_rss=378.9M | sysmem=4635M used/124134M avail | load=4.04,2.98,2.74 | top=2406152 cpu=274% rss=86.5M cmd=java
+[5m1s] stage=running | tree_cpu=316.8% tree_rss=420.9M | sysmem=4551M used/124218M avail | load=3.73,2.95,2.73 | top=2407165 cpu=362% rss=125.5M cmd=java
+[5m12s] stage=running | tree_cpu=227.7% tree_rss=358.9M | sysmem=4604M used/124165M avail | load=3.47,2.92,2.72 | top=2408187 cpu=228% rss=63.5M cmd=java
+[5m22s] stage=running | tree_cpu=247.7% tree_rss=372.4M | sysmem=4499M used/124270M avail | load=3.68,2.99,2.75 | top=2409203 cpu=259% rss=76.0M cmd=java
+[5m33s] stage=running | tree_cpu=2.6% tree_rss=297.9M | sysmem=4477M used/124292M avail | load=3.20,2.90,2.72 | top=2378379 cpu=2.6% rss=297.9M cmd=python
+[5m43s] stage=running | tree_cpu=253.5% tree_rss=377.4M | sysmem=4493M used/124276M avail | load=3.01,2.87,2.71 | top=2411151 cpu=273% rss=89.5M cmd=java
+[5m53s] stage=running | tree_cpu=261.5% tree_rss=361.4M | sysmem=4461M used/124308M avail | load=3.14,2.91,2.73 | top=2412180 cpu=257% rss=65.5M cmd=java
+[6m4s] stage=running | tree_cpu=377.4% tree_rss=448.0M | sysmem=4668M used/124101M avail | load=3.18,2.93,2.74 | top=2413185 cpu=377% rss=149.1M cmd=java
+[6m14s] stage=running | tree_cpu=281.4% tree_rss=423.9M | sysmem=4658M used/124111M avail | load=3.31,2.97,2.75 | top=2414200 cpu=337% rss=134.0M cmd=java
+[6m25s] stage=running | tree_cpu=204.4% tree_rss=366.4M | sysmem=4503M used/124266M avail | load=3.54,3.03,2.77 | top=2415215 cpu=221% rss=71.0M cmd=java
+[6m35s] stage=running | tree_cpu=2.3% tree_rss=299.9M | sysmem=4468M used/124301M avail | load=3.15,2.96,2.76 | top=2378379 cpu=2.3% rss=299.9M cmd=python
+[6m45s] stage=running | tree_cpu=2.3% tree_rss=299.9M | sysmem=4471M used/124298M avail | load=3.11,2.97,2.76 | top=2378379 cpu=2.3% rss=299.9M cmd=python
+[6m56s] stage=running | tree_cpu=2.2% tree_rss=299.9M | sysmem=4490M used/124279M avail | load=2.79,2.90,2.74 | top=2378379 cpu=2.2% rss=299.9M cmd=python
+[7m6s] stage=running | tree_cpu=245.2% tree_rss=366.9M | sysmem=4587M used/124182M avail | load=2.81,2.90,2.74 | top=2419271 cpu=257% rss=73.5M cmd=java
+[7m16s] stage=running | tree_cpu=2.1% tree_rss=300.4M | sysmem=4613M used/124156M avail | load=2.92,2.92,2.75 | top=2378379 cpu=2.1% rss=300.4M cmd=python
+[7m27s] stage=running | tree_cpu=343.1% tree_rss=448.4M | sysmem=4499M used/124270M avail | load=3.30,3.01,2.78 | top=2421236 cpu=355% rss=0.0M cmd=java
+[7m37s] stage=running | tree_cpu=2.1% tree_rss=301.4M | sysmem=4466M used/124303M avail | load=2.87,2.92,2.75 | top=2378379 cpu=2.1% rss=301.4M cmd=python
+[7m48s] stage=running | tree_cpu=2.0% tree_rss=301.4M | sysmem=4435M used/124334M avail | load=2.89,2.93,2.76 | top=2378379 cpu=2.0% rss=301.4M cmd=python
+[7m58s] stage=running | tree_cpu=2.0% tree_rss=301.4M | sysmem=4480M used/124289M avail | load=2.67,2.88,2.74 | top=2378379 cpu=2.0% rss=301.4M cmd=python
+[8m8s] stage=running | tree_cpu=321.0% tree_rss=433.4M | sysmem=4496M used/124273M avail | load=2.57,2.85,2.73 | top=2425211 cpu=360% rss=137.0M cmd=java
+[8m19s] stage=running | tree_cpu=209.0% tree_rss=369.4M | sysmem=4476M used/124293M avail | load=2.38,2.79,2.72 | top=2426231 cpu=222% rss=77.5M cmd=java
+[8m29s] stage=running | tree_cpu=273.9% tree_rss=384.9M | sysmem=4578M used/124191M avail | load=2.33,2.77,2.71 | top=2427249 cpu=323% rss=114.0M cmd=java
+[8m40s] stage=running | tree_cpu=374.9% tree_rss=456.4M | sysmem=4455M used/124314M avail | load=3.06,2.91,2.76 | top=2378379 cpu=1.9% rss=301.4M cmd=python
+[8m50s] stage=running | tree_cpu=381.9% tree_rss=456.1M | sysmem=4408M used/124361M avail | load=3.35,2.98,2.78 | top=2429281 cpu=402% rss=0.0M cmd=java
+[9m1s] stage=running | tree_cpu=1.9% tree_rss=301.9M | sysmem=4567M used/124202M avail | load=3.28,2.98,2.78 | top=2378379 cpu=1.9% rss=301.9M cmd=python
+[9m11s] stage=running | tree_cpu=1.8% tree_rss=301.9M | sysmem=4425M used/124344M avail | load=3.31,3.00,2.79 | top=2378379 cpu=1.8% rss=301.9M cmd=python
+[9m21s] stage=running | tree_cpu=356.8% tree_rss=439.2M | sysmem=4545M used/124224M avail | load=3.10,2.96,2.78 | top=2432332 cpu=354% rss=136.8M cmd=java
+[9m32s] stage=running | tree_cpu=373.8% tree_rss=449.8M | sysmem=4582M used/124187M avail | load=2.86,2.91,2.77 | top=2433344 cpu=400% rss=147.9M cmd=java
+[9m42s] stage=running | tree_cpu=1.8% tree_rss=302.4M | sysmem=4546M used/124222M avail | load=2.80,2.90,2.77 | top=2378379 cpu=1.8% rss=302.4M cmd=python
+[9m52s] stage=running | tree_cpu=1.7% tree_rss=302.4M | sysmem=4514M used/124255M avail | load=3.14,2.97,2.79 | top=2378379 cpu=1.7% rss=302.4M cmd=python
+[10m3s] stage=running | tree_cpu=1.7% tree_rss=302.4M | sysmem=4608M used/124161M avail | load=3.04,2.95,2.79 | top=2378379 cpu=1.7% rss=302.4M cmd=python
+[10m13s] stage=running | tree_cpu=1.7% tree_rss=302.9M | sysmem=4496M used/124273M avail | load=3.35,3.02,2.81 | top=2378379 cpu=1.7% rss=302.9M cmd=python
+[10m23s] stage=running | tree_cpu=285.7% tree_rss=445.4M | sysmem=4541M used/124228M avail | load=3.37,3.04,2.82 | top=2438334 cpu=326% rss=145.8M cmd=java
+[10m34s] stage=running | tree_cpu=1.7% tree_rss=303.4M | sysmem=4533M used/124236M avail | load=3.79,3.14,2.85 | top=2378379 cpu=1.7% rss=303.4M cmd=python
+[10m44s] stage=running | tree_cpu=337.7% tree_rss=434.9M | sysmem=4601M used/124168M avail | load=3.83,3.17,2.87 | top=2440367 cpu=361% rss=135.5M cmd=java
+[10m55s] stage=running | tree_cpu=258.6% tree_rss=366.9M | sysmem=4449M used/124320M avail | load=4.07,3.24,2.90 | top=2441395 cpu=248% rss=64.0M cmd=java
+[11m5s] stage=running | tree_cpu=359.6% tree_rss=305.4M | sysmem=4486M used/124283M avail | load=4.21,3.30,2.92 | top=2378379 cpu=1.6% rss=305.4M cmd=python
+[11m16s] stage=running | tree_cpu=1.6% tree_rss=306.9M | sysmem=4640M used/124129M avail | load=4.10,3.31,2.93 | top=2378379 cpu=1.6% rss=306.9M cmd=python
+[11m26s] stage=running | tree_cpu=254.6% tree_rss=373.9M | sysmem=4580M used/124189M avail | load=4.15,3.35,2.94 | top=2444517 cpu=265% rss=72.0M cmd=java
+[11m37s] stage=running | tree_cpu=253.6% tree_rss=414.4M | sysmem=4679M used/124090M avail | load=4.06,3.35,2.95 | top=2445534 cpu=310% rss=122.5M cmd=java
+[11m47s] stage=running | tree_cpu=368.6% tree_rss=307.4M | sysmem=4463M used/124306M avail | load=3.74,3.31,2.94 | top=2378379 cpu=1.6% rss=307.4M cmd=python
+[11m57s] stage=running | tree_cpu=347.6% tree_rss=450.6M | sysmem=4542M used/124227M avail | load=3.86,3.35,2.95 | top=2447563 cpu=347% rss=141.7M cmd=java
+[12m8s] stage=running | tree_cpu=268.6% tree_rss=388.4M | sysmem=4485M used/124284M avail | load=3.42,3.27,2.93 | top=2448585 cpu=284% rss=93.5M cmd=java
+[12m18s] stage=running | tree_cpu=282.5% tree_rss=389.9M | sysmem=4439M used/124330M avail | load=3.68,3.33,2.96 | top=2449605 cpu=302% rss=92.0M cmd=java
+[12m29s] stage=running | tree_cpu=1.5% tree_rss=307.9M | sysmem=4370M used/124399M avail | load=4.04,3.42,3.00 | top=2378379 cpu=1.5% rss=307.9M cmd=python
+[12m39s] stage=running | tree_cpu=1.5% tree_rss=307.9M | sysmem=4444M used/124325M avail | load=3.73,3.38,2.98 | top=2378379 cpu=1.5% rss=307.9M cmd=python
+[12m49s] stage=running | tree_cpu=309.5% tree_rss=459.0M | sysmem=4502M used/124267M avail | load=3.70,3.38,2.99 | top=2452568 cpu=340% rss=150.1M cmd=java
+[13m0s] stage=running | tree_cpu=1.5% tree_rss=308.9M | sysmem=4518M used/124251M avail | load=3.45,3.34,2.98 | top=2378379 cpu=1.5% rss=308.9M cmd=python
+[13m10s] stage=running | tree_cpu=251.5% tree_rss=376.4M | sysmem=4491M used/124277M avail | load=3.75,3.41,3.01 | top=2454675 cpu=268% rss=74.5M cmd=java
+[13m21s] stage=running | tree_cpu=289.5% tree_rss=390.9M | sysmem=4496M used/124273M avail | load=4.04,3.48,3.03 | top=2455694 cpu=330% rss=111.0M cmd=java
+[13m31s] stage=running | tree_cpu=346.5% tree_rss=450.9M | sysmem=4594M used/124175M avail | load=3.73,3.43,3.02 | top=2456709 cpu=349% rss=140.5M cmd=java
+[13m42s] stage=running | tree_cpu=339.4% tree_rss=449.0M | sysmem=4603M used/124166M avail | load=3.46,3.38,3.01 | top=2457801 cpu=333% rss=137.6M cmd=java
+[13m52s] stage=running | tree_cpu=228.4% tree_rss=381.4M | sysmem=4619M used/124150M avail | load=3.00,3.28,2.98 | top=2458819 cpu=248% rss=76.5M cmd=java
+[14m3s] stage=running | tree_cpu=344.4% tree_rss=459.8M | sysmem=4641M used/124128M avail | load=3.29,3.34,3.00 | top=2378379 cpu=1.4% rss=311.4M cmd=python
+[14m13s] stage=running | tree_cpu=1.4% tree_rss=311.4M | sysmem=4584M used/124185M avail | load=3.33,3.35,3.01 | top=2378379 cpu=1.4% rss=311.4M cmd=python
+[14m23s] stage=running | tree_cpu=1.4% tree_rss=311.9M | sysmem=4553M used/124216M avail | load=3.34,3.35,3.01 | top=2378379 cpu=1.4% rss=311.9M cmd=python
+[14m34s] stage=running | tree_cpu=1.4% tree_rss=312.4M | sysmem=4528M used/124241M avail | load=3.72,3.43,3.05 | top=2378379 cpu=1.4% rss=312.4M cmd=python
+[14m44s] stage=running | tree_cpu=1.4% tree_rss=313.4M | sysmem=4475M used/124294M avail | load=3.47,3.38,3.03 | top=2378379 cpu=1.4% rss=313.4M cmd=python
+[14m54s] stage=running | tree_cpu=363.4% tree_rss=314.9M | sysmem=4566M used/124203M avail | load=3.48,3.39,3.04 | top=2378379 cpu=1.4% rss=314.9M cmd=python
+[15m5s] stage=running | tree_cpu=360.4% tree_rss=465.8M | sysmem=4479M used/124290M avail | load=3.33,3.36,3.03 | top=2378379 cpu=1.4% rss=314.9M cmd=python
+[15m15s] stage=running | tree_cpu=362.4% tree_rss=458.9M | sysmem=4649M used/124120M avail | load=3.19,3.33,3.03 | top=2466945 cpu=353% rss=141.5M cmd=java
+[15m26s] stage=running | tree_cpu=242.4% tree_rss=375.9M | sysmem=4557M used/124212M avail | load=3.48,3.39,3.05 | top=2467965 cpu=244% rss=61.5M cmd=java
+[15m36s] stage=running | tree_cpu=1.4% tree_rss=316.9M | sysmem=4457M used/124312M avail | load=3.79,3.46,3.08 | top=2378379 cpu=1.4% rss=316.9M cmd=python
+[15m47s] stage=running | tree_cpu=1.3% tree_rss=316.9M | sysmem=4450M used/124319M avail | load=3.52,3.41,3.06 | top=2378379 cpu=1.3% rss=316.9M cmd=python
+[15m57s] stage=running | tree_cpu=333.3% tree_rss=458.9M | sysmem=4718M used/124051M avail | load=3.43,3.39,3.06 | top=2471014 cpu=361% rss=143.9M cmd=java
+[16m8s] stage=running | tree_cpu=339.3% tree_rss=456.3M | sysmem=4706M used/124063M avail | load=3.20,3.35,3.05 | top=2472029 cpu=349% rss=138.9M cmd=java
+[16m18s] stage=running | tree_cpu=257.3% tree_rss=390.9M | sysmem=4619M used/124150M avail | load=3.17,3.33,3.05 | top=2473049 cpu=262% rss=77.0M cmd=java
+[16m28s] stage=running | tree_cpu=236.3% tree_rss=389.9M | sysmem=4528M used/124241M avail | load=3.15,3.32,3.05 | top=2474063 cpu=258% rss=79.3M cmd=java
+[16m39s] stage=running | tree_cpu=1.3% tree_rss=319.4M | sysmem=4525M used/124244M avail | load=3.53,3.40,3.08 | top=2378379 cpu=1.3% rss=319.4M cmd=python
+[16m49s] stage=running | tree_cpu=248.3% tree_rss=404.9M | sysmem=4496M used/124273M avail | load=3.22,3.34,3.06 | top=2476115 cpu=288% rss=107.5M cmd=java
+[17m0s] stage=running | tree_cpu=1.3% tree_rss=320.4M | sysmem=4474M used/124295M avail | load=3.25,3.35,3.07 | top=2378379 cpu=1.3% rss=320.4M cmd=python
+[17m10s] stage=running | tree_cpu=1.3% tree_rss=320.4M | sysmem=4540M used/124229M avail | load=2.98,3.28,3.05 | top=2378379 cpu=1.3% rss=320.4M cmd=python
+[17m21s] stage=running | tree_cpu=302.3% tree_rss=463.6M | sysmem=4610M used/124159M avail | load=3.55,3.39,3.09 | top=2479153 cpu=325% rss=144.7M cmd=java
+[17m31s] stage=running | tree_cpu=265.3% tree_rss=469.0M | sysmem=4533M used/124236M avail | load=3.16,3.31,3.07 | top=2480173 cpu=281% rss=148.6M cmd=java
+[17m42s] stage=running | tree_cpu=1.3% tree_rss=321.4M | sysmem=4556M used/124213M avail | load=3.05,3.29,3.06 | top=2378379 cpu=1.3% rss=321.4M cmd=python
+[17m52s] stage=running | tree_cpu=1.3% tree_rss=321.9M | sysmem=4519M used/124250M avail | load=2.81,3.23,3.04 | top=2378379 cpu=1.3% rss=321.9M cmd=python
+[18m3s] stage=running | tree_cpu=332.2% tree_rss=458.6M | sysmem=4545M used/124224M avail | load=3.14,3.29,3.06 | top=2483223 cpu=328% rss=135.2M cmd=java
+[18m13s] stage=running | tree_cpu=1.2% tree_rss=322.9M | sysmem=4526M used/124243M avail | load=3.81,3.42,3.11 | top=2378379 cpu=1.2% rss=322.9M cmd=python
+[18m23s] stage=running | tree_cpu=321.2% tree_rss=323.4M | sysmem=4552M used/124217M avail | load=3.53,3.38,3.10 | top=2378379 cpu=1.2% rss=323.4M cmd=python
+[18m34s] stage=running | tree_cpu=241.2% tree_rss=406.4M | sysmem=4538M used/124231M avail | load=3.26,3.33,3.09 | top=2486115 cpu=280% rss=105.0M cmd=java
+[18m44s] stage=running | tree_cpu=334.2% tree_rss=460.9M | sysmem=4563M used/124206M avail | load=3.69,3.41,3.12 | top=2487059 cpu=351% rss=136.0M cmd=java
+[18m55s] stage=running | tree_cpu=255.2% tree_rss=397.4M | sysmem=4476M used/124293M avail | load=3.43,3.37,3.11 | top=2488087 cpu=270% rss=78.5M cmd=java
+[19m5s] stage=running | tree_cpu=1.2% tree_rss=324.9M | sysmem=4489M used/124280M avail | load=3.30,3.34,3.10 | top=2378379 cpu=1.2% rss=324.9M cmd=python
+[19m16s] stage=running | tree_cpu=236.2% tree_rss=394.4M | sysmem=4655M used/124114M avail | load=3.54,3.39,3.12 | top=2490051 cpu=250% rss=77.0M cmd=java
+[19m26s] stage=running | tree_cpu=1.3% tree_rss=324.9M | sysmem=4633M used/124136M avail | load=3.39,3.36,3.11 | top=2378379 cpu=1.3% rss=324.9M cmd=python
+[19m36s] stage=running | tree_cpu=379.3% tree_rss=469.1M | sysmem=4688M used/124081M avail | load=3.32,3.35,3.11 | top=2491998 cpu=398% rss=146.2M cmd=java
+[19m47s] stage=running | tree_cpu=390.3% tree_rss=472.4M | sysmem=4552M used/124217M avail | load=3.34,3.35,3.11 | top=2493018 cpu=404% rss=0.0M cmd=java
+[19m57s] stage=running | tree_cpu=236.3% tree_rss=396.9M | sysmem=4496M used/124273M avail | load=2.98,3.28,3.09 | top=2494038 cpu=264% rss=79.5M cmd=java
+[20m8s] stage=running | tree_cpu=322.3% tree_rss=445.9M | sysmem=4516M used/124253M avail | load=3.36,3.35,3.12 | top=2495059 cpu=352% rss=127.0M cmd=java
+[20m18s] stage=running | tree_cpu=1.3% tree_rss=325.4M | sysmem=4401M used/124368M avail | load=3.40,3.36,3.12 | top=2378379 cpu=1.3% rss=325.4M cmd=python
+[20m29s] stage=running | tree_cpu=1.3% tree_rss=328.4M | sysmem=4546M used/124223M avail | load=3.03,3.28,3.10 | top=2378379 cpu=1.3% rss=328.4M cmd=python
+[20m39s] stage=running | tree_cpu=1.3% tree_rss=328.9M | sysmem=4488M used/124281M avail | load=3.11,3.28,3.10 | top=2378379 cpu=1.3% rss=328.9M cmd=python
+[20m49s] stage=running | tree_cpu=251.3% tree_rss=446.4M | sysmem=4637M used/124132M avail | load=2.94,3.24,3.09 | top=2498981 cpu=296% rss=130.0M cmd=java
+[21m0s] stage=running | tree_cpu=246.3% tree_rss=410.4M | sysmem=4553M used/124216M avail | load=5.67,3.83,3.29 | top=2499992 cpu=251% rss=79.0M cmd=java
+[21m10s] stage=running | tree_cpu=301.3% tree_rss=478.9M | sysmem=4606M used/124163M avail | load=5.03,3.76,3.27 | top=2500937 cpu=317% rss=147.0M cmd=java
+[21m21s] stage=running | tree_cpu=385.3% tree_rss=477.8M | sysmem=4504M used/124265M avail | load=4.49,3.68,3.25 | top=2501953 cpu=385% rss=0.0M cmd=java
+[21m31s] stage=running | tree_cpu=185.3% tree_rss=411.9M | sysmem=4590M used/124179M avail | load=4.94,3.81,3.29 | top=2502969 cpu=187% rss=79.5M cmd=java
+[21m42s] stage=running | tree_cpu=266.2% tree_rss=403.9M | sysmem=4544M used/124225M avail | load=4.65,3.78,3.29 | top=2503914 cpu=261% rss=74.5M cmd=java
+[21m52s] stage=running | tree_cpu=357.2% tree_rss=473.7M | sysmem=4653M used/124116M avail | load=4.48,3.77,3.29 | top=2504927 cpu=367% rss=146.3M cmd=java
+[22m3s] stage=running | tree_cpu=355.2% tree_rss=477.3M | sysmem=4663M used/124106M avail | load=4.24,3.75,3.29 | top=2505947 cpu=369% rss=148.4M cmd=java
+[22m13s] stage=running | tree_cpu=285.2% tree_rss=459.9M | sysmem=4615M used/124154M avail | load=7.94,4.59,3.57 | top=2506961 cpu=336% rss=132.0M cmd=java
+[22m24s] stage=running | tree_cpu=319.2% tree_rss=336.4M | sysmem=4515M used/124254M avail | load=7.17,4.58,3.58 | top=2378379 cpu=1.2% rss=333.9M cmd=python
+[22m34s] stage=running | tree_cpu=1.2% tree_rss=334.4M | sysmem=4555M used/124214M avail | load=6.30,4.47,3.56 | top=2378379 cpu=1.2% rss=334.4M cmd=python
+[22m45s] stage=running | tree_cpu=239.2% tree_rss=393.9M | sysmem=4549M used/124220M avail | load=5.73,4.41,3.55 | top=2510087 cpu=232% rss=60.5M cmd=java
+[22m55s] stage=running | tree_cpu=343.2% tree_rss=476.2M | sysmem=4560M used/124209M avail | load=5.23,4.35,3.53 | top=2511029 cpu=352% rss=143.8M cmd=java
+[23m5s] stage=running | tree_cpu=323.2% tree_rss=451.4M | sysmem=4542M used/124227M avail | load=4.96,4.32,3.53 | top=2512046 cpu=367% rss=130.0M cmd=java
+[23m16s] stage=running | tree_cpu=252.2% tree_rss=399.9M | sysmem=4514M used/124255M avail | load=4.51,4.24,3.52 | top=2513073 cpu=245% rss=60.5M cmd=java
+[23m26s] stage=running | tree_cpu=272.2% tree_rss=412.9M | sysmem=4552M used/124217M avail | load=4.36,4.22,3.52 | top=2514080 cpu=289% rss=78.5M cmd=java
+[23m37s] stage=running | tree_cpu=1.2% tree_rss=339.9M | sysmem=4527M used/124242M avail | load=3.85,4.11,3.49 | top=2378379 cpu=1.2% rss=339.9M cmd=python
+[23m47s] stage=running | tree_cpu=256.2% tree_rss=418.4M | sysmem=4559M used/124210M avail | load=3.94,4.12,3.50 | top=2516032 cpu=275% rss=78.0M cmd=java
+[23m57s] stage=running | tree_cpu=291.2% tree_rss=454.9M | sysmem=4674M used/124095M avail | load=3.71,4.07,3.49 | top=2517046 cpu=357% rss=126.5M cmd=java
+[24m8s] stage=running | tree_cpu=1.2% tree_rss=341.4M | sysmem=4517M used/124252M avail | load=3.44,4.00,3.47 | top=2378379 cpu=1.2% rss=341.4M cmd=python
+[24m18s] stage=running | tree_cpu=1.2% tree_rss=341.4M | sysmem=4499M used/124270M avail | load=3.07,3.90,3.45 | top=2378379 cpu=1.2% rss=341.4M cmd=python
+[24m29s] stage=running | tree_cpu=355.2% tree_rss=486.1M | sysmem=4634M used/124135M avail | load=3.45,3.94,3.47 | top=2520021 cpu=364% rss=145.1M cmd=java
+[24m39s] stage=running | tree_cpu=330.2% tree_rss=488.5M | sysmem=4543M used/124226M avail | load=3.30,3.89,3.46 | top=2521040 cpu=347% rss=146.6M cmd=java
+[24m50s] stage=running | tree_cpu=1.2% tree_rss=342.9M | sysmem=4468M used/124301M avail | load=3.34,3.88,3.46 | top=2378379 cpu=1.2% rss=342.9M cmd=python
+[25m0s] stage=running | tree_cpu=1.2% tree_rss=343.9M | sysmem=4562M used/124207M avail | load=3.05,3.80,3.43 | top=2378379 cpu=1.2% rss=343.9M cmd=python
+[25m11s] stage=running | tree_cpu=348.2% tree_rss=351.4M | sysmem=4513M used/124256M avail | load=3.44,3.86,3.46 | top=2378379 cpu=1.2% rss=348.4M cmd=python
+[25m21s] stage=running | tree_cpu=274.2% tree_rss=474.9M | sysmem=4793M used/123976M avail | load=3.60,3.88,3.47 | top=2525115 cpu=337% rss=130.5M cmd=java
+[25m32s] stage=running | tree_cpu=1.2% tree_rss=348.9M | sysmem=4562M used/124207M avail | load=3.51,3.85,3.46 | top=2378379 cpu=1.2% rss=348.9M cmd=python
+[25m42s] stage=running | tree_cpu=1.2% tree_rss=349.9M | sysmem=4419M used/124350M avail | load=3.57,3.85,3.47 | top=2378379 cpu=1.2% rss=349.9M cmd=python
+[25m52s] stage=running | tree_cpu=287.2% tree_rss=474.4M | sysmem=4563M used/124206M avail | load=3.65,3.86,3.47 | top=2528237 cpu=330% rss=131.0M cmd=java
+[26m3s] stage=running | tree_cpu=358.2% tree_rss=493.8M | sysmem=4498M used/124271M avail | load=3.24,3.77,3.45 | top=2529255 cpu=374% rss=0.0M cmd=java
+[26m13s] stage=running | tree_cpu=364.2% tree_rss=492.7M | sysmem=4600M used/124169M avail | load=3.53,3.81,3.46 | top=2530272 cpu=380% rss=141.3M cmd=java
+[26m24s] stage=running | tree_cpu=270.2% tree_rss=431.9M | sysmem=4561M used/124208M avail | load=3.42,3.77,3.46 | top=2531288 cpu=284% rss=81.5M cmd=java
+[26m34s] stage=running | tree_cpu=1.2% tree_rss=353.9M | sysmem=4573M used/124196M avail | load=4.05,3.89,3.50 | top=2378379 cpu=1.2% rss=353.9M cmd=python
+[26m45s] stage=running | tree_cpu=379.2% tree_rss=358.4M | sysmem=4538M used/124231M avail | load=4.59,4.01,3.54 | top=2378379 cpu=1.2% rss=358.4M cmd=python
+[26m55s] stage=running | tree_cpu=314.2% tree_rss=490.4M | sysmem=4549M used/124220M avail | load=4.33,3.98,3.54 | top=2534261 cpu=361% rss=135.0M cmd=java
+[27m5s] stage=running | tree_cpu=286.2% tree_rss=486.9M | sysmem=4614M used/124155M avail | load=3.98,3.91,3.52 | top=2535275 cpu=338% rss=131.5M cmd=java
+[27m16s] stage=running | tree_cpu=258.1% tree_rss=474.9M | sysmem=4607M used/124162M avail | load=4.26,3.98,3.55 | top=2536294 cpu=303% rss=126.5M cmd=java
+[27m26s] stage=running | tree_cpu=264.1% tree_rss=430.9M | sysmem=4632M used/124137M avail | load=3.84,3.90,3.52 | top=2537310 cpu=286% rss=76.5M cmd=java
+[27m37s] stage=running | tree_cpu=229.1% tree_rss=420.9M | sysmem=4677M used/124092M avail | load=4.17,3.97,3.55 | top=2538327 cpu=223% rss=61.5M cmd=java
+[27m47s] stage=running | tree_cpu=1.1% tree_rss=359.9M | sysmem=4630M used/124139M avail | load=4.07,3.95,3.55 | top=2378379 cpu=1.1% rss=359.9M cmd=python
+[27m58s] stage=running | tree_cpu=246.2% tree_rss=428.9M | sysmem=4482M used/124287M avail | load=4.36,4.02,3.58 | top=2540293 cpu=245% rss=64.0M cmd=java
+[28m8s] stage=running | tree_cpu=1.1% tree_rss=365.9M | sysmem=4453M used/124316M avail | load=5.08,4.18,3.64 | top=2378379 cpu=1.1% rss=365.9M cmd=python
+[28m19s] stage=running | tree_cpu=1.1% tree_rss=366.4M | sysmem=4549M used/124220M avail | load=5.04,4.21,3.65 | top=2378379 cpu=1.1% rss=366.4M cmd=python
+[28m29s] stage=running | tree_cpu=334.1% tree_rss=508.6M | sysmem=4690M used/124079M avail | load=4.83,4.20,3.66 | top=2543263 cpu=328% rss=139.7M cmd=java
+[28m40s] stage=running | tree_cpu=1.1% tree_rss=367.9M | sysmem=4568M used/124201M avail | load=4.38,4.13,3.64 | top=2378379 cpu=1.1% rss=367.9M cmd=python
+[28m50s] stage=running | tree_cpu=248.1% tree_rss=463.4M | sysmem=4610M used/124159M avail | load=4.32,4.12,3.64 | top=2545212 cpu=295% rss=124.0M cmd=java
+[29m0s] stage=running | tree_cpu=369.1% tree_rss=524.1M | sysmem=4450M used/124319M avail | load=3.81,4.02,3.61 | top=2378379 cpu=1.1% rss=374.4M cmd=python
+[29m11s] stage=running | tree_cpu=246.1% tree_rss=494.9M | sysmem=4530M used/124239M avail | load=3.78,4.00,3.61 | top=2547248 cpu=289% rss=129.5M cmd=java
+[29m21s] stage=running | tree_cpu=1.1% tree_rss=375.9M | sysmem=4512M used/124257M avail | load=3.80,4.00,3.62 | top=2378379 cpu=1.1% rss=375.9M cmd=python
+[29m31s] stage=running | tree_cpu=1.1% tree_rss=381.4M | sysmem=4566M used/124203M avail | load=3.53,3.94,3.60 | top=2378379 cpu=1.1% rss=381.4M cmd=python
+[29m42s] stage=running | tree_cpu=226.1% tree_rss=442.9M | sysmem=4610M used/124159M avail | load=3.67,3.95,3.61 | top=2550219 cpu=234% rss=61.5M cmd=java
+[29m52s] stage=running | tree_cpu=1.2% tree_rss=388.9M | sysmem=4688M used/124081M avail | load=3.55,3.92,3.60 | top=2378379 cpu=1.2% rss=388.9M cmd=python
+[30m3s] stage=running | tree_cpu=365.2% tree_rss=396.4M | sysmem=4501M used/124268M avail | load=3.75,3.96,3.62 | top=2378379 cpu=1.2% rss=396.4M cmd=python
+[30m13s] stage=running | tree_cpu=1.2% tree_rss=417.4M | sysmem=4677M used/124092M avail | load=3.71,3.94,3.62 | top=2378379 cpu=1.2% rss=417.4M cmd=python
+Generating traces...
+
+Date: 2026-06-06;13:09:55
+SDN model file: model.json
+Forwarding properties file: properties.json
+Trace generation strategy: bfs
+Depth: 4
+Network model branches: CBg:14;CDetect:1;CFailover:1;CCleanup:1;BSw:18
+Trace(s) generation time: 6.3494330800604075
+Maude execution time: 2.144128047861159
+Trace generation cache hits: 4795
+Trace generation cache misses: 1344
+Generated traces: 104040
+
+Analyzing traces...
+
+========== Final Stats ==========
+Date: 2026-06-06;13:09:55
+SDN model file: model.json
+Forwarding properties file: properties.json
+Trace generation strategy: bfs
+Depth: 4
+Network model branches: CBg:14;CDetect:1;CFailover:1;CCleanup:1;BSw:18
+Trace(s) generation time: 6.3494330800604075
+Maude execution time: 2.144128047861159
+Trace generation cache hits: 4795
+Trace generation cache misses: 1344
+Generated traces: 104040
+KATch total execution time: 1808.2974434050266
+KATch total cache hits: 166324
+KATch total cache misses: 2244
+Harmful races found: 59
+Trace Analyzer execution time: 1814.9292556270957
+Total execution time: 1821.278688707156
+=================================
+Output written to: <RACELOOM_WORKDIR>/output/run_2026_06_06T13_09_55
+
+RaceLoom finished with exit code: 0
+Full log: <RACELOOM_WORKDIR>/progress_logs/run_2026_06_06T13_09_55.log
+
+----- END SANITIZED RACELOOM LOG -----

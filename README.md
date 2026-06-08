@@ -337,3 +337,21 @@ This repository is released under the license in `LICENSE`.
 ## Citation
 
 If you use this benchmark suite, please cite the RaceLoom paper/artifact and this repository. See `docs/references.md`.
+
+## Reproducing paper numbers from validation logs
+
+The repository includes sanitized validation logs for the runs used to report the benchmark numbers.
+
+| Item | Path |
+|---|---|
+| Sanitized validation logs | `docs/validation_logs/` |
+| Reproduction guide | `docs/reproduce_paper_numbers.md` |
+| Extraction/checking script | `scripts/extract_paper_numbers_from_logs.py` |
+
+To reproduce and check the reported trace counts and harmful-race counts from the logs, run:
+
+```bash
+python3 scripts/extract_paper_numbers_from_logs.py
+```
+
+The script parses 40 validation logs and checks the extracted numbers against the committed summary TSV files.
