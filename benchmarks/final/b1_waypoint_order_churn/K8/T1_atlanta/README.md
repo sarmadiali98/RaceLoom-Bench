@@ -1,16 +1,15 @@
-# L3/T1/K8 — Waypoint on SNDlib Atlanta with background update churn
+# B1 waypoint / IDS-bypass — T1 Atlanta
 
-This is the topology-aware version of the L3 waypoint benchmark.
+This directory contains the B1 waypoint-order benchmark instance on the T1 Atlanta topology.
 
-It keeps the same core invariant:
+Contents:
 
-```text
-monitored traffic must not bypass the IDS waypoint
+| Path | Contents |
+|---|---|
+| `bad/` | Faulty RaceLoom model and property. |
+| `control/` | Corrected RaceLoom model and property. |
+| `source/` | Source/embedding metadata for this benchmark instance. |
+| `metadata.json` | Recorded benchmark metadata. |
+| `run.sh` | Local helper script for this instance. |
 
-but adds eight safe background updates on topology nodes outside the core safe/bypass paths.
-
-Expected validation:
-
-bad: harmful races > 0
-control: harmful races = 0
-
+Expected counted result: 156,100 traces, 62 harmful races in the faulty model, and 0 harmful races in the control model.

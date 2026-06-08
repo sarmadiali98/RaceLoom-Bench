@@ -1,14 +1,15 @@
-# L4 wrong next hop — T4_germany50 K16
+# B2 wrong next-hop / route mapping — T4 Germany50
 
-Counted L4 benchmark cell.
+This directory contains the B2 route-mapping benchmark instance on the T4 Germany50 topology.
 
-Expected:
+Contents:
 
-```text
-bad: harmful races > 0
-control: harmful races = 0
+| Path | Contents |
+|---|---|
+| `bad/` | Faulty RaceLoom model and property. |
+| `control/` | Corrected RaceLoom model and property. |
+| `source/` | Source/embedding metadata for this benchmark instance. |
+| `metadata.json` | Recorded benchmark metadata. |
+| `run.sh` | Local helper script for this instance. |
 
-Recommended run:
-
-bad/control at depth 4, strategy bfs
-
+Expected counted result: 104,040 traces, 33 harmful races in the faulty model, and 0 harmful races in the control model.
