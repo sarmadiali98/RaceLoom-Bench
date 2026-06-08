@@ -1,54 +1,58 @@
 # Tested configurations
 
-This file records the systems used to generate and check the benchmark results.
+This file records the exact systems used for benchmark validation and smoke-test checks.
 
-## Full benchmark generation / validation server
+## Full benchmark validation server
 
-| Item | Value |
+| Item | Exact value |
 |---|---|
 | OS | Ubuntu 24.04.3 LTS |
-| Kernel | Linux 6.8.0-87-generic x86_64 |
-| Memory | approximately 128 GB RAM |
-| RaceLoom execution | RaceLoom artifact environment with KATch |
-| Strategy | BFS |
+| Kernel | Linux gpu1 6.8.0-87-generic #88-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 09:28:41 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux |
+| CPU model | Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz |
+| CPUs reported by `lscpu` | 64 |
+| CPUs reported by `nproc --all` | 128 |
+| CPUs available to the process from `nproc` | 64 |
+| Memory | 135025090560 bytes = 125.751915 GiB = 135.025091 GB |
+| Python | 3.13.5 |
+| Java | OpenJDK 1.8.0_492 |
+| RaceLoom `main.py` SHA-256 | `c77059168460593a2980f23398b73cc3dd68e646466fb380371e83bce515f120` |
 
-The main B1--B4 matrix is recorded in `docs/final_4x4_matrix.md`.
-The synthetic S1--S4 matrix is recorded in `docs/synthetic_s1_s4_matrix.md`.
+The full validation results are summarized in:
 
-## Reviewer smoke test on macOS / Colima
+- `docs/final_4x4_matrix.md`
+- `docs/synthetic_s1_s4_matrix.md`
+- `docs/runtime_summary.md`
+- `docs/benchmark_runtimes_exact.tsv`
 
-This test checked that a fresh clone of `RaceLoom-Bench` can be mounted into the RaceLoom Docker image and executed through the reviewer-facing wrapper scripts.
+## Reviewer smoke-test system
 
-| Item | Value |
+| Item | Exact value |
 |---|---|
-| Host | macOS on Apple Silicon |
-| Docker runtime | Colima |
-| Docker client | 29.4.3 |
-| Docker server | 29.2.1 |
-| Container platform | `linux/amd64` |
-| RaceLoom image used for local test | `raceloom:latest` |
+| Host OS | macOS 26.5.1, build 25F80 |
+| Kernel | Darwin MacBook-Air-3.local 25.5.0 Darwin Kernel Version 25.5.0: Mon Apr 27 20:38:00 PDT 2026; root:xnu-12377.121.6~2/RELEASE_ARM64_T8103 arm64 |
+| CPU | Apple M1 |
+| Physical CPUs reported by macOS | 8 |
+| Logical CPUs reported by macOS | 8 |
+| Host memory | 8589934592 bytes = 8.000000 GiB |
+| Docker client version | 29.4.3 |
+| Docker server version | 29.2.1 |
+| Docker server OS/architecture | linux/aarch64 |
+| Docker VM operating system | Ubuntu 24.04.4 LTS |
+| Docker VM CPUs | 4 |
+| Docker VM memory | 8307826688 bytes |
+| RaceLoom image ID | `sha256:8c16a50fd72f464170dab459fe513120bfaaa5dad7efb764b34f5bc1b5015908` |
+| RaceLoom image tags | `["raceloom:latest"]` |
+| RaceLoom image OS/architecture | linux/amd64 |
+| RaceLoom image size | 1992659308 bytes |
+| Container platform used | `linux/amd64` |
 | RaceLoom workdir | `/raceloom` |
-| Test directory | fresh clone under the user's home directory |
+| RaceLoom command | `python main.py` |
 
-Command used:
+Smoke-test result:
 
-    git clone https://github.com/sarmadiali98/RaceLoom-Bench.git RaceLoom-Bench-review-test
-    cd RaceLoom-Bench-review-test
-
-    export RACELOOM_IMAGE=raceloom:latest
-    export RACELOOM_WORKDIR=/raceloom
-    export RACELOOM_CMD="python main.py"
-    export DOCKER_PLATFORM=linux/amd64
-
-    time bash scripts/docker_smoke_test.sh
-
-Expected result:
-
-| Benchmark | Model | Generated traces | Harmful races | RaceLoom time |
+| Side | Branches | Traces | Harmful races | Total execution time |
 |---|---|---:|---:|---:|
-| B2 route-mapping smoke | faulty | 8 | 1 | 15.49s |
-| B2 route-mapping smoke | control | 8 | 0 | 15.68s |
+| bad | `CRoute:1;BSw:2` | 8 | 1 | 15.824144s |
+| control | `CRoute:1;BSw:2` | 8 | 0 | 16.730201s |
 
-Total wall-clock time: 36.774s.
-
-Apple Silicon uses amd64 emulation for this image, so this runtime is only a smoke-test reference. Full benchmark runtimes should be measured on native Linux/amd64.
+Apple Silicon uses amd64 emulation for this image, so the smoke-test runtime is a compatibility reference rather than a native Linux/amd64 performance measurement.

@@ -248,19 +248,32 @@ All four faulty synthetic models expose harmful races. All four control models e
 
 The reviewer smoke test was checked from a fresh clone on macOS with Colima and the RaceLoom Docker image running as `linux/amd64`.
 
-| Test | Machine | Result | Wall-clock time |
+| Test | Machine | Result | Bad/control RaceLoom time |
 |---|---|---|---:|
-| B2 Docker smoke test | macOS / Apple Silicon / Colima / `linux/amd64` | PASS | 36.774s |
+| B2 Docker smoke test | macOS 26.5.1 / Apple M1 / Colima / `linux/amd64` | PASS | 15.824144s / 16.730201s |
 
-The full B1--B4 matrix and S1--S4 synthetic benchmarks were validated on an Ubuntu validation server.
+The full B1--B4 matrix and S1--S4 synthetic benchmarks were validated on the following server.
 
-| Machine | OS / kernel | Memory | Notes |
-|---|---|---:|---|
-| Validation server | Ubuntu 24.04.3 LTS / Linux 6.8.0-87-generic x86_64 | about 128 GB RAM | Used for full B1--B4 and S1--S4 runs. |
+| Item | Exact value |
+|---|---|
+| OS | Ubuntu 24.04.3 LTS |
+| Kernel | Linux gpu1 6.8.0-87-generic #88-Ubuntu SMP PREEMPT_DYNAMIC Sat Oct 11 09:28:41 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux |
+| CPU model | Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz |
+| CPUs reported by `lscpu` | 64 |
+| CPUs available to the process from `nproc` | 64 |
+| Memory | 135025090560 bytes = 125.751915 GiB = 135.025091 GB |
+
+Total recorded runtimes:
+
+| Benchmark set | Total recorded runtime |
+|---|---:|
+| B1--B4 main matrix | 36638.825103s = 610.647 min |
+| S1--S4 synthetic set | 8254.524522s = 137.575 min |
 
 Detailed runtime information is recorded in:
 
 - `docs/runtime_summary.md`
+- `docs/benchmark_runtimes_exact.tsv`
 - `docs/tested_configurations.md`
 
 ## Running benchmarks
