@@ -14,3 +14,7 @@ This benchmark repository is a companion artifact for RaceLoom.
 - Repository: https://github.com/sarmadiali98/RaceLoom-Bench
 
 This repository contains benchmark models, properties, topology assets, expected results, and helper scripts. It does not include RaceLoom itself. To run the benchmarks, first obtain the RaceLoom Docker artifact using `scripts/setup_raceloom_artifact.sh`.
+
+## License note
+
+RaceLoom-Bench is licensed under CC-BY-4.0. RaceLoom itself is not included in this repository and remains distributed separately through its own artifact record and license.
