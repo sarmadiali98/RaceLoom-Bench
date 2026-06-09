@@ -17,4 +17,4 @@ This repository contains benchmark models, properties, topology assets, expected
 
 ## License note
 
-RaceLoom-Bench is licensed under CC-BY-4.0. RaceLoom itself is not included in this repository and remains distributed separately through its own artifact record and license.
+RaceLoom-Bench is licensed under the MIT License. RaceLoom itself is not included in this repository and remains distributed separately through its own artifact record and license.

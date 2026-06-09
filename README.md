@@ -332,7 +332,7 @@ These benchmarks are RaceLoom model-level artifacts. They are source-derived or 
 
 ## License
 
-This repository is licensed under the Creative Commons Attribution 4.0 International License (CC-BY-4.0). See `LICENSE`.
+This repository is licensed under the MIT License. See `LICENSE`.
 
 RaceLoom-Bench does not include RaceLoom itself. RaceLoom is distributed separately through its own artifact record and license. This repository contains benchmark models, properties, topology assets, helper scripts, result summaries, and sanitized validation logs.
 
