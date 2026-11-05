@@ -15,7 +15,7 @@
   "policy_class": "waypoint_update_order_uninspected_destination",
   "encoding_style": "same_destination_with_linked_bypass_marker_on_real_topology",
   "translation_honesty": "This strengthened B1 benchmark makes the waypoint participate in the race. The ingress update and waypoint inspection update are separate controller events. In the faulty model, the waypoint initially forwards monitored traffic as uninspected and is later updated to produce an inspected tag. A harmful race occurs when ingress forwarding is enabled before the waypoint inspection update. In the control model, the waypoint is safe from the start. K8 background churn is retained.",
-  "property": "(port=2) . @Network . (port=18) with AllowsPackets=false",
+  "property": "(port=2) . @Network . (port=8513) with AllowsPackets=false",
   "expected_bad": {
     "harmful_races": "> 0"
   },
@@ -276,7 +276,9 @@
       "bypass_output_port": 172
     }
   },
-  "validated_bad_depth4": {
+  "superseded_bad_depth4_cmon": {
+    "superseded": true,
+    "superseded_reason": "Older CMon-based model encoding (network_model_branches CMon:1;CBg:8;BSw:10), not the committed K8 model (CIngress/CWaypoint/CBg). Retained as historical evidence.",
     "date": "2026-05-30;09:11:24",
     "depth": 4,
     "strategy": "bfs",
@@ -295,7 +297,9 @@
     "output_dir": "output/run_2026_05_30T09_11_24",
     "log": "progress_logs/run_2026_05_30T09_11_24.log"
   },
-  "validated_control_depth4": {
+  "superseded_control_depth4_cmon": {
+    "superseded": true,
+    "superseded_reason": "Older CMon-based model encoding (network_model_branches CMon:1;CBg:8;BSw:10), not the committed K8 model (CIngress/CWaypoint/CBg). Retained as historical evidence.",
     "date": "2026-05-30;09:14:21",
     "depth": 4,
     "strategy": "bfs",
@@ -315,6 +319,23 @@
     "log": "progress_logs/run_2026_05_30T09_14_21.log"
   },
   "paper_id": "B1",
+  "baseline_provenance": {
+    "authoritative_encoding": "CBg:8;CIngress:1;CWaypoint:1;BSw:11",
+    "authoritative_source": "docs/validation_logs/main/B1_K8_T1_atlanta_{bad,control}.txt (2026-06-02)",
+    "committed_model_encoding_verified": "CIngress/CWaypoint/CBg (bad and control)",
+    "faulty_control_difference": "waypoint switch InitialFlowTable differs: bad (port = 8502) . (port <- 8510); control (port = 8502) . (port <- 8503). Additionally, committed control/model.json Links duplicates the 8 background-link (port = 90x1) . (port <- 90x2) pairs, so the two model files are not otherwise identical.",
+    "properties_faulty_control": "byte-identical",
+    "workspace_rerun_this_commit": false,
+    "model_hash_available": false,
+    "note": "The committed model has NOT been re-executed at this commit; the 2026-06-02 logs are historical evidence and carry no model hash, so they cannot be cryptographically tied to the committed model.json. Status remains generated_unvalidated. The current CIngress/CWaypoint encoding is referenced in the 2026-06-02 depth-5 logs (156100 traces, 62 bad / 0 control harmful races); K8 remains the one configuration whose historical depth is 5 (all other B1 configs use depth 4). No depth-4 validated_* block was produced for the current encoding, so the superseded CMon depth-4 run is preserved only under superseded_*_cmon.",
+    "top_level_property_historical_discrepancy": {
+      "superseded_top_level_property": "(port=2) . @Network . (port=18) with AllowsPackets=false",
+      "corrected_top_level_property": "(port=2) . @Network . (port=8513) with AllowsPackets=false",
+      "reason": "The superseded top-level property value referenced port 18, which is inconsistent with the committed current property files. The committed bad/properties.json and control/properties.json both specify (port=2) . @Network . (port=8513), and the nested b1_waypoint_order_encoding.checked_property also specifies port 8513. The corrected value represents the current baseline.",
+      "properties_faulty_control_sha256": "3fd72e9a9f97b09213799cf636b35f4b914af54cdd01f0c1bd8bd01fd962df95",
+      "historical_lineage_limitation": "The exact historical model lineage of the superseded port-18 value is NOT cryptographically proven; it is retained only as a recorded metadata discrepancy."
+    }
+  },
   "b1_waypoint_order_encoding": {
     "source_node": "n009",
     "waypoint_node": "n013",

@@ -1,0 +1,38 @@
+# CITATION.cff — RaceLoom-Bench v1.1.0 release metadata.
+# Author-approved release information (final): version 1.1.0, author
+# Ali Sarmadi, affiliation Tehran Institute for Advanced Studies, existing
+# CFF default citation format, no ORCID (none supplied), and no DOI yet —
+# the artifact DOI is added only after Zenodo creates it at publication.
+# `date-released` is set to the actual UTC publication date of the
+# v1.1.0 release.
+# Note: the `license: MIT` field describes the original RaceLoom-Bench
+# material. Third-party components (RaceLoom runtime, topology datasets)
+# keep their own licenses; see THIRD_PARTY_NOTICES.md and REUSE.toml.
+cff-version: 1.2.0
+title: RaceLoom-Bench
+message: >-
+  If you use RaceLoom-Bench in your research, please cite it using the
+  metadata below. RaceLoom itself is distributed separately and should be
+  cited through its own artifact record (DOI 10.5281/zenodo.16884345).
+type: software
+authors:
+  - name: Ali Sarmadi
+    affiliation: Tehran Institute for Advanced Studies
+version: 1.1.0
+date-released: 2026-11-05
+license: MIT
+repository-code: "https://github.com/sarmadiali98/RaceLoom-Bench"
+abstract: >-
+  RaceLoom-Bench is a benchmark artifact for evaluating RaceLoom on
+  software-defined networking race conditions. It contains RaceLoom model
+  inputs, forwarding properties, topology assets, a canonical Docker
+  execution pipeline, independent scientific result checkers, and expected
+  result summaries for 16 principal B1-B4 configurations, 4 supplementary
+  S1-S4 synthetic configurations, and 5 auxiliary smoke benchmarks.
+keywords:
+  - software-defined networking
+  - race conditions
+  - symbolic execution
+  - benchmark
+  - reproducibility
+  - network verification

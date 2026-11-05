@@ -1,0 +1,79 @@
+RaceLoom-Bench release runtime record
+=====================================
+
+This file records the verified runtime identity and execution environment of the
+reference reproduction runs performed for this release candidate. All values are
+taken from the per-configuration provenance records written by the canonical
+launchers (provenance schema raceloom-matrix-provenance-v1) and from direct
+inspection of the validation host.
+
+Reference reproduction runs
+---------------------------
+
+  Principal matrix:   2026-11-04, 09:47:16Z - 16:34:22Z (16 configurations, 32 sides)
+  Supplementary set:  2026-11-04, 17:06:34Z - 18:23:16Z (4 configurations, 8 sides)
+
+Runtime image (verified)
+------------------------
+
+  Image reference used:      raceloom:latest
+  Resolved local image ID:   sha256:fe13627b75f8e7c8c3d2299a1090f2eeac255785b4a569ad5b84766180e24087
+  Architecture:              amd64
+  Repo digest recorded:      raceloom@sha256:fe13627b75f8e7c8c3d2299a1090f2eeac255785b4a569ad5b84766180e24087
+  Provenance fields:         requested_image == resolved_image_id in every
+                             per-configuration provenance.tsv of the reference runs
+  Image source:              RaceLoom artifact record, Zenodo DOI 10.5281/zenodo.16884345
+                             (raceloom.tar.gz; archive SHA-256
+                             bc533c637a0fa55e51f6c84c07137bdd44ddbd303c9a2443ab6301710ec58d45)
+
+  Note: the image ID above is the local Docker content-addressed image ID recorded
+  at execution time, not a registry manifest digest.
+
+Execution environment (as recorded at execution time)
+-----------------------------------------------------
+
+  Host name:                 ali
+  Host architecture:         x86_64
+  Docker client version:     29.1.3
+  Docker server version:     29.1.3
+  Host python3 version:      3.14.4
+  Runtime python version:    not recorded (the container interpreter was not
+                             queried outside benchmark execution)
+  Repository branch:         fix/reviewer-reproducibility
+  Repository HEAD:           ac837210b919c5b91ae3b4dd445935b5e937a083
+  Worktree state:            dirty (uncommitted documentation and checker work
+                             was present; per-configuration provenance records
+                             include a working-tree fingerprint, wt_fingerprint,
+                             covering every tracked and untracked non-ignored file)
+
+  Operating-system release:  not recorded in the execution-time provenance. The
+                             historical 2026-06 validation host was Ubuntu 24.04.3 LTS
+                             (kernel 6.8.0-87-generic); the same server currently
+                             reports Ubuntu 26.04.1 LTS (kernel 7.0.0-42-generic).
+                             Runtime identity for the reference runs is anchored by
+                             the image ID and Docker versions above, which were
+                             recorded in every provenance record.
+
+Canonical execution pipeline
+----------------------------
+
+  scripts/run_final_matrix.sh          (principal 16-configuration launcher)
+  scripts/run_supplementary_matrix.sh  (supplementary 4-configuration launcher)
+  scripts/run_one_pair.sh              (bad/control pair runner)
+  scripts/run_raceloom_progress.sh     (single Docker-backed RaceLoom run)
+
+  Container invocation (per side):
+    docker run --rm [--platform <DOCKER_PLATFORM>] --workdir /raceloom
+      --entrypoint python3
+      -v <model.json>:/raceloom-bench-input/model.json:ro
+      -v <properties.json>:/raceloom-bench-input/properties.json:ro
+      [-v <output-dir>:/raceloom/output]
+      raceloom:latest main.py -d <depth> -s bfs
+      /raceloom-bench-input/model.json /raceloom-bench-input/properties.json
+
+Verification results
+--------------------
+
+  Principal checker:      scripts/check_final_matrix.py  -> 16/16 SCIENTIFIC_MATCH (PASS)
+  Supplementary checker:  scripts/check_supplementary_matrix.py -> 4/4 SCIENTIFIC_MATCH (PASS)
+  Checker reports:        preserved in the release evidence archive

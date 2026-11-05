@@ -15,7 +15,7 @@
   "policy_class": "waypoint_update_order_uninspected_destination",
   "encoding_style": "same_destination_with_linked_bypass_marker_on_real_topology",
   "translation_honesty": "B1 waypoint-order benchmark. CIngress installs source forwarding. CWaypoint installs the waypoint inspection rewrite. In the faulty model, the waypoint initially forwards monitored traffic as uninspected. In the control model, the waypoint is safe from the start. Background churn is retained.",
-  "property": "(port=2) . @Network . (port=18) with AllowsPackets=false",
+  "property": "(port=2) . @Network . (port=8513) with AllowsPackets=false",
   "expected_bad": {
     "harmful_races": "> 0"
   },
@@ -245,6 +245,15 @@
     }
   },
   "paper_id": "B1",
+  "baseline_provenance": {
+    "top_level_property_historical_discrepancy": {
+      "superseded_top_level_property": "(port=2) . @Network . (port=18) with AllowsPackets=false",
+      "corrected_top_level_property": "(port=2) . @Network . (port=8513) with AllowsPackets=false",
+      "reason": "The superseded top-level property value referenced port 18, which is inconsistent with the committed current property files. The committed bad/properties.json and control/properties.json both specify (port=2) . @Network . (port=8513), and the nested b1_waypoint_order_encoding.checked_property also specifies port 8513. The corrected value represents the current baseline.",
+      "properties_faulty_control_sha256": "3fd72e9a9f97b09213799cf636b35f4b914af54cdd01f0c1bd8bd01fd962df95",
+      "historical_lineage_limitation": "The exact historical model lineage of the superseded port-18 value is NOT cryptographically proven; it is retained only as a recorded metadata discrepancy."
+    }
+  },
   "b1_waypoint_order_encoding": {
     "source_node": "n026",
     "waypoint_node": "n009",

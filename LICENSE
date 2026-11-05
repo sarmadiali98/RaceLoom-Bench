@@ -1,3 +1,42 @@
+RaceLoom-Bench — license scope notice
+=====================================
+
+The MIT License below applies to the **original RaceLoom-Bench material**:
+
+- the benchmark definitions in `benchmarks/` (models, properties, metadata,
+  expected statistics, embeddings, and run scripts);
+- the topology-selection metadata (`topology_assets/selected_topologies.json`)
+  and documentation in `topology_assets/`;
+- the execution, verification, and test scripts in `scripts/` and
+  `tools/generators/`;
+- the original documentation (`ARTIFACT.md`, `README.md`, `RELEASE.md`,
+  `CITATION.cff`, `THIRD_PARTY_NOTICES.md`, `REUSE.toml`, `docs/`, benchmark
+  READMEs);
+- the provenance records in `provenance/`.
+
+The MIT License does **not** extend to third-party material used by or
+redistributed in this artifact, which remains under its own license terms:
+
+- the SNDlib-derived topology datasets — `topology_assets/T1_atlanta.json`,
+  `T2_nobel_eu.json`, and `T4_germany50.json` and the benchmark topology
+  copies derived from them — under the ZIB Academic License (unmodified
+  license text: `topology_assets/licenses/SNDlib_ZIB_Academic_License.txt`);
+- the Geant2012-derived topology data — `topology_assets/T3_geant2012.json`
+  and its benchmark topology copy — under Creative Commons Attribution 4.0
+  International (CC BY 4.0);
+- the RaceLoom software and its Docker runtime image (obtained separately
+  from the official RaceLoom artifact record; Apache-2.0 for the RaceLoom
+  code, with further bundled components under their own licenses).
+
+These third-party licenses govern their respective files; the MIT grant above
+neither overrides nor replaces them. `THIRD_PARTY_NOTICES.md` is the
+authoritative component-by-component record of these third-party licenses,
+attributions, and redistribution conditions, and `REUSE.toml` is the
+machine-readable file-to-license mapping. Nothing in this notice alters the
+license terms of any third-party material.
+
+-------------------------------------------------------------------------------
+
 MIT License
 
 Copyright (c) 2026 Ali Sarmadi

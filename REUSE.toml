@@ -1,0 +1,107 @@
+# REUSE.toml — machine-readable file-to-license mapping for RaceLoom-Bench.
+#
+# This file follows the REUSE Specification (version 3.3) TOML format and is
+# the machine-readable counterpart of the scope statement in `LICENSE` and of
+# `THIRD_PARTY_NOTICES.md` (the authoritative human-readable record).
+#
+# Mapping summary:
+#   - Original RaceLoom-Bench material ......... MIT
+#   - SNDlib-derived topology files (3 assets
+#     + 17 benchmark topology copies) .......... LicenseRef-ZIB-Academic-License
+#   - Geant2012-derived topology files
+#     (1 asset + 1 benchmark topology copy) .... CC-BY-4.0
+#   - RaceLoom runtime (execution engine) ...... Apache-2.0 — NOT bundled in
+#     this repository; obtained separately from the official RaceLoom artifact
+#     record (Zenodo DOI 10.5281/zenodo.16884345), so it has no file mapping
+#     here. See THIRD_PARTY_NOTICES.md §3.
+#
+# License texts: `LICENSES/LicenseRef-ZIB-Academic-License.txt` is a
+# byte-identical copy of the unmodified text at
+# `topology_assets/licenses/SNDlib_ZIB_Academic_License.txt` (kept in sync and
+# verified by the release checksum manifest); `LICENSES/CC-BY-4.0.txt` is the
+# official Creative Commons Attribution 4.0 International legal code.
+#
+# Semantics: within each [[annotations]] entry, `path` entries are glob
+# patterns (`*` does not cross `/`; `**` does). When several entries match the
+# same file, the LAST matching entry takes precedence, so the third-party
+# entries below override the MIT default for the topology files.
+
+version = 1
+
+# --- Original RaceLoom-Bench material: MIT ---------------------------------
+
+[[annotations]]
+path = [
+    "ARTIFACT.md",
+    "README.md",
+    "LICENSE",
+    "CITATION.cff",
+    "THIRD_PARTY_NOTICES.md",
+    "RELEASE.md",
+    "benchmarks/**",
+    "scripts/*.py",
+    "scripts/*.sh",
+    "scripts/*.md",
+    "tools/generators/*.py",
+    "tools/audits/*.py",
+    "docs/**",
+    "provenance/*",
+    "topology_assets/README.md",
+    "topology_assets/selected_topologies.json",
+    ".gitignore",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ali Sarmadi"
+SPDX-License-Identifier = "MIT"
+
+# --- SNDlib-derived topology files: ZIB Academic License --------------------
+# Three topology assets plus all 17 corresponding benchmark topology copies.
+
+[[annotations]]
+path = [
+    "topology_assets/T1_atlanta.json",
+    "topology_assets/T2_nobel_eu.json",
+    "topology_assets/T4_germany50.json",
+    "benchmarks/final/*/K8/T1_atlanta/source/topology.json",
+    "benchmarks/final/*/K12/T2_nobel_eu/source/topology.json",
+    "benchmarks/final/*/K16/T4_germany50/source/topology.json",
+    "benchmarks/smoke/*/T1_atlanta/source/topology.json",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "ZIB / atesio and Poznań University of Technology (SNDlib network data, converted via TopoHub)"
+SPDX-License-Identifier = "LicenseRef-ZIB-Academic-License"
+
+# --- Geant2012-derived topology files: CC BY 4.0 ----------------------------
+# One topology asset plus its benchmark topology copy.
+
+[[annotations]]
+path = [
+    "topology_assets/T3_geant2012.json",
+    "benchmarks/final/b1_waypoint_order_churn/K14/T3_geant2012/source/topology.json",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "Internet Topology Zoo — Matthew Roughan, Hung Nguyen, Nickolas Falkner (University of Adelaide)"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# --- Bundled license texts ---------------------------------------------------
+# The unmodified ZIB Academic License text copy under topology_assets/ is
+# itself the text of the LicenseRef-ZIB-Academic-License identifier.
+
+[[annotations]]
+path = ["topology_assets/licenses/SNDlib_ZIB_Academic_License.txt"]
+precedence = "override"
+SPDX-FileCopyrightText = "ZIB / atesio (ZIB Academic License text, reproduced unmodified from the official SNDlib distribution)"
+SPDX-License-Identifier = "LicenseRef-ZIB-Academic-License"
+
+# --- Bundled evidence archive ------------------------------------------------
+# The release package bundles the scientific evidence archive of the verified
+# reference reproduction (generated RaceLoom-Bench evidence and checker
+# reports — original RaceLoom-Bench material). The file exists only in the
+# assembled release package, so this entry matches nothing in the development
+# working tree.
+
+[[annotations]]
+path = ["raceloom-bench-evidence.tar.gz"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Ali Sarmadi"
+SPDX-License-Identifier = "MIT"

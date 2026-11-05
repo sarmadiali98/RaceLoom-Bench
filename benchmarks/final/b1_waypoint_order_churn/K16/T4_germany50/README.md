@@ -1,10 +1,196 @@
-# L3/T4_germany50/K16 — waypoint with background churn
+# B1 waypoint / IDS-bypass — T4 Germany50 (K16)
 
-Topology: `sndlib/germany50`
+This directory contains the B1 waypoint-order benchmark instance on the T4 Germany50
+topology, with topology-aware background update churn at level K=16.
 
-Expected validation:
+## Overview
+
+B1 is the waypoint-order / IDS-bypass benchmark derived from the L3 FAUCET NFV / Zeek
+IDS waypoint scenario. Traffic from a source switch must pass through a waypoint switch
+that performs a Zeek-style inspection rewrite before reaching the destination. In the
+faulty model, the waypoint's initial flow table forwards monitored traffic as
+*uninspected* until a later update installs the inspection rewrite; in the control
+model, the waypoint is safe from the start. The property checks that traffic cannot
+reach the destination uninspected.
+
+This instance is embedded on the Germany50 topology (`sndlib/germany50`) with 50 nodes.
+Background update churn is retained: K=16 additional switches periodically perform
+unrelated background flow-table updates while the core waypoint scenario plays out.
+K16 depth 4 is the largest L3 topology-aware stress configuration in this benchmark
+family.
+
+## Configuration
 
 ```text
-bad: harmful races > 0
-control: harmful races = 0
+benchmark: L3 waypoint / IDS bypass on SNDlib Germany50
+variant: topology-aware background update churn
+churn level: K=16
+depth: 4
+strategy: bfs
+network model branches: CBg:16;CIngress:1;CWaypoint:1;BSw:19
+generated traces: 129,276
 ```
+
+## Directory structure
+
+| Path | Contents |
+|---|---|
+| `bad/` | Faulty RaceLoom model (`model.json`) and property (`properties.json`). |
+| `control/` | Corrected RaceLoom model (`model.json`) and property (`properties.json`). |
+| `source/` | Source data for this instance: [`source/topology.json`](source/topology.json) (committed copy of the T4 Germany50 topology asset) and [`source/churn_embedding.json`](source/churn_embedding.json) (node-to-switch embedding metadata). |
+| [`expected_stats.md`](expected_stats.md) | Expected counted results and their provenance. |
+| `metadata.json` | Recorded benchmark metadata (status: `generated_unvalidated`). |
+| `run.sh` | Local helper script for this instance. |
+| `README.md` | This file. |
+
+## Faulty / control semantics
+
+The faulty (`bad/model.json`) and control (`control/model.json`) models are identical
+except for one line: the waypoint switch `SW006`'s `InitialFlowTable`.
+
+- **Faulty:** `(((port = 167) . (port <- 172)) + ((port = 8502) . (port <- 8510)))` —
+  the waypoint initially forwards monitored traffic as uninspected (to port 8510).
+- **Control:** `(((port = 167) . (port <- 172)) + ((port = 8502) . (port <- 8503)))` —
+  the waypoint is safe from the start (to port 8503).
+
+In both models the waypoint's post-update policy (`upWaypoint`) is the safe rewrite
+`(port = 8502) . (port <- 8503)`. The source switch `SW048` carries the ingress update
+`upIngress: (port = 2) . (port <- 8501)`, and the destination switch `SW020` carries the
+destination table `(((port = 8504) . (port <- 8505)) + ((port = 8511) . (port <- 8512)))`.
+
+`properties.json` is byte-identical between the two models (SHA-256
+`3fd72e9a9f97b09213799cf636b35f4b914af54cdd01f0c1bd8bd01fd962df95`).
+
+## Property
+
+Both `bad/properties.json` and `control/properties.json` contain the same three
+properties — `CT->SW`, `CT->SW<-CT`, and `CT->CT->SW` — each with:
+
+```text
+Expression:      (port=2) . @Network . (port=8513)
+AllowsPackets:   false
+```
+
+The property is violated exactly when a packet injected at the source's uninspected
+port 2 reaches the destination port 8513 without having been rewritten by the waypoint.
+
+## Expected results
+
+Recorded paper-reproduction baseline (status: `generated_unvalidated`; see
+[`expected_stats.md`](expected_stats.md) for full provenance):
+
+```text
+bad:     129,276 generated traces, 50 harmful races, KATch time 1959.0167602123693 s, total execution time 1972.720083417138 s
+control: 129,276 generated traces,  0 harmful races, KATch time 2355.212045780383 s, total execution time 2369.6304522170685 s
+```
+
+Evidence: historical validation logs
+[`docs/validation_logs/main/B1_K16_T4_germany50_bad.txt`](../../../../../docs/validation_logs/main/B1_K16_T4_germany50_bad.txt)
+and
+[`docs/validation_logs/main/B1_K16_T4_germany50_control.txt`](../../../../../docs/validation_logs/main/B1_K16_T4_germany50_control.txt),
+both dated 2026-06-05, which report the branch signature
+`CBg:16;CIngress:1;CWaypoint:1;BSw:19`, depth 4, BFS, 129,276 generated traces, and the
+harmful-race and timing figures above.
+
+## Branch signature and `BSw:19` composition (verified)
+
+The historical depth-4 runs report the branch signature `CBg:16;CIngress:1;CWaypoint:1;BSw:19`:
+16 background-update components (`CBg:16`, one per churn level), 1 ingress component
+(`CIngress:1`), 1 waypoint component (`CWaypoint:1`) and 19 switch components (`BSw:19`).
+
+`BSw` counts the alternatives of the generated `BSWMain` recursive definition — the
+big-switch expression that the RaceLoom model builder emits for the network's switches. It
+is generated by `DNKMaudeModel.__buildBigSwMainExpr` in the RaceLoom implementation, which is
+distributed separately from RaceLoom-Bench and is not tracked in this repository (see
+*Implementation provenance for `BSw`* below). The generated expression starts from one base
+default-forwarding alternative and appends one alternative per `DirectUpdate` and one per
+`RequestedUpdate` across all switches. `InitialFlowTable` entries are **not** counted by
+`BSw`; in particular, the destination switch's initial forwarding table contributes nothing,
+and the faulty/control difference at the waypoint `SW006` `InitialFlowTable` (see
+*Faulty / control semantics* above) therefore leaves `BSw` unchanged. (In both models the
+waypoint's `InitialFlowTable` also contains the unrelated marker-forwarding alternative
+`(port = 167) . (port <- 172)`; as an `InitialFlowTable` entry it contributes no `BSw`
+alternative in either model.) The `Links` expression is not counted either; in this instance
+`bad/model.json` and `control/model.json` have identical `Links`, so no link-related
+alternatives arise in either model.
+
+The committed K16 models (`bad/` and `control/` are identical in this respect) contain exactly
+18 `DirectUpdate`s and zero `RequestedUpdate`s, decomposed as follows:
+
+| Contribution | Count |
+|---|---:|
+| Base default-forwarding alternative | 1 |
+| Background `DirectUpdate`s — K = 16, one per background switch (`SW001`, `SW003`, `SW004`, `SW005`, `SW007`, `SW009`, `SW010`, `SW011`, `SW012`, `SW014`, `SW015`, `SW017`, `SW018`, `SW022`, `SW023`, `SW025`) | 16 |
+| Ingress `DirectUpdate` (`SW048`, channel `upIngress`) | 1 |
+| Waypoint `DirectUpdate` (`SW006`, channel `upWaypoint`) | 1 |
+| Destination `DirectUpdate`s (`SW020` has none) | 0 |
+| `RequestedUpdate`s | 0 |
+| **`BSw` total** | **19** |
+
+so `BSw = 1 + 16 + 1 + 1 + 0 + 0 = 19`, matching the historical signature `BSw:19` in both
+2026-06-05 logs. The 16 background switches and the core placement (source `SW048`, waypoint
+`SW006`, destination `SW020`) are recorded in
+[`source/churn_embedding.json`](source/churn_embedding.json) (see *Node mapping* below).
+
+**Implementation provenance for `BSw`.** The semantics above were verified against the
+RaceLoom implementation source, which is distributed separately from RaceLoom-Bench (it is
+not part of this repository, so no repository-relative source link is given). Reference:
+Zenodo record `16884345`; archive size 794,997,198 bytes, MD5
+`21ba15ae55de83d833a80c27b677e80e`, SHA-256
+`bc533c637a0fa55e51f6c84c07137bdd44ddbd303c9a2443ab6301710ec58d45`; source file
+`src/model/dnk_maude_model.py`, class `DNKMaudeModel`, function `__buildBigSwMainExpr`
+(lines 177–209; the `BSw` branch count is recorded at line 208). The precise historical
+relationship between the inspected archive and the June 2026 validation logs is not
+cryptographically proven.
+
+## Topology provenance (T4 Germany50)
+
+- **Dataset:** Germany50, from [SNDlib](https://sndlib.put.poznan.pl/), distributed via
+  [TopoHub](https://www.topohub.org/), as recorded in
+  [`topology_assets/README.md`](../../../../../topology_assets/README.md). The upstream
+  license is the ZIB Academic License of SNDlib (unmodified license text:
+  `topology_assets/licenses/SNDlib_ZIB_Academic_License.txt`); the license terms are summarized at component level in `THIRD_PARTY_NOTICES.md` §4, and the file-level mapping is `REUSE.toml`.
+- **Committed asset:** [`topology_assets/T4_germany50.json`](../../../../../topology_assets/T4_germany50.json)
+  in the repository root. The file records `topology_id: T4_germany50` and
+  `source: sndlib/germany50`.
+- **Instance copy:** [`source/topology.json`](source/topology.json) in this directory. It is
+  byte-identical to the committed asset except for **exactly one additional trailing
+  newline** at the end of the file.
+- **SHA-256 checksums** (recomputed from the committed files):
+
+  ```text
+  cb8a168e241f520f0b42767dc36cb63c4c7fcf26afdc2936e91a09ec22c79773  source/topology.json
+  baa69165ce28508c25d3524d9a84ca5a6bd8cf1cd82d70f781992acf9d85a8d6  topology_assets/T4_germany50.json
+  ```
+
+- **Verified graph properties** (independently recomputed from the committed file):
+  50 nodes, 88 undirected edges, connected, diameter 9, cycle rank 39. These match the
+  `stats` block inside the file.
+
+## Node mapping
+
+The correspondence between the original topology node names (`n001`–`n050`) and the
+switch names (`SW001`–`SW050`) used in the model files is documented in
+[`source/churn_embedding.json`](source/churn_embedding.json). The model files reference
+switches by their encoded names and do not contain the original topology node names;
+consult the embedding file for the mapping. The core embedding places the source at
+`n048` (`SW048`), the waypoint at `n006` (`SW006`), and the destination at `n020`
+(`SW020`); the 16 background-update switches (`SW001`, `SW003`, `SW004`, `SW005`,
+`SW007`, `SW009`, `SW010`, `SW011`, `SW012`, `SW014`, `SW015`, `SW017`, `SW018`,
+`SW022`, `SW023`, `SW025`) are also listed there with their churn channels and policies.
+
+## Provenance limitations
+
+- The committed models have **not** been re-executed at this commit. Metadata status
+  remains `generated_unvalidated`; no `validated_bad_depth4` / `validated_control_depth4`
+  metadata blocks are asserted.
+- The 2026-06-05 historical logs contain no model hash, so the figures cannot be tied
+  cryptographically to the committed `bad/model.json` / `control/model.json`. The match
+  is by encoding signature (branch signature above) and by the documented
+  faulty/control `InitialFlowTable` difference, not by a hash.
+- No independent rerun of this instance has been performed at this commit; the figures
+  above are the recorded paper-reproduction baseline, not a new reproduction.
+- The upstream license of Germany50 (SNDlib) is the ZIB Academic License; see
+  `THIRD_PARTY_NOTICES.md` §4 for the component-level license summary and `REUSE.toml` for the file-level mapping.
+- This artifact has not passed a new benchmark execution as part of this documentation
+  update.

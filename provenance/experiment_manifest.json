@@ -1,0 +1,1074 @@
+{
+  "schema": "raceloom-bench-experiment-manifest-v1",
+  "generated_utc": "2026-11-05T11:31:25Z",
+  "repository": {
+    "branch": "fix/reviewer-reproducibility",
+    "head": "ac837210b919c5b91ae3b4dd445935b5e937a083"
+  },
+  "runtime_reference": "provenance/runtime.txt",
+  "runtime_image_id": "sha256:fe13627b75f8e7c8c3d2299a1090f2eeac255785b4a569ad5b84766180e24087",
+  "reference_reproduction_date": "2026-11-04",
+  "configuration_counts": {
+    "principal": 16,
+    "supplementary": 4,
+    "smoke": 5,
+    "total": 25
+  },
+  "baseline_backed_reproduced": 20,
+  "principal_configurations": [
+    {
+      "config_id": "B1_K8_T1_atlanta",
+      "family": "B1_waypoint_order",
+      "family_description": "B1 waypoint / IDS-bypass: monitored traffic must traverse the required waypoint.",
+      "topology": "T1_atlanta",
+      "topology_source": "SNDlib / TopoHub",
+      "k": 8,
+      "depth": 5,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/final/b1_waypoint_order_churn/K8/T1_atlanta",
+      "inputs": {
+        "bad_model": "benchmarks/final/b1_waypoint_order_churn/K8/T1_atlanta/bad/model.json",
+        "bad_properties": "benchmarks/final/b1_waypoint_order_churn/K8/T1_atlanta/bad/properties.json",
+        "control_model": "benchmarks/final/b1_waypoint_order_churn/K8/T1_atlanta/control/model.json",
+        "control_properties": "benchmarks/final/b1_waypoint_order_churn/K8/T1_atlanta/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 156100,
+        "bad_harmful": 62,
+        "control_harmful": 0,
+        "branches": "CBg:8;CIngress:1;CWaypoint:1;BSw:11",
+        "depth": 5,
+        "strategy": "bfs",
+        "source": "docs/final_4x4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/main/B1_K8_T1_atlanta_bad.txt",
+        "docs/validation_logs/main/B1_K8_T1_atlanta_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_final_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/principal_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "principal_matrix/B1_K8_T1_atlanta",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T09:47:16Z",
+        "utc_end": "2026-11-04T09:59:08Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "B1_K12_T2_nobel_eu",
+      "family": "B1_waypoint_order",
+      "family_description": "B1 waypoint / IDS-bypass: monitored traffic must traverse the required waypoint.",
+      "topology": "T2_nobel_eu",
+      "topology_source": "SNDlib / TopoHub",
+      "k": 12,
+      "depth": 4,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/final/b1_waypoint_order_churn/K12/T2_nobel_eu",
+      "inputs": {
+        "bad_model": "benchmarks/final/b1_waypoint_order_churn/K12/T2_nobel_eu/bad/model.json",
+        "bad_properties": "benchmarks/final/b1_waypoint_order_churn/K12/T2_nobel_eu/bad/properties.json",
+        "control_model": "benchmarks/final/b1_waypoint_order_churn/K12/T2_nobel_eu/control/model.json",
+        "control_properties": "benchmarks/final/b1_waypoint_order_churn/K12/T2_nobel_eu/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 49980,
+        "bad_harmful": 38,
+        "control_harmful": 0,
+        "branches": "CBg:12;CIngress:1;CWaypoint:1;BSw:15",
+        "depth": 4,
+        "strategy": "bfs",
+        "source": "docs/final_4x4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/main/B1_K12_T2_nobel_eu_bad.txt",
+        "docs/validation_logs/main/B1_K12_T2_nobel_eu_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_final_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/principal_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "principal_matrix/B1_K12_T2_nobel_eu",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T10:40:20Z",
+        "utc_end": "2026-11-04T10:56:43Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "B1_K14_T3_geant2012",
+      "family": "B1_waypoint_order",
+      "family_description": "B1 waypoint / IDS-bypass: monitored traffic must traverse the required waypoint.",
+      "topology": "T3_geant2012",
+      "topology_source": "Internet Topology Zoo / TopoHub",
+      "k": 14,
+      "depth": 4,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/final/b1_waypoint_order_churn/K14/T3_geant2012",
+      "inputs": {
+        "bad_model": "benchmarks/final/b1_waypoint_order_churn/K14/T3_geant2012/bad/model.json",
+        "bad_properties": "benchmarks/final/b1_waypoint_order_churn/K14/T3_geant2012/bad/properties.json",
+        "control_model": "benchmarks/final/b1_waypoint_order_churn/K14/T3_geant2012/control/model.json",
+        "control_properties": "benchmarks/final/b1_waypoint_order_churn/K14/T3_geant2012/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 82688,
+        "bad_harmful": 44,
+        "control_harmful": 0,
+        "branches": "CBg:14;CIngress:1;CWaypoint:1;BSw:17",
+        "depth": 4,
+        "strategy": "bfs",
+        "source": "docs/final_4x4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/main/B1_K14_T3_geant2012_bad.txt",
+        "docs/validation_logs/main/B1_K14_T3_geant2012_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_final_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/principal_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "principal_matrix/B1_K14_T3_geant2012",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T10:56:44Z",
+        "utc_end": "2026-11-04T11:18:11Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "B1_K16_T4_germany50",
+      "family": "B1_waypoint_order",
+      "family_description": "B1 waypoint / IDS-bypass: monitored traffic must traverse the required waypoint.",
+      "topology": "T4_germany50",
+      "topology_source": "SNDlib / TopoHub",
+      "k": 16,
+      "depth": 4,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/final/b1_waypoint_order_churn/K16/T4_germany50",
+      "inputs": {
+        "bad_model": "benchmarks/final/b1_waypoint_order_churn/K16/T4_germany50/bad/model.json",
+        "bad_properties": "benchmarks/final/b1_waypoint_order_churn/K16/T4_germany50/bad/properties.json",
+        "control_model": "benchmarks/final/b1_waypoint_order_churn/K16/T4_germany50/control/model.json",
+        "control_properties": "benchmarks/final/b1_waypoint_order_churn/K16/T4_germany50/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 129276,
+        "bad_harmful": 50,
+        "control_harmful": 0,
+        "branches": "CBg:16;CIngress:1;CWaypoint:1;BSw:19",
+        "depth": 4,
+        "strategy": "bfs",
+        "source": "docs/final_4x4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/main/B1_K16_T4_germany50_bad.txt",
+        "docs/validation_logs/main/B1_K16_T4_germany50_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_final_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/principal_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "principal_matrix/B1_K16_T4_germany50",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T11:18:11Z",
+        "utc_end": "2026-11-04T11:58:58Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "B2_K8_T1_atlanta",
+      "family": "B2_route_mapping",
+      "family_description": "B2 wrong next-hop / route update: routed traffic must not reach an incorrect next-hop branch.",
+      "topology": "T1_atlanta",
+      "topology_source": "SNDlib / TopoHub",
+      "k": 8,
+      "depth": 5,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/final/b2_route_mapping_forced_distinct/K8/T1_atlanta",
+      "inputs": {
+        "bad_model": "benchmarks/final/b2_route_mapping_forced_distinct/K8/T1_atlanta/bad/model.json",
+        "bad_properties": "benchmarks/final/b2_route_mapping_forced_distinct/K8/T1_atlanta/bad/properties.json",
+        "control_model": "benchmarks/final/b2_route_mapping_forced_distinct/K8/T1_atlanta/control/model.json",
+        "control_properties": "benchmarks/final/b2_route_mapping_forced_distinct/K8/T1_atlanta/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 96309,
+        "bad_harmful": 74,
+        "control_harmful": 0,
+        "branches": "CBg:8;CRoute:1;BSw:10",
+        "depth": 5,
+        "strategy": "bfs",
+        "source": "docs/final_4x4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/main/B2_K8_T1_atlanta_bad.txt",
+        "docs/validation_logs/main/B2_K8_T1_atlanta_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_final_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/principal_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "principal_matrix/B2_K8_T1_atlanta",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T11:58:58Z",
+        "utc_end": "2026-11-04T12:04:16Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "B2_K12_T2_nobel_eu",
+      "family": "B2_route_mapping",
+      "family_description": "B2 wrong next-hop / route update: routed traffic must not reach an incorrect next-hop branch.",
+      "topology": "T2_nobel_eu",
+      "topology_source": "SNDlib / TopoHub",
+      "k": 12,
+      "depth": 4,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/final/b2_route_mapping_forced_distinct/K12/T2_nobel_eu",
+      "inputs": {
+        "bad_model": "benchmarks/final/b2_route_mapping_forced_distinct/K12/T2_nobel_eu/bad/model.json",
+        "bad_properties": "benchmarks/final/b2_route_mapping_forced_distinct/K12/T2_nobel_eu/bad/properties.json",
+        "control_model": "benchmarks/final/b2_route_mapping_forced_distinct/K12/T2_nobel_eu/control/model.json",
+        "control_properties": "benchmarks/final/b2_route_mapping_forced_distinct/K12/T2_nobel_eu/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 37856,
+        "bad_harmful": 25,
+        "control_harmful": 0,
+        "branches": "CBg:12;CRoute:1;BSw:14",
+        "depth": 4,
+        "strategy": "bfs",
+        "source": "docs/final_4x4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/main/B2_K12_T2_nobel_eu_bad.txt",
+        "docs/validation_logs/main/B2_K12_T2_nobel_eu_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_final_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/principal_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "principal_matrix/B2_K12_T2_nobel_eu",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T12:04:16Z",
+        "utc_end": "2026-11-04T12:14:21Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "B2_K14_T3_geant2012",
+      "family": "B2_route_mapping",
+      "family_description": "B2 wrong next-hop / route update: routed traffic must not reach an incorrect next-hop branch.",
+      "topology": "T3_geant2012",
+      "topology_source": "Internet Topology Zoo / TopoHub",
+      "k": 14,
+      "depth": 4,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/final/b2_route_mapping_forced_distinct/K14/T3_geant2012",
+      "inputs": {
+        "bad_model": "benchmarks/final/b2_route_mapping_forced_distinct/K14/T3_geant2012/bad/model.json",
+        "bad_properties": "benchmarks/final/b2_route_mapping_forced_distinct/K14/T3_geant2012/bad/properties.json",
+        "control_model": "benchmarks/final/b2_route_mapping_forced_distinct/K14/T3_geant2012/control/model.json",
+        "control_properties": "benchmarks/final/b2_route_mapping_forced_distinct/K14/T3_geant2012/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 64800,
+        "bad_harmful": 29,
+        "control_harmful": 0,
+        "branches": "CBg:14;CRoute:1;BSw:16",
+        "depth": 4,
+        "strategy": "bfs",
+        "source": "docs/final_4x4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/main/B2_K14_T3_geant2012_bad.txt",
+        "docs/validation_logs/main/B2_K14_T3_geant2012_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_final_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/principal_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "principal_matrix/B2_K14_T3_geant2012",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T12:14:21Z",
+        "utc_end": "2026-11-04T12:30:52Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "B2_K16_T4_germany50",
+      "family": "B2_route_mapping",
+      "family_description": "B2 wrong next-hop / route update: routed traffic must not reach an incorrect next-hop branch.",
+      "topology": "T4_germany50",
+      "topology_source": "SNDlib / TopoHub",
+      "k": 16,
+      "depth": 4,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/final/b2_route_mapping_forced_distinct/K16/T4_germany50",
+      "inputs": {
+        "bad_model": "benchmarks/final/b2_route_mapping_forced_distinct/K16/T4_germany50/bad/model.json",
+        "bad_properties": "benchmarks/final/b2_route_mapping_forced_distinct/K16/T4_germany50/bad/properties.json",
+        "control_model": "benchmarks/final/b2_route_mapping_forced_distinct/K16/T4_germany50/control/model.json",
+        "control_properties": "benchmarks/final/b2_route_mapping_forced_distinct/K16/T4_germany50/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 104040,
+        "bad_harmful": 33,
+        "control_harmful": 0,
+        "branches": "CBg:16;CRoute:1;BSw:18",
+        "depth": 4,
+        "strategy": "bfs",
+        "source": "docs/final_4x4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/main/B2_K16_T4_germany50_bad.txt",
+        "docs/validation_logs/main/B2_K16_T4_germany50_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_final_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/principal_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "principal_matrix/B2_K16_T4_germany50",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T12:30:52Z",
+        "utc_end": "2026-11-04T12:56:27Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "B3_K8_T1_atlanta",
+      "family": "B3_slice_isolation",
+      "family_description": "B3 slice isolation: traffic from one slice must not reach another slice.",
+      "topology": "T1_atlanta",
+      "topology_source": "SNDlib / TopoHub",
+      "k": 8,
+      "depth": 5,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K8/T1_atlanta",
+      "inputs": {
+        "bad_model": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K8/T1_atlanta/bad/model.json",
+        "bad_properties": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K8/T1_atlanta/bad/properties.json",
+        "control_model": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K8/T1_atlanta/control/model.json",
+        "control_properties": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K8/T1_atlanta/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 156100,
+        "bad_harmful": 72,
+        "control_harmful": 0,
+        "branches": "CBg:8;CSliceA:1;CSliceB:1;BSw:11",
+        "depth": 5,
+        "strategy": "bfs",
+        "source": "docs/final_4x4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/main/B3_K8_T1_atlanta_bad.txt",
+        "docs/validation_logs/main/B3_K8_T1_atlanta_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_final_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/principal_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "principal_matrix/B3_K8_T1_atlanta",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T12:56:27Z",
+        "utc_end": "2026-11-04T13:05:33Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "B3_K12_T2_nobel_eu",
+      "family": "B3_slice_isolation",
+      "family_description": "B3 slice isolation: traffic from one slice must not reach another slice.",
+      "topology": "T2_nobel_eu",
+      "topology_source": "SNDlib / TopoHub",
+      "k": 12,
+      "depth": 4,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K12/T2_nobel_eu",
+      "inputs": {
+        "bad_model": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K12/T2_nobel_eu/bad/model.json",
+        "bad_properties": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K12/T2_nobel_eu/bad/properties.json",
+        "control_model": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K12/T2_nobel_eu/control/model.json",
+        "control_properties": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K12/T2_nobel_eu/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 49980,
+        "bad_harmful": 51,
+        "control_harmful": 0,
+        "branches": "CBg:12;CSliceA:1;CSliceB:1;BSw:15",
+        "depth": 4,
+        "strategy": "bfs",
+        "source": "docs/final_4x4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/main/B3_K12_T2_nobel_eu_bad.txt",
+        "docs/validation_logs/main/B3_K12_T2_nobel_eu_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_final_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/principal_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "principal_matrix/B3_K12_T2_nobel_eu",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T13:05:34Z",
+        "utc_end": "2026-11-04T13:18:25Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "B3_K14_T3_geant2012",
+      "family": "B3_slice_isolation",
+      "family_description": "B3 slice isolation: traffic from one slice must not reach another slice.",
+      "topology": "T3_geant2012",
+      "topology_source": "Internet Topology Zoo / TopoHub",
+      "k": 14,
+      "depth": 4,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K14/T3_geant2012",
+      "inputs": {
+        "bad_model": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K14/T3_geant2012/bad/model.json",
+        "bad_properties": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K14/T3_geant2012/bad/properties.json",
+        "control_model": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K14/T3_geant2012/control/model.json",
+        "control_properties": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K14/T3_geant2012/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 82688,
+        "bad_harmful": 46,
+        "control_harmful": 0,
+        "branches": "CBg:14;CSliceA:1;CSliceB:1;BSw:17",
+        "depth": 4,
+        "strategy": "bfs",
+        "source": "docs/final_4x4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/main/B3_K14_T3_geant2012_bad.txt",
+        "docs/validation_logs/main/B3_K14_T3_geant2012_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_final_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/principal_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "principal_matrix/B3_K14_T3_geant2012",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T13:18:25Z",
+        "utc_end": "2026-11-04T13:43:56Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "B3_K16_T4_germany50",
+      "family": "B3_slice_isolation",
+      "family_description": "B3 slice isolation: traffic from one slice must not reach another slice.",
+      "topology": "T4_germany50",
+      "topology_source": "SNDlib / TopoHub",
+      "k": 16,
+      "depth": 4,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K16/T4_germany50",
+      "inputs": {
+        "bad_model": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K16/T4_germany50/bad/model.json",
+        "bad_properties": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K16/T4_germany50/bad/properties.json",
+        "control_model": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K16/T4_germany50/control/model.json",
+        "control_properties": "benchmarks/final/b3_slice_isolation_twocontroller_churn/K16/T4_germany50/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 129276,
+        "bad_harmful": 67,
+        "control_harmful": 0,
+        "branches": "CBg:16;CSliceA:1;CSliceB:1;BSw:19",
+        "depth": 4,
+        "strategy": "bfs",
+        "source": "docs/final_4x4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/main/B3_K16_T4_germany50_bad.txt",
+        "docs/validation_logs/main/B3_K16_T4_germany50_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_final_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/principal_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "principal_matrix/B3_K16_T4_germany50",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T13:43:56Z",
+        "utc_end": "2026-11-04T14:19:26Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "B4_K8_T1_atlanta",
+      "family": "B4_failover_cleanup",
+      "family_description": "B4 failover / stale path: post-failure traffic must not continue along a stale failed path.",
+      "topology": "T1_atlanta",
+      "topology_source": "SNDlib / TopoHub",
+      "k": 8,
+      "depth": 5,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/final/b4_failover_cleanup_churn/K8/T1_atlanta",
+      "inputs": {
+        "bad_model": "benchmarks/final/b4_failover_cleanup_churn/K8/T1_atlanta/bad/model.json",
+        "bad_properties": "benchmarks/final/b4_failover_cleanup_churn/K8/T1_atlanta/bad/properties.json",
+        "control_model": "benchmarks/final/b4_failover_cleanup_churn/K8/T1_atlanta/control/model.json",
+        "control_properties": "benchmarks/final/b4_failover_cleanup_churn/K8/T1_atlanta/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 242363,
+        "bad_harmful": 79,
+        "control_harmful": 0,
+        "branches": "CBg:8;CDetect:1;CFailover:1;CCleanup:1;BSw:12",
+        "depth": 5,
+        "strategy": "bfs",
+        "source": "docs/final_4x4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/main/B4_K8_T1_atlanta_bad.txt",
+        "docs/validation_logs/main/B4_K8_T1_atlanta_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_final_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/principal_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "principal_matrix/B4_K8_T1_atlanta",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T14:19:26Z",
+        "utc_end": "2026-11-04T14:31:42Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "B4_K12_T2_nobel_eu",
+      "family": "B4_failover_cleanup",
+      "family_description": "B4 failover / stale path: post-failure traffic must not continue along a stale failed path.",
+      "topology": "T2_nobel_eu",
+      "topology_source": "SNDlib / TopoHub",
+      "k": 12,
+      "depth": 4,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/final/b4_failover_cleanup_churn/K12/T2_nobel_eu",
+      "inputs": {
+        "bad_model": "benchmarks/final/b4_failover_cleanup_churn/K12/T2_nobel_eu/bad/model.json",
+        "bad_properties": "benchmarks/final/b4_failover_cleanup_churn/K12/T2_nobel_eu/bad/properties.json",
+        "control_model": "benchmarks/final/b4_failover_cleanup_churn/K12/T2_nobel_eu/control/model.json",
+        "control_properties": "benchmarks/final/b4_failover_cleanup_churn/K12/T2_nobel_eu/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 64800,
+        "bad_harmful": 51,
+        "control_harmful": 0,
+        "branches": "CBg:12;CDetect:1;CFailover:1;CCleanup:1;BSw:16",
+        "depth": 4,
+        "strategy": "bfs",
+        "source": "docs/final_4x4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/main/B4_K12_T2_nobel_eu_bad.txt",
+        "docs/validation_logs/main/B4_K12_T2_nobel_eu_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_final_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/principal_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "principal_matrix/B4_K12_T2_nobel_eu",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T14:31:42Z",
+        "utc_end": "2026-11-04T14:55:47Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "B4_K14_T3_geant2012",
+      "family": "B4_failover_cleanup",
+      "family_description": "B4 failover / stale path: post-failure traffic must not continue along a stale failed path.",
+      "topology": "T3_geant2012",
+      "topology_source": "Internet Topology Zoo / TopoHub",
+      "k": 14,
+      "depth": 4,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/final/b4_failover_cleanup_churn/K14/T3_geant2012",
+      "inputs": {
+        "bad_model": "benchmarks/final/b4_failover_cleanup_churn/K14/T3_geant2012/bad/model.json",
+        "bad_properties": "benchmarks/final/b4_failover_cleanup_churn/K14/T3_geant2012/bad/properties.json",
+        "control_model": "benchmarks/final/b4_failover_cleanup_churn/K14/T3_geant2012/control/model.json",
+        "control_properties": "benchmarks/final/b4_failover_cleanup_churn/K14/T3_geant2012/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 104040,
+        "bad_harmful": 59,
+        "control_harmful": 0,
+        "branches": "CBg:14;CDetect:1;CFailover:1;CCleanup:1;BSw:18",
+        "depth": 4,
+        "strategy": "bfs",
+        "source": "docs/final_4x4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/main/B4_K14_T3_geant2012_bad.txt",
+        "docs/validation_logs/main/B4_K14_T3_geant2012_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_final_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/principal_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "principal_matrix/B4_K14_T3_geant2012",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T14:55:47Z",
+        "utc_end": "2026-11-04T15:34:02Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "B4_K16_T4_germany50",
+      "family": "B4_failover_cleanup",
+      "family_description": "B4 failover / stale path: post-failure traffic must not continue along a stale failed path.",
+      "topology": "T4_germany50",
+      "topology_source": "SNDlib / TopoHub",
+      "k": 16,
+      "depth": 4,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/final/b4_failover_cleanup_churn/K16/T4_germany50",
+      "inputs": {
+        "bad_model": "benchmarks/final/b4_failover_cleanup_churn/K16/T4_germany50/bad/model.json",
+        "bad_properties": "benchmarks/final/b4_failover_cleanup_churn/K16/T4_germany50/bad/properties.json",
+        "control_model": "benchmarks/final/b4_failover_cleanup_churn/K16/T4_germany50/control/model.json",
+        "control_properties": "benchmarks/final/b4_failover_cleanup_churn/K16/T4_germany50/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 158840,
+        "bad_harmful": 67,
+        "control_harmful": 0,
+        "branches": "CBg:16;CDetect:1;CFailover:1;CCleanup:1;BSw:20",
+        "depth": 4,
+        "strategy": "bfs",
+        "source": "docs/final_4x4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/main/B4_K16_T4_germany50_bad.txt",
+        "docs/validation_logs/main/B4_K16_T4_germany50_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_final_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/principal_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "principal_matrix/B4_K16_T4_germany50",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T15:34:02Z",
+        "utc_end": "2026-11-04T16:34:22Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    }
+  ],
+  "supplementary_configurations": [
+    {
+      "config_id": "S1_multidomain_wrong_destination",
+      "scenario": "Multidomain wrong destination",
+      "depth": 5,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/synthetic/final/s1_multidomain_wrong_destination",
+      "inputs": {
+        "bad_model": "benchmarks/synthetic/final/s1_multidomain_wrong_destination/bad/model.json",
+        "bad_properties": "benchmarks/synthetic/final/s1_multidomain_wrong_destination/bad/properties.json",
+        "control_model": "benchmarks/synthetic/final/s1_multidomain_wrong_destination/control/model.json",
+        "control_properties": "benchmarks/synthetic/final/s1_multidomain_wrong_destination/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 363024,
+        "bad_harmful": 396,
+        "control_harmful": 0,
+        "branches": "C1A:3;C2A:3;C1B:3;C2B:3;BSw:13",
+        "depth": 5,
+        "strategy": "bfs",
+        "source": "docs/synthetic_s1_s4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/synthetic/S1_bad.txt",
+        "docs/validation_logs/synthetic/S1_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_supplementary_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/supplementary_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "supplementary/S1_multidomain_wrong_destination",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T17:06:34Z",
+        "utc_end": "2026-11-04T17:26:50Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "S2_hierarchical_extended_wrong_destination",
+      "scenario": "Hierarchical extended wrong destination",
+      "depth": 4,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/synthetic/final/s2_hierarchical_extended_wrong_destination",
+      "inputs": {
+        "bad_model": "benchmarks/synthetic/final/s2_hierarchical_extended_wrong_destination/bad/model.json",
+        "bad_properties": "benchmarks/synthetic/final/s2_hierarchical_extended_wrong_destination/bad/properties.json",
+        "control_model": "benchmarks/synthetic/final/s2_hierarchical_extended_wrong_destination/control/model.json",
+        "control_properties": "benchmarks/synthetic/final/s2_hierarchical_extended_wrong_destination/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 38478,
+        "bad_harmful": 31,
+        "control_harmful": 0,
+        "branches": "C1:7;C2:7;CM:2;BSw:15",
+        "depth": 4,
+        "strategy": "bfs",
+        "source": "docs/synthetic_s1_s4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/synthetic/S2_bad.txt",
+        "docs/validation_logs/synthetic/S2_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_supplementary_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/supplementary_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "supplementary/S2_hierarchical_extended_wrong_destination",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T17:26:50Z",
+        "utc_end": "2026-11-04T17:46:22Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "S3_multi_slice_shared_core_isolation",
+      "scenario": "Multi-slice shared-core isolation",
+      "depth": 5,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/synthetic/final/s3_multi_slice_shared_core_isolation",
+      "inputs": {
+        "bad_model": "benchmarks/synthetic/final/s3_multi_slice_shared_core_isolation/bad/model.json",
+        "bad_properties": "benchmarks/synthetic/final/s3_multi_slice_shared_core_isolation/bad/properties.json",
+        "control_model": "benchmarks/synthetic/final/s3_multi_slice_shared_core_isolation/control/model.json",
+        "control_properties": "benchmarks/synthetic/final/s3_multi_slice_shared_core_isolation/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 363024,
+        "bad_harmful": 104,
+        "control_harmful": 0,
+        "branches": "C1:6;C2:6;BSw:13",
+        "depth": 5,
+        "strategy": "bfs",
+        "source": "docs/synthetic_s1_s4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/synthetic/S3_bad.txt",
+        "docs/validation_logs/synthetic/S3_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_supplementary_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/supplementary_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "supplementary/S3_multi_slice_shared_core_isolation",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T17:46:22Z",
+        "utc_end": "2026-11-04T18:05:58Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    },
+    {
+      "config_id": "S4_multi_region_stale_reroute",
+      "scenario": "Multi-region stale reroute",
+      "depth": 5,
+      "strategy": "bfs",
+      "benchmark_dir": "benchmarks/synthetic/final/s4_multi_region_stale_reroute",
+      "inputs": {
+        "bad_model": "benchmarks/synthetic/final/s4_multi_region_stale_reroute/bad/model.json",
+        "bad_properties": "benchmarks/synthetic/final/s4_multi_region_stale_reroute/bad/properties.json",
+        "control_model": "benchmarks/synthetic/final/s4_multi_region_stale_reroute/control/model.json",
+        "control_properties": "benchmarks/synthetic/final/s4_multi_region_stale_reroute/control/properties.json"
+      },
+      "expected_statistics": {
+        "traces": 150533,
+        "bad_harmful": 18,
+        "control_harmful": 0,
+        "branches": "C1:5;C2:6;CM:2;BSw:12",
+        "depth": 5,
+        "strategy": "bfs",
+        "source": "docs/synthetic_s1_s4_matrix.tsv"
+      },
+      "historical_logs": [
+        "docs/validation_logs/synthetic/S4_bad.txt",
+        "docs/validation_logs/synthetic/S4_control.txt"
+      ],
+      "baseline_backed": true,
+      "checker_coverage": {
+        "checker": "scripts/check_supplementary_matrix.py",
+        "covered": true,
+        "classification": "SCIENTIFIC_MATCH",
+        "report": "checker_reports/supplementary_check_report.json"
+      },
+      "evidence": {
+        "archive_path": "supplementary/S4_multi_region_stale_reroute",
+        "status": "COMPLETE",
+        "utc_start": "2026-11-04T18:05:58Z",
+        "utc_end": "2026-11-04T18:23:16Z"
+      },
+      "reproduction_status": "reproduced_2026-11-04_SCIENTIFIC_MATCH"
+    }
+  ],
+  "smoke_configurations": [
+    {
+      "config_id": "b1_waypoint_order_smoke_T1_atlanta",
+      "benchmark_dir": "benchmarks/smoke/b1_waypoint_order_smoke/T1_atlanta",
+      "topology": "T1_atlanta",
+      "topology_source": "SNDlib / TopoHub",
+      "depth": 4,
+      "strategy": "bfs",
+      "inputs": {
+        "bad_model": "benchmarks/smoke/b1_waypoint_order_smoke/T1_atlanta/bad/model.json",
+        "bad_properties": "benchmarks/smoke/b1_waypoint_order_smoke/T1_atlanta/bad/properties.json",
+        "control_model": "benchmarks/smoke/b1_waypoint_order_smoke/T1_atlanta/control/model.json",
+        "control_properties": "benchmarks/smoke/b1_waypoint_order_smoke/T1_atlanta/control/properties.json"
+      },
+      "expected_statistics": {
+        "bad_harmful": "> 0",
+        "control_harmful": 0,
+        "exact_traces": null,
+        "source": "benchmarks/smoke/b1_waypoint_order_smoke/T1_atlanta/metadata.json",
+        "historical_baseline": false
+      },
+      "historical_logs": [],
+      "baseline_backed": false,
+      "checker_coverage": {
+        "checker": null,
+        "covered": false,
+        "reason": "no historical baseline; auxiliary smoke check outside the scientific checkers"
+      },
+      "executed_in_release": false,
+      "evidence": [
+        {
+          "archive_path": null,
+          "detail": "not executed in this release; no evidence archived"
+        }
+      ],
+      "reproduction_status": "not_applicable_auxiliary_smoke"
+    },
+    {
+      "config_id": "b1_waypoint_tagged_marker_smoke_T1_atlanta",
+      "benchmark_dir": "benchmarks/smoke/b1_waypoint_tagged_marker_smoke/T1_atlanta",
+      "topology": "T1_atlanta",
+      "topology_source": "SNDlib / TopoHub",
+      "depth": 4,
+      "strategy": "bfs",
+      "inputs": {
+        "bad_model": "benchmarks/smoke/b1_waypoint_tagged_marker_smoke/T1_atlanta/bad/model.json",
+        "bad_properties": "benchmarks/smoke/b1_waypoint_tagged_marker_smoke/T1_atlanta/bad/properties.json",
+        "control_model": "benchmarks/smoke/b1_waypoint_tagged_marker_smoke/T1_atlanta/control/model.json",
+        "control_properties": "benchmarks/smoke/b1_waypoint_tagged_marker_smoke/T1_atlanta/control/properties.json"
+      },
+      "expected_statistics": {
+        "bad_harmful": "> 0",
+        "control_harmful": 0,
+        "exact_traces": null,
+        "source": "benchmarks/smoke/b1_waypoint_tagged_marker_smoke/T1_atlanta/metadata.json",
+        "historical_baseline": false
+      },
+      "historical_logs": [],
+      "baseline_backed": false,
+      "checker_coverage": {
+        "checker": null,
+        "covered": false,
+        "reason": "no historical baseline; auxiliary smoke check outside the scientific checkers"
+      },
+      "executed_in_release": false,
+      "evidence": [
+        {
+          "archive_path": null,
+          "detail": "not executed in this release; no evidence archived"
+        }
+      ],
+      "reproduction_status": "not_applicable_auxiliary_smoke"
+    },
+    {
+      "config_id": "b2_route_mapping_smoke_T1_atlanta",
+      "benchmark_dir": "benchmarks/smoke/b2_route_mapping_smoke/T1_atlanta",
+      "topology": "T1_atlanta",
+      "topology_source": "SNDlib / TopoHub",
+      "depth": 4,
+      "strategy": "bfs",
+      "inputs": {
+        "bad_model": "benchmarks/smoke/b2_route_mapping_smoke/T1_atlanta/bad/model.json",
+        "bad_properties": "benchmarks/smoke/b2_route_mapping_smoke/T1_atlanta/bad/properties.json",
+        "control_model": "benchmarks/smoke/b2_route_mapping_smoke/T1_atlanta/control/model.json",
+        "control_properties": "benchmarks/smoke/b2_route_mapping_smoke/T1_atlanta/control/properties.json"
+      },
+      "expected_statistics": {
+        "bad_harmful": "> 0",
+        "control_harmful": 0,
+        "exact_traces": 8,
+        "source": "benchmarks/smoke/b2_route_mapping_smoke/T1_atlanta/metadata.json",
+        "historical_baseline": false
+      },
+      "historical_logs": [],
+      "baseline_backed": false,
+      "checker_coverage": {
+        "checker": null,
+        "covered": false,
+        "reason": "no historical baseline; auxiliary smoke check outside the scientific checkers"
+      },
+      "executed_in_release": true,
+      "evidence": [
+        {
+          "archive_path": "smoke_evidence/b2_route_mapping_smoke_canonical",
+          "detail": "canonical pair-runner smoke run, 2026-11-03, per-side artifact isolation; bad traces=8 harmful=1, control traces=8 harmful=0"
+        }
+      ],
+      "reproduction_status": "not_applicable_auxiliary_smoke"
+    },
+    {
+      "config_id": "b3_slice_isolation_twocontroller_smoke_T1_atlanta",
+      "benchmark_dir": "benchmarks/smoke/b3_slice_isolation_twocontroller_smoke/T1_atlanta",
+      "topology": "T1_atlanta",
+      "topology_source": "SNDlib / TopoHub",
+      "depth": 4,
+      "strategy": "bfs",
+      "inputs": {
+        "bad_model": "benchmarks/smoke/b3_slice_isolation_twocontroller_smoke/T1_atlanta/bad/model.json",
+        "bad_properties": "benchmarks/smoke/b3_slice_isolation_twocontroller_smoke/T1_atlanta/bad/properties.json",
+        "control_model": "benchmarks/smoke/b3_slice_isolation_twocontroller_smoke/T1_atlanta/control/model.json",
+        "control_properties": "benchmarks/smoke/b3_slice_isolation_twocontroller_smoke/T1_atlanta/control/properties.json"
+      },
+      "expected_statistics": {
+        "bad_harmful": "> 0",
+        "control_harmful": 0,
+        "exact_traces": null,
+        "source": "benchmarks/smoke/b3_slice_isolation_twocontroller_smoke/T1_atlanta/metadata.json",
+        "historical_baseline": false
+      },
+      "historical_logs": [],
+      "baseline_backed": false,
+      "checker_coverage": {
+        "checker": null,
+        "covered": false,
+        "reason": "no historical baseline; auxiliary smoke check outside the scientific checkers"
+      },
+      "executed_in_release": false,
+      "evidence": [
+        {
+          "archive_path": null,
+          "detail": "not executed in this release; no evidence archived"
+        }
+      ],
+      "reproduction_status": "not_applicable_auxiliary_smoke"
+    },
+    {
+      "config_id": "b4_failover_stale_path_smoke_T1_atlanta",
+      "benchmark_dir": "benchmarks/smoke/b4_failover_stale_path_smoke/T1_atlanta",
+      "topology": "T1_atlanta",
+      "topology_source": "SNDlib / TopoHub",
+      "depth": 4,
+      "strategy": "bfs",
+      "inputs": {
+        "bad_model": "benchmarks/smoke/b4_failover_stale_path_smoke/T1_atlanta/bad/model.json",
+        "bad_properties": "benchmarks/smoke/b4_failover_stale_path_smoke/T1_atlanta/bad/properties.json",
+        "control_model": "benchmarks/smoke/b4_failover_stale_path_smoke/T1_atlanta/control/model.json",
+        "control_properties": "benchmarks/smoke/b4_failover_stale_path_smoke/T1_atlanta/control/properties.json"
+      },
+      "expected_statistics": {
+        "bad_harmful": "> 0",
+        "control_harmful": 0,
+        "exact_traces": null,
+        "source": "benchmarks/smoke/b4_failover_stale_path_smoke/T1_atlanta/metadata.json",
+        "historical_baseline": false
+      },
+      "historical_logs": [],
+      "baseline_backed": false,
+      "checker_coverage": {
+        "checker": null,
+        "covered": false,
+        "reason": "no historical baseline; auxiliary smoke check outside the scientific checkers"
+      },
+      "executed_in_release": false,
+      "evidence": [
+        {
+          "archive_path": null,
+          "detail": "not executed in this release; no evidence archived"
+        }
+      ],
+      "reproduction_status": "not_applicable_auxiliary_smoke"
+    }
+  ],
+  "notes": [
+    "Exactly 20 configurations (16 principal + 4 supplementary) are baseline-backed: they have historical expectations (matrix TSV rows and sanitized validation logs) and were re-executed on 2026-11-04 through the canonical pipeline, with both independent checkers classifying every configuration SCIENTIFIC_MATCH.",
+    "The 5 smoke configurations are auxiliary artifact-review checks without historical baselines. They are NOT baseline-backed reproductions, are not covered by the scientific checkers, and must not be cited as reproduced results. Only the default reviewer smoke test (b2_route_mapping_smoke/T1_atlanta) was executed in this release.",
+    "Expected statistics for principal and supplementary configurations come from the committed matrix TSVs and sanitized historical validation logs and were not modified.",
+    "Evidence locations use paths inside the release evidence archive (raceloom-bench-evidence); historical log paths are repository-relative and are also copied into the archive under historical_validation_logs/."
+  ]
+}
